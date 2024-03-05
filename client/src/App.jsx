@@ -1,0 +1,150 @@
+import { useState, useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import './styles.css'
+
+import PanelHome from './components/home/panel.jsx'
+import PanelHomeTablet from './components/home/paneltablet.jsx'
+import PanelHomeCell from './components/home/panelcell.jsx'
+
+import DashboardHome from './components/home/dashboard.jsx'
+import DashboardHomeTablet from './components/home/dashboardtablet.jsx'
+import DashboardHomeCell from './components/home/dashboardcell.jsx'
+
+import Signin from './components/cuenta/signin.jsx'
+import SigninTablet from './components/cuenta/signintablet.jsx'
+import SigninCell from './components/cuenta/signincell.jsx'
+
+import Register from './components/cuenta/register.jsx'
+import RegisterTablet from './components/cuenta/registertablet.jsx'
+import RegisterCell from './components/cuenta/registercell.jsx'
+
+import PerfilCuenta from './components/cuenta/profile/perfil.jsx'
+import PerfilCuentaTablet from './components/cuenta/profile/perfiltablet.jsx'
+import PerfilCuentaCell from './components/cuenta/profile/perfilcell.jsx'
+
+import CotizacionesCuenta from './components/cuenta/cotizaciones/lista.jsx'
+import CotizacionesCuentaTablet from './components/cuenta/cotizaciones/listatablet.jsx'
+import CotizacionesCuentaCell from './components/cuenta/cotizaciones/listacell.jsx'
+
+import FavoritosCuenta from './components/cuenta/favoritos/lista.jsx'
+import FavoritosCuentaTablet from './components/cuenta/favoritos/listatablet.jsx'
+import FavoritosCuentaCell from './components/cuenta/favoritos/listacell.jsx'
+
+import SobreNosotros from './components/nosotros/dashboard.jsx'
+import SobreNosotrosTablet from './components/nosotros/dashboardtablet.jsx'
+import SobreNosotrosCell from './components/nosotros/dashboardcell.jsx'
+
+import Tienda from './components/tienda/dashboard.jsx'
+import TiendaTablet from './components/tienda/dashboardtablet.jsx'
+import TiendaCell from './components/tienda/dashboardcell.jsx'
+
+import CarritoCotizar from './components/carrito/dashboard.jsx'
+import CarritoCotizarTablet from './components/carrito/dashboardtablet.jsx'
+import CarritoCotizarCell from './components/carrito/dashboardcell.jsx'
+
+import ConfirmacionCotizacion from './components/carrito/confirmacion.jsx'
+import ConfirmacionCotizacionTablet from './components/carrito/confirmaciontablet.jsx'
+import ConfirmacionCotizacionCell from './components/carrito/confirmacioncell.jsx'
+
+import EnviadaCotizacion from './components/carrito/enviada.jsx'
+import EnviadaCotizacionTablet from './components/carrito/enviadatablet.jsx'
+import EnviadaCotizacionCell from './components/carrito/enviadacell.jsx'
+
+import DetallesProducto from './components/producto/dashboard.jsx'
+import DetallesProductoTablet from './components/producto/dashboardtablet.jsx'
+import DetallesProductoCell from './components/producto/dashboardcell.jsx'
+
+import DetallesProveedor from './components/proveedor/productos.jsx'
+import DetallesProveedorTablet from './components/proveedor/productostablet.jsx'
+import DetallesProveedorCell from './components/proveedor/productoscell.jsx'
+
+import Contacto from './components/contacto/dashboard.jsx'
+import ContactoTablet from './components/contacto/dashboardtablet.jsx'
+import ContactoCell from './components/contacto/dashboardcell.jsx'
+
+function App() {
+  const [width, setWidth] = useState (window.outerWidth)
+
+  useEffect(() => {
+    window.addEventListener('resize', handle_resize)
+
+    return () => {
+      window.removeEventListener('resize', handle_resize)
+    }
+  }, [])
+
+  const handle_resize = () => {
+    setWidth(window.outerWidth)
+  }
+
+  return (
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={width < 500 ? <PanelHomeCell   proporcional={499 / width}/> : 
+                                     width < 991 ? <PanelHomeTablet proporcional={991 / width}/> : 
+                                                   <PanelHome       proporcional={1920 / width} />}>
+
+                <Route index element={width < 500 ? <DashboardHomeCell   proporcional={499 / width}/> :
+                                      width < 991 ? <DashboardHomeTablet proporcional={991 / width}/> :
+                                                    <DashboardHome       proporcional={1920 / width} />}/>
+                
+                <Route path='signin' element={width < 500 ? <SigninCell   proporcional={499 / width}/> :
+                                              width < 991 ? <SigninTablet proporcional={991 / width}/> :
+                                                            <Signin       proporcional={1920 / width} />}/>
+                                                             
+                <Route path='registro' element={width < 500 ? <RegisterCell   proporcional={499 / width}/> :
+                                                width < 991 ? <RegisterTablet proporcional={991 / width}/> :
+                                                              <Register       proporcional={1920 / width} />}/>
+                                                    
+                <Route path='sobre-nosotros' element={width < 500 ? <SobreNosotrosCell   proporcional={499 / width}/> :
+                                                      width < 991 ? <SobreNosotrosTablet proporcional={991 / width}/> :
+                                                                    <SobreNosotros       proporcional={1920 / width} />}/>
+                                                    
+                <Route path='proveedor/:proveedor' element={width < 500 ? <DetallesProveedorCell   proporcional={499 / width}/> :
+                                                            width < 991 ? <DetallesProveedorTablet proporcional={991 / width}/> :
+                                                                          <DetallesProveedor       proporcional={1920 / width} />}/>
+ 
+                <Route path='tienda' element={width < 500 ? <TiendaCell   proporcional={499 / width}/> :
+                                              width < 991 ? <TiendaTablet proporcional={991 / width}/> :
+                                                            <Tienda       proporcional={1920 / width} />}/>
+                                                            
+                <Route path='lista-cotizar' element={width < 500 ? <CarritoCotizarCell   proporcional={499 / width}/> :
+                                                     width < 991 ? <CarritoCotizarTablet proporcional={991 / width}/> :
+                                                                   <CarritoCotizar       proporcional={1920 / width} />}/>
+                                                                   
+                <Route path='lista-cotizar/confirmar' element={width < 500 ? <ConfirmacionCotizacionCell   proporcional={499 / width}/> :
+                                                               width < 991 ? <ConfirmacionCotizacionTablet proporcional={991 / width}/> :
+                                                                             <ConfirmacionCotizacion       proporcional={1920 / width} />}/>
+                                                                             
+                <Route path='lista-cotizar/enviada' element={width < 500 ? <EnviadaCotizacionCell   proporcional={499 / width}/> :
+                                                             width < 991 ? <EnviadaCotizacionTablet proporcional={991 / width}/> :
+                                                                           <EnviadaCotizacion       proporcional={1920 / width} />}/>
+                                                            
+                <Route path='proveedor/:proveedor/producto/:producto' element={width < 500 ? <DetallesProductoCell   proporcional={499 / width}/> :
+                                                                               width < 991 ? <DetallesProductoTablet proporcional={991 / width}/> :
+                                                                                             <DetallesProducto       proporcional={1920 / width} />}/>
+
+                <Route path='contacto' element={width < 500 ? <ContactoCell   proporcional={499 / width}/> :
+                                                width < 991 ? <ContactoTablet proporcional={991 / width}/> :
+                                                              <Contacto       proporcional={1920 / width} />}/>
+                                                             
+                <Route path='cuenta/perfil' element={width < 500 ? <PerfilCuentaCell   proporcional={499 / width}/> :
+                                                     width < 991 ? <PerfilCuentaTablet proporcional={991 / width}/> :
+                                                                   <PerfilCuenta       proporcional={1920 / width} />}/>
+                                                                   
+                                                             
+                <Route path='cuenta/cotizaciones' element={width < 500 ? <CotizacionesCuentaCell   proporcional={499 / width}/> :
+                                                           width < 991 ? <CotizacionesCuentaTablet proporcional={991 / width}/> :
+                                                                         <CotizacionesCuenta       proporcional={1920 / width} />}/>
+                                                                   
+                <Route path='cuenta/favoritos' element={width < 500 ? <FavoritosCuentaCell   proporcional={499 / width}/> :
+                                                        width < 991 ? <FavoritosCuentaTablet proporcional={991 / width}/> :
+                                                                      <FavoritosCuenta       proporcional={1920 / width} />}/>
+            </Route>
+        </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
