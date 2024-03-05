@@ -238,8 +238,6 @@ router.get ('/api/productos/search/:search/filtro/:filtro/order/:order_by/:order
     }
 })
 
-<<<<<<< HEAD
-=======
 router.get ('/api/proveedor/detalles/productos/:id_proveedor', async (req, res) => {
     const {id_proveedor} = req.params
 
@@ -282,5 +280,4 @@ router.get ('/api/producto/detalles/medida/:id_medida', async(req, res) => {
     }
 })
 
->>>>>>> 745518f (V1.0.14)
 module.exports = router
