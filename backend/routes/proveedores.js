@@ -135,8 +135,6 @@ router.get ('/api/proveedores/search/:search/order/:order_by/:order/:begin/:cant
     }
 })
 
-<<<<<<< HEAD
-=======
 router.get ('/api/tipo_productos/proveedor/:id_proveedor', async (req, res) => {
     const {id_proveedor} = req.params
 
@@ -175,5 +173,4 @@ router.get ('/api/medidas/productos/proveedor/:id_tipo', async (req, res) => {
     }
 })
 
->>>>>>> 745518f (V1.0.14)
 module.exports = router
