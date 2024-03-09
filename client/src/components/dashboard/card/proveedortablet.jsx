@@ -1,10 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import arrow_right_white from '../../../assets/iconos/arrow_right_white_96.png'
+import { useDispatch, useSelector } from 'react-redux'
+import {productosdata} from '../../../redux/slice/productosdata'
+import { productosConstants } from '../../../uri/productos-constants'
+import { useNavigate } from 'react-router-dom'
+import { set_productos_proveedor } from '../../../redux/actions/dataactions'
 
-export default function CardProveedorTablet({proporcional, titulo, subtitulo, descripcion, icono, logo}) {
+export default function CardProveedorTablet({proporcional, id, titulo, subtitulo, descripcion, icono, logo}) {
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [seleccion_producto, setSeleccionProducto] = useState('')
+
+    const {get_proveedor_detalles_productos} = useSelector(({productos_data}) => productos_data)
+
+    useEffect (() => {
+      if (get_proveedor_detalles_productos && get_proveedor_detalles_productos.success === true && get_proveedor_detalles_productos.productos &&
+          get_proveedor_detalles_productos.total_productos && get_proveedor_detalles_productos.proveedor){
+            console.log (get_proveedor_detalles_productos)
+        dispatch (productosdata(productosConstants(0, 0, 0, 0, 0, 0, 0, {}, true).get_proveedor_detalles_productos))
+        dispatch(set_productos_proveedor({productos: get_proveedor_detalles_productos.productos, total_productos: get_proveedor_detalles_productos.total_productos,
+              proveedor: get_proveedor_detalles_productos.proveedor }))
+        navigate(`/proveedor/${get_proveedor_detalles_productos.productos[0].proveedor.replace(' ', '-')}`)
+      }
+    }, [get_proveedor_detalles_productos])
+
+    const ver_productos_proveedor = () => {
+      dispatch(productosdata(productosConstants(id, 0, 0, 0, 0, 0, 9, {}, false).get_proveedor_detalles_productos))
+    }
 
     return (
         <div style={{width: 405.5 / proporcional, marginBottom: 37 / proporcional, marginRight: 15 / proporcional, marginLeft: 15 / proporcional}}>
@@ -23,7 +48,8 @@ export default function CardProveedorTablet({proporcional, titulo, subtitulo, de
                             marginBottom: 30 / proporcional}}>
                             {descripcion}
                         </p>
-                        <div className='d-flex' style={{cursor: 'pointer'}}>
+                        <div className='d-flex' style={{cursor: 'pointer'}}
+                            onClick={() => ver_productos_proveedor()}>
                             <p style={{fontSize: 14 / proporcional, fontWeight: 600 / proporcional, color: '#d18e32', lineHeight: `${14 / proporcional}px`,
                                 marginRight: 5 / proporcional}}>
                                 Ver más
