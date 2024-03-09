@@ -281,7 +281,7 @@ export default function InformacionProveedor({proporcional}) {
                                 lista_tipo_productos && lista_tipo_productos.length > 0 ? (
                                     lista_tipo_productos.map ((tipo, index) => {
                                         return (
-                                            <div style={{width: `25%`, height: 30 / proporcional, cursor: 'pointer'}}>
+                                            <div style={{width: `50%`, height: 30 / proporcional, cursor: 'pointer'}}>
                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 800, color: 'rgb(56, 77, 167)'}}>
                                                     {tipo.nombre_tipo}
                                                 </p>
