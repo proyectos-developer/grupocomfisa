@@ -51,10 +51,6 @@ import EnviadaCotizacion from './components/carrito/enviada.jsx'
 import EnviadaCotizacionTablet from './components/carrito/enviadatablet.jsx'
 import EnviadaCotizacionCell from './components/carrito/enviadacell.jsx'
 
-import DetallesProducto from './components/producto/dashboard.jsx'
-import DetallesProductoTablet from './components/producto/dashboardtablet.jsx'
-import DetallesProductoCell from './components/producto/dashboardcell.jsx'
-
 import DetallesProveedor from './components/proveedor/productos.jsx'
 import DetallesProveedorTablet from './components/proveedor/productostablet.jsx'
 import DetallesProveedorCell from './components/proveedor/productoscell.jsx'
@@ -121,10 +117,6 @@ function App() {
                                                              width < 991 ? <EnviadaCotizacionTablet proporcional={991 / width}/> :
                                                                            <EnviadaCotizacion       proporcional={1920 / width} />}/>
                                                             
-                <Route path='proveedor/:proveedor/producto/:producto' element={width < 500 ? <DetallesProductoCell   proporcional={499 / width}/> :
-                                                                               width < 991 ? <DetallesProductoTablet proporcional={991 / width}/> :
-                                                                                             <DetallesProducto       proporcional={1920 / width} />}/>
-
                 <Route path='contacto' element={width < 500 ? <ContactoCell   proporcional={499 / width}/> :
                                                 width < 991 ? <ContactoTablet proporcional={991 / width}/> :
                                                               <Contacto       proporcional={1920 / width} />}/>

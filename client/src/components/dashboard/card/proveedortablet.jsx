@@ -59,13 +59,13 @@ export default function CardProveedorTablet({proporcional, id, titulo, subtitulo
                     </div>
                 </div>
             </div>
-            <div className='d-flex' style={{width: 403.5 / proporcional}}>
+            <div className='d-flex' style={{width: 403.5 / proporcional, cursor: 'pointer'}} onClick={() => {ver_productos_proveedor(); window.scrollTo(0, 0)}}>
                 <img src={icono} style={{width: 32 / proporcional, height: 32 / proporcional, margin: 13 / proporcional }}/>
                 <div style={{width: 292 / proporcional, height: 'auto'}}>
-                    <p style={{fontSize: 21 / proporcional, lineHeight: `${29 / proporcional}px`, color: '#292929', fontWeight: 500, marginBottom: 0}}>
+                    <p style={{fontSize: 20 / proporcional, lineHeight: `${29 / proporcional}px`, color: '#292929', fontWeight: 500, marginBottom: 0}}>
                         {titulo}
                     </p>
-                    <p style={{fontSize: 19 / proporcional, lineHeight: `${29 / proporcional}px`, color: '#292929', fontWeight: 500, marginBottom: 6}}>
+                    <p style={{fontSize: 18 / proporcional, lineHeight: `${29 / proporcional}px`, color: '#292929', fontWeight: 500, marginBottom: 6}}>
                         {subtitulo}
                     </p>
                     <div className='rounded-pill' style={{width: 100 / proporcional, height: 4 / proporcional, background: '#d18e32'}}/>
