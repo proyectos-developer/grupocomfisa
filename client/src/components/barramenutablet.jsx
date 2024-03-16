@@ -220,199 +220,210 @@ export default function BarraMenu({proporcional}) {
                                             marginBottom: 0, color: '#000000'}}>
                                           Alambre recocido
                                         </p>
-                                    </div>
+                                  </div>
                                   </div>
                                   <div style={{width: '25%', height:'auto'}}>
-                                    <div style={{width: '100%', height: 40 / proporcional}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        Aceros Arequipa
-                                      </p>
-                                    </div>
+                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                        marginBottom: 0, color: '#22222'}}>
+                                      Acreos Arequipa
+                                    </p>
                                     <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
                                         onClick={() => ver_productos_proveedor('26')}>
                                         <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                 marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                         <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
                                             marginBottom: 0, color: '#000000'}}>
-                                          Clavo de albañilería
+                                          Clavos albañilería
                                         </p>
                                     </div>
                                   </div>
                               </div>
                               <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <div style={{width: '100%', height: 40 / proporcional}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         TREAMPERÚ
                                       </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('29')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Clavo albañilería
+                                          </p>
+                                      </div>
                                     </div>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('29')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Clavo de albañilería
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        Piramide
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('23')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Ladrillos
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Piramide
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('23')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Ladrillos
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        SAGITARIO
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('31')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Ladrillos
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Inka
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('21')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Cemento
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        INKA
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('21')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Cemento
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      UNACEM
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('22')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Cemento
-                                        </p>
-                                    </div>
-                                  </div>
                               </div>
                               <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Etsa Perú
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('16')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Planchas de Tecnopor
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        UNACEM
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('22')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Cemento
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Majestad
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('19')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Sellador
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        ETSAPERÚ
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('16')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Planchas de Tecnopor
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Norton
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('12')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Discos cortadores
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        MAJESTAD
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('19')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Sellador
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Briker
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('13')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Discos cortadores
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        NORTON
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('12')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Discos cortadores
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
                               </div>
                               <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Comfisa
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('24')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Guantes de protección
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        BRIKER
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('13')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Discos cortadores
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      ASA
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('14')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Lijas de agua y de acero
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        COMFISA
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('24')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Guantes de protección
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Tigre
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => ver_productos_proveedor('25')}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Tubos y conexiones
-                                        </p>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        ASA
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('14')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Lijas de agua y de acero
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                </div>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        TIGRE
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('25')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Tubos y conexiones
+                                          </p>
+                                      </div>
+                                    </div>
+                              </div>
                             </div>
                           ) : null
                         }  

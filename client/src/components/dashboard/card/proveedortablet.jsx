@@ -46,10 +46,10 @@ export default function CardProveedorTablet({proporcional, id, titulo, subtitulo
                     <div style={{width: 385.5 / proporcional, height: 282 / proporcional, marginTop: 14 / proporcional, marginBottom: 14 / proporcional}}>
                         <p style={{fontSize: 16 / proporcional, color: 'white', textAlign: 'left', marginBottom: 0, lineHeight: `${24 / proporcional}px`,
                             marginBottom: 30 / proporcional}}>
-                            {descripcion}
+                            {descripcion.slice(0, 250)}...
                         </p>
                         <div className='d-flex' style={{cursor: 'pointer'}}
-                            onClick={() => ver_productos_proveedor()}>
+                            onClick={() => {ver_productos_proveedor(); window.scrollTo(0, 0)}}>
                             <p style={{fontSize: 14 / proporcional, fontWeight: 600 / proporcional, color: '#d18e32', lineHeight: `${14 / proporcional}px`,
                                 marginRight: 5 / proporcional}}>
                                 Ver más

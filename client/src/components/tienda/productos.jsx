@@ -95,7 +95,7 @@ export default function  Productos({proporcional}) {
                 lista_productos && lista_productos.length > 0 ? ( 
                     lista_productos.map ((producto, numprod) => {
                         return (
-                            <div className='d-flex' style={{width: '100%'}}>
+                            <div className='d-flex justify-content-between' style={{width: '100%'}}>
                             {
                                 productos[(3 *  numprod)] ? ( 
                                     <CardProductoTienda producto={productos[(3 *  numprod)]} key={(3 *  numprod)} index={(3 *  numprod)} proporcional={proporcional}/>

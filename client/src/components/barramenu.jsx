@@ -117,27 +117,15 @@ export default function BarraMenu({proporcional}) {
             <div className='d-flex justify-content-end' style={{width: '75%', height: 48 / proporcional, paddingTop: 2 / proporcional,
                 paddingBottom: 2 / proporcional}}>
                 <div className='d-flex'>
-                  <div className='d-flex' style={{paddingRight: 25 / proporcional, borderRight: '1px solid #e6e8e8'}}>
+                  <div className='d-flex' style={{paddingRight: 25 / proporcional}}>
                     <img src={icono_cell} style={{width: 29 / proporcional, height: 29 / proporcional, marginTop: 7.5 / proporcional, marginBottom: 7.5 / proporcional, 
                             marginRight: 15 / proporcional}}/>
                     <div style={{}}>
                       <p style={{fontSize: 14 / proporcional, lineHeight: `${22 / proporcional}px`, color: '#5f656d', marginBottom: 0, fontWeight: 400}}>
-                        Soporte técnico
+                        Contácto
                       </p>
                       <p style={{fontSize: 16 / proporcional, lineHeight: `${22 / proporcional}px`, color: '#212121', marginBottom: 0, fontWeight: 600}}>
-                        +51 999 999999
-                      </p>
-                    </div>
-                  </div>
-                  <div className='d-flex' style={{paddingLeft: 25 / proporcional}}>
-                    <img src={icono_clock} style={{width: 29 / proporcional, height: 29 / proporcional, marginTop: 7.5 / proporcional, marginBottom: 7.5 / proporcional, 
-                            marginRight: 15 / proporcional}}/>
-                    <div style={{}}>
-                      <p style={{fontSize: 14 / proporcional, lineHeight: `${22 / proporcional}px`, color: '#5f656d', marginBottom: 0, fontWeight: 400}}>
-                        Soporte técnico
-                      </p>
-                      <p style={{fontSize: 16 / proporcional, lineHeight: `${22 / proporcional}px`, color: '#212121', marginBottom: 0, fontWeight: 600}}>
-                        +51 999 999999
+                        +51 979 357 290
                       </p>
                     </div>
                   </div>
@@ -276,6 +264,21 @@ export default function BarraMenu({proporcional}) {
                                     <div style={{width: '25%', height:'auto'}}>
                                       <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
+                                        SAGITARIO
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('31')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Ladrillos
+                                          </p>
+                                      </div>
+                                    </div>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
                                         Inka
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
@@ -288,6 +291,8 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
+                                </div>
+                                <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                     <div style={{width: '25%', height:'auto'}}>
                                       <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
@@ -303,12 +308,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                </div>
-                                <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                     <div style={{width: '25%', height:'auto'}}>
                                       <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
-                                        Etsa Perú
+                                        ETSAPERÚ
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
                                           onClick={() => ver_productos_proveedor('16')}>
@@ -323,7 +326,7 @@ export default function BarraMenu({proporcional}) {
                                     <div style={{width: '25%', height:'auto'}}>
                                       <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
-                                        Majestad
+                                        MAJESTAD
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
                                           onClick={() => ver_productos_proveedor('19')}>
@@ -338,25 +341,10 @@ export default function BarraMenu({proporcional}) {
                                     <div style={{width: '25%', height:'auto'}}>
                                       <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
-                                        Norton
+                                        NORTON
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
                                           onClick={() => ver_productos_proveedor('12')}>
-                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                              marginBottom: 0, color: '#000000'}}>
-                                            Discos cortadores
-                                          </p>
-                                      </div>
-                                    </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        Briker
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('13')}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -370,7 +358,22 @@ export default function BarraMenu({proporcional}) {
                                     <div style={{width: '25%', height:'auto'}}>
                                       <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
-                                        Comfisa
+                                        BRIKER
+                                      </p>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                          onClick={() => ver_productos_proveedor('13')}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Discos cortadores
+                                          </p>
+                                      </div>
+                                    </div>
+                                    <div style={{width: '25%', height:'auto'}}>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                          marginBottom: 0, color: '#22222'}}>
+                                        COMFISA
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
                                           onClick={() => ver_productos_proveedor('24')}>
@@ -400,7 +403,7 @@ export default function BarraMenu({proporcional}) {
                                     <div style={{width: '25%', height:'auto'}}>
                                       <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
-                                        Tigre
+                                        TIGRE
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
                                           onClick={() => ver_productos_proveedor('25')}>
@@ -412,7 +415,7 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                  </div>
+                                </div>
                             </div>
                           ) : null
                         }

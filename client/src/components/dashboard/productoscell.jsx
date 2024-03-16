@@ -9,6 +9,7 @@ import icono_cortador from '../../assets/iconos/icono_cortador.png'
 import icono_cortador_1 from '../../assets/iconos/icono_cortador_1.png'
 import icono_guantes from '../../assets/iconos/icono_guantes.png'
 import icono_ladrillos from '../../assets/iconos/icono_ladrillos.png'
+import icono_ladrillos_1 from '../../assets/iconos/icono_ladrillos_1.png'
 import icono_lija from '../../assets/iconos/icono_lija.png'
 import icono_planchas from '../../assets/iconos/icono_planchas.png'
 import icono_sellado from '../../assets/iconos/icono_sellado.png'
@@ -29,6 +30,7 @@ import sellador from '../../assets/productos/sellador_427.png'
 import cemento from '../../assets/productos/cemento_427.png'
 import cemento_1 from '../../assets/productos/cemento_1_427.png'
 import ladrillos from '../../assets/productos/ladrillos_427.png'
+import ladrillos_1 from '../../assets/productos/ladrillos_1_427.png'
 import guantes from '../../assets/productos/guantes_427.png'
 import tubos from '../../assets/productos/tubos_427.png'
 
@@ -39,21 +41,41 @@ export default function ProductosProveedoresCell({proporcional}) {
     const [seleccion_producto, setSeleccionProducto] = useState('')
 
     const lista_proveedores = [
-        {id: '15', subtitulo: 'ACEROS AREQUIPA', titulo: 'BARRAS CORRUGADAS', descripcion: 'Se utiliza como material de refuerzo en las construcciones de concreto armado. Debido a sus características y propiedades posee un función esencial en la construcción de obras de infraestructura, de vivienda, comerciales e industriales.', icono: icono_varilla, logo: varillas},
-        {id: '30', subtitulo: 'INKAFERRO', titulo: 'BARRAS CORRUGADAS', descripcion: 'Se utiliza como material de refuerzo en las construcciones de concreto armado. Debido a sus características y propiedades posee un función esencial en la construcción de obras de infraestructura, de vivienda, comerciales e industriales.', icono: icono_varilla_1, logo: varillas_1},
-        {id: '17', subtitulo: 'METALYCK', titulo: 'ALAMBRE RECOCIDO', descripcion: '', icono: icono_alambre, logo: alambre},
-        {id: '26', subtitulo: 'ACEROS AREQUIPA', titulo: 'CLAVO DE ALBAñILERÍA', descripcion: 'Los clavos son elementos de fijación metálica y su objetivo principal es fija elementos de construcción.', icono: icono_clavos, logo: clavos},
-        {id: '29', subtitulo: 'TREAMPERÚ', titulo: 'CLAVO DE ALBAñILERÍA', descripcion: 'Los clavos son elementos de fijación metálica y su objetivo principal es fija elementos de construcción.', icono: icono_clavos_1, logo: clavos_1},
-        {id: '23', subtitulo: 'PIRAMIDE', titulo: 'LADRILLOS', descripcion: 'Los ladrillos se utiliazan en construcción para cerramientos, fachadas y particiones. Se utiliza principalemnte para construir muros o tabiques. Aunque se pueden colocar a hueso, lo habitual es que se reciban con mortero.', icono: icono_ladrillos, logo: ladrillos},
-        {id: '21', subtitulo: 'INKA', titulo: 'CEMENTO', descripcion: 'El cemento es un material de construcción esencial; de hecho, es el más utiliazado en el mundo. La mayoría de las construcciones lo emplean en, por lo menos, una de sus etapas: cimientos, suelos, dinteles, muros, paredes o techos', icono: icono_cemento, logo: cemento},
-        {id: '22', subtitulo: 'UNACEM', titulo: 'CEMENTO', descripcion: 'El cemento es un material de construcción esencial; de hecho, es el más utiliazado en el mundo. La mayoría de las construcciones lo emplean en, por lo menos, una de sus etapas: cimientos, suelos, dinteles, muros, paredes o techos', icono: icono_cemento_1, logo: cemento_1},
-        {id: '16', subtitulo: 'ETSA PERÚ', titulo: 'PLANCHAS TECNOPOR', descripcion: 'El tecnopor es utilizado en el sector de las obras civiles y construcción, en techos y paredes para el aislamiento térmico y acústico.', icono: icono_planchas, logo: tecnopor},
-        {id: '19', subtitulo: 'MAJESTAD', titulo: 'SELLADOR', descripcion: 'El sellador genera en la pared una barrera que impide que en los poros de la superficie entre cualquier tipo de sustancia o material que pueda perjudicar a la pintura.', icono: icono_sellado, logo: sellador},
-        {id: '12', subtitulo: 'NORTON', titulo: 'DISCOS PARA CORTAR', descripcion: 'Usados en trabajos artesanales e industriales para darle forma a un material, para cortar o para mejorar el acabado de la superficie del producto.', icono: icono_cortador, logo: cortadora},
-        {id: '13', subtitulo: 'BRIKER', titulo: 'DISCOS PARA CORTAR', descripcion: 'Usados en trabajos artesanales e industriales para darle forma a un material, para cortar o para mejorar el acabado de la superficie del producto.', icono: icono_cortador_1, logo: cortadora_1},
-        {id: '24', subtitulo: 'COMFISA', titulo: 'GUANTES DE PROTECCIÓN', descripcion: 'Guante reforzador de nitrilo en la palma para proteger contra cortes leves. De fácil manipulación y flexible.', icono: icono_guantes, logo: guantes},
-        {id: '14', subtitulo: 'ASA', titulo: 'LIJAS DE AGUA Y DE FIERRO', descripcion: 'Las lijas suelen usarse para dejar lisas las paredes, previo al pintado. Las lijas también se utilizan en carpintería, para el acabado de diferentes piezas', icono: icono_lija, logo: lijas},
-        {id: '25', subtitulo: 'TIGRE', titulo: 'TUBOS Y CONEXIONES', descripcion: '', icono: icono_tubo, logo: tubos}
+        {id: '15', subtitulo: 'ACEROS AREQUIPA', titulo: 'BARRAS CORRUGADAS', descripcion: `El acero nace de la fusión de diferentes cargas metálicas, con contenido de hierro, ferroaleaciones y carbono, las cuales determinan su estructura molecular pero este proceso no es tan simple como parece. Para conocerlo, explicaremos el proceso de producción de Corporación Aceros Arequipa, empresa peruana líder en la fabricación y comercialización de productos de acero en el Perú, el cual cuenta con dos sedes productivas.`, icono: icono_varilla, logo: varillas},
+
+        {id: '30', subtitulo: 'INKAFERRO', titulo: 'BARRAS CORRUGADAS', descripcion: `Las barras corrugadas ArcelorMittal ASTM A615/A615M grado 60 se emplea como acero de refuerzo para todo tipo de obra: viviendas, edificaciones, centros comerciales y obras de gran envergadura como represas, puentes, 
+        puertos, losas industriales, entre otrosposee una función esencial en la construcción de obras de infraestructura, de vivienda, comerciales e industriales de calidad internacional.`, icono: icono_varilla_1, logo: varillas_1},
+
+        {id: '17', subtitulo: 'METALYCK', titulo: 'ALAMBRE RECOCIDO', descripcion: `Alambres lisos de acero de bajo carbono laminados y/o trefilado, sometido a tratamiento térmico de recocido para aumentar su ductilidad, usados en la construcción civil en el armado de estructuras y amarre de encofrados.`, icono: icono_alambre, logo: alambre},
+
+        {id: '26', subtitulo: 'ACEROS AREQUIPA', titulo: 'CLAVO DE ALBAÑILERÍA', descripcion: `El acero nace de la fusión de diferentes cargas metálicas, con contenido de hierro, ferroaleaciones y carbono, las cuales determinan su estructura molecular pero este proceso no es tan simple como parece. Para conocerlo, explicaremos el proceso de producción de Corporación Aceros Arequipa, empresa peruana líder en la fabricación y comercialización de productos de acero en el Perú, el cual cuenta con dos sedes productivas.`, icono: icono_clavos, logo: clavos},
+
+        {id: '29', subtitulo: 'TREAMPERÚ', titulo: 'CLAVO DE ALBAÑILERÍA', descripcion: `En Tream Perú nos caracterizamos por ofrecer productos fabricados bajo estándares de calidad que nos diferencian de la competencia y nos permiten responder a las necesidades del mercado.
+        Los clavos se dividen según sea el sector, Tream Perú fabrica clavos destinados a 4 sectores específicos: albañil, carpintero, frutero y minero.`, icono: icono_clavos_1, logo: clavos_1},
+
+        {id: '23', subtitulo: 'PIRAMIDE', titulo: 'LADRILLOS', descripcion: `Los ladrillos se utilizan en construcción para fachadas y particiones. Se utiliza principalmente para construir muros o tabiques. Aunque se pueden colocar a hueso, lo habitual es que se reciban con mortero.`, icono: icono_ladrillos, logo: ladrillos},
+
+        {id: '31', subtitulo: 'SAGITARIO', titulo: 'LADRILLOS', descripcion: `La implementación de los ladrillos es lo último en maquinaria totalmente automatizada, lo que nos permite no sólo mejorar la fabricación de productos con arcilla microcompacta, de altísima durabilidad, sino también incursionar en la elaboración de materiales bajo patrones europeos de calidad.`, icono: icono_ladrillos_1, logo: ladrillos_1},
+
+        {id: '21', subtitulo: 'INKA', titulo: 'CEMENTO', descripcion: `El cemento es un material de construcción esencial; de hecho, es el más utilizado en el mundo. La mayoría de las construcciones lo emplean en, por lo menos, una de sus etapas: cimientos, suelos, dinteles, muros, paredes o techos.`, icono: icono_cemento, logo: cemento},
+
+        {id: '22', subtitulo: 'UNACEM', titulo: 'CEMENTO', descripcion: `Garantizamos la ejecución y sostenibilidad de nuestras operaciones con los más altos estándares de calidad, protección de nuestras instalaciones, desempeño ambiental, y de salud y seguridad en el trabajo a través de nuestro Sistema Integrado de Gestión.`, icono: icono_cemento_1, logo: cemento_1},
+
+        {id: '16', subtitulo: 'ETSAPERÚ', titulo: 'PLANCHAS TECNOPOR', descripcion: `El Tecnopor es utilizado en el sector de las obras civiles y construcción,
+        en techos y paredes para el aislamiento térmico y acústico.`, icono: icono_planchas, logo: tecnopor},
+
+        {id: '19', subtitulo: 'MAJESTAD', titulo: 'SELLADOR', descripcion: `Puede utilizarse para el pintado de cielos rasos, cercos perimétricos, jardines, y como 
+        señalización en postesEl temple es uno de los productos más utilizado tradicionalmente para pintar paredes. Hasta la aparición de las modernas pinturas plásticas, era el material más cómodo y barato de utilizar.`, icono: icono_sellado, logo: sellador},
+
+        {id: '12', subtitulo: 'NORTON', titulo: 'DISCOS CORTADORES', descripcion: 'Los discos NORTON son productos abrasivos de diferentes tamaños, granulometrías y formatos; indicados para operaciones profesionales e industriales sobre materiales como fierro, acero, acero inoxidable, madera, concreto, piedras, vidrios, entre otros.', icono: icono_cortador, logo: cortadora},
+        {id: '13', subtitulo: 'BRIKER', titulo: 'DISCOS CORTADORES', descripcion: `Para los discos abrasivos BRIKER empleamos rigurosos procesos de calidad en cada herramienta para asegurar su funcionamiento y la integridad física de cada uno de nuestros usuarios.`, icono: icono_cortador_1, logo: cortadora_1},
+
+        {id: '24', subtitulo: 'COMFISA', titulo: 'GUANTES', descripcion: `Guante reforzador de nitrilo en la palma para proteger contra cortes leves. De fácil manipulación y flexible. Ajuste elástico para la muñeca.`, icono: icono_guantes, logo: guantes},
+
+        {id: '14', subtitulo: 'ASA', titulo: 'LIJAS', descripcion: `Las lijas suelen usarse para dejar lisas las paredes, previo al pintado. Las lijas
+        también se utilizan en carpintería, para el acabado de diferentes piezas.`, icono: icono_lija, logo: lijas},
+
+        {id: '25', subtitulo: 'TIGRE', titulo: 'TUBOS Y CONEXIONES', descripcion: `Nuestros productos operan en los segmentos de hidráulica, eléctrica, drenaje, accesorios sanitarios, infraestructura, industria, riego, herramientas de pintura, metales sanitarios y en soluciones para aguas y efluentes en el tratamiento de reutilización de aguas.`, icono: icono_tubo, logo: tubos}
     ]
 
     return (

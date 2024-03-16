@@ -14,7 +14,7 @@ import {favoritosdata} from '../../../redux/slice/favoritosdata'
 import {favoritosConstants} from '../../../uri/favoritos-constants'
 
 export default function CardProductoTienda({producto, proporcional}) {
-
+    console.log (producto)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -45,68 +45,33 @@ export default function CardProductoTienda({producto, proporcional}) {
         }
     }, [get_proveedor_detalles_productos])
 
-    const agregar_lista_cotizar = () => {
-        const shop_id = window.localStorage.getItem ('shop_id')
-        if (shop_id){
-            const new_lista = {
-                id_producto: producto.id,
-                usuario: authenticated ? window.localStorage.getItem ('usuario') : '',
-                shop_id: shop_id,
-                comentarios: '',
-                cantidad: 1,
-                precio: 0
-            }
-            dispatch (carritodata (carritoConstants(0, 0, new_lista, false).new_cotizar))
-        }else{
-            const shopid = uuidv4()
-            const new_lista = {
-                id_producto: producto.id,
-                usuario: authenticated ? window.localStorage.getItem ('usuario') : '',
-                shop_id: shopid,
-                comentarios: '',
-                cantidad: 1,
-                precio: 0
-            }
-            window.localStorage.setItem ('shop_id', shopid)
-            dispatch (carritodata (carritoConstants(0, 0, new_lista, false).new_cotizar))
-        }
-    }
-
-    const agregar_favoritos = () => {
-        if (!authenticated){
-            dispatch(set_open_warning_login({open: true, warning: 'favoritos'}))
-        }else{
-            const favorito_data = {
-                id_producto: producto.id,
-                usuario: window.localStorage.getItem ('usuario')
-            }
-            dispatch (favoritosdata(favoritosConstants(favorito_data, false, 0, 0).new_favorito))
-        }
-    }
-
     const ver_detalles_producto = (producto) => {
-        dispatch(productosdata(productosConstants(producto.id_proveedor, 0, 0, 0, 0, 0, 0, {}, false).get_proveedor_detalles_productos))
+        dispatch(productosdata(productosConstants(producto.id_proveedor, 0, 0, 0, 0, 0, 0, {}, false).get_prouctos_proveedor))
     }
 
     return (
-        <div className='shadow rounded' style={{width: 258 / proporcional, marginRight: 5 / proporcional, marginLeft: 5 / proporcional, marginBottom: 40 / proporcional}}
+        <div className='shadow rounded' style={{width: '32%', marginRight: 5 / proporcional, marginLeft: 5 / proporcional, marginBottom: 40 / proporcional}}
             onMouseOver={() => setViewOpcions(true)} onMouseLeave={() => setViewOpcions(false)}>
-            <img src={producto.foto_uno} style={{width: 258 / proporcional, height: 258 / proporcional}}/>
-            <div className='position-relative' style={{width: 258 / proporcional}}>
-                <div className='d-flex' style={{width: 258 / proporcional, paddingLeft: 10 / proporcional, paddingRight: 10 / proporcional}}>
-                    <p style={{fontSize: 16 / proporcional, fontWeight: 700, lineHeight: `${18 / proporcional}px`, color: '#5f656d', paddingTop: 10 / proporcional,
-                        paddingBottom: 10 / proporcional, marginTop: 15 / proporcional, marginBottom: 15 / proporcional, cursor: 'default', marginRight: 5 / proporcional}}>{producto.producto.split(' ')[0]}:</p>
-                    <p style={{fontSize: 16 / proporcional, fontWeight: 500, lineHeight: `${18 / proporcional}px`, color: '#5f656d', paddingTop: 10 / proporcional,
-                        paddingBottom: 10 / proporcional, marginTop: 15 / proporcional, marginBottom: 15 / proporcional, cursor: 'default'}}>{producto.descripcion}</p>
-                </div>
-                <div className='d-flex' style={{width: 258 / proporcional, paddingLeft: 10 / proporcional, paddingRight: 10 / proporcional}}>
-                    <p style={{fontSize: 26 / proporcional, fontWeight: 700, lineHeight: `${30 / proporcional}px`, color: '#222931', paddingTop: 10 / proporcional,
-                            paddingBottom: 10 / proporcional, marginTop: 15 / proporcional, marginBottom: 15 / proporcional, cursor: 'default'}}>Pide cotización</p>
+            <img src={producto.foto_uno} style={{width: '100%', height: 'auto'}}/>
+            <div className='position-relative' style={{width: '100%'}}>
+                <div style={{width: '100%', height: 'auto', paddingLeft: 10 / proporcional, paddingRight: 10 / proporcional, marginTop: 15 / proporcional, marginBottom: 10 / proporcional}}>
+                    <div className='d-flex' style={{width: '100%'}}>
+                        <p style={{fontSize: 14 / proporcional, fontWeight: 500, lineHeight: `${18 / proporcional}px`, color: '#5f656d', cursor: 'default', marginBottom: 0, marginRight: 5 / proporcional}}>Proveedor:</p>
+                        <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#5f656d', cursor: 'default', marginBottom: 0}}>{producto.proveedor}</p>
+                    </div>
+                    <div className='d-flex' style={{width: '100%'}}>
+                        <p style={{fontSize: 14 / proporcional, fontWeight: 500, lineHeight: `${18 / proporcional}px`, color: '#5f656d', cursor: 'default', marginBottom: 0, marginRight: 5 / proporcional}}>Producto:</p>
+                        <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#5f656d', cursor: 'default', marginBottom: 0}}>{producto.producto}</p>
+                    </div>
+                    <div className='d-flex' style={{width: '100%'}}>
+                        <p style={{fontSize: 22 / proporcional, fontWeight: 700, lineHeight: `${30 / proporcional}px`, color: '#222931', 
+                            marginTop: 15 / proporcional, marginBottom: 15 / proporcional, cursor: 'default'}}>Pide cotización</p>
+                    </div>
                 </div>
                 <div className={`position-absolute start-0 ${view_opciones ? 'animate__animated animate__bounceIn' : 'top-0 animate__animated animate__bounceOut'}`} 
-                    style={{width: 238 / proporcional, bottom: 0, marginLeft: 10 / proporcional, marginRight: 10 / proporcional,}}>
-                    <button className='btn' style={{width: 238 / proporcional, background: '#d18e32', height: 50 / proporcional, marginTop: 5 / proporcional,
-                        marginBottom: 10 / proporcional, color: 'white', fontWeight: 400, fontSize: 16 / proporcional}}
+                    style={{width: '100%', bottom: 0, marginLeft: 10 / proporcional, marginRight: 10 / proporcional,}}>
+                    <button className='btn' style={{width: '90%', background: '#d18e32', height: 50 / proporcional, marginTop: 5 / proporcional,
+                        marginBottom: 10 / proporcional, color: 'white', fontWeight: 600, fontSize: 16 / proporcional}}
                         onClick={() => ver_detalles_producto(producto)}>
                         Ver más detalles
                     </button>

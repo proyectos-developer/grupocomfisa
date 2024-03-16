@@ -36,6 +36,10 @@ export default function InformacionProveedor({proporcional}) {
     const [foto_dos, setFotoDos] = useState('')
     const [foto_tres, setFotoTres] = useState('')
     const [foto_cuatro, setFotoCuatro] = useState('')
+    const [foto_cinco, setFotoCinco] = useState('')
+    const [foto_seis, setFotoSeis] = useState('')
+    const [foto_siete, setFotoSiete] = useState('')
+    const [foto_ocho, setFotoOcho] = useState('')
 
     const [cantidad, setCantidad] = useState (1)
 
@@ -56,6 +60,10 @@ export default function InformacionProveedor({proporcional}) {
     const [indice_foto_dos, setIndiceFotoDos] = useState (2)
     const [indice_foto_tres, setIndiceFotoTres] = useState (3)
     const [indice_foto_cuatro, setIndiceFotoCuatro] = useState (4)
+    const [indice_foto_cinco, setIndiceFotocinco] = useState (5)
+    const [indice_foto_seis, setIndiceFotoSeis] = useState (6)
+    const [indice_foto_siete, setIndiceFotoSiete] = useState (7)
+    const [indice_foto_ocho, setIndiceFotoOcho] = useState (8)
 
     useEffect(() => {
         if (productos_proveedor && productos_proveedor.proveedor && productos_proveedor.productos){
@@ -74,10 +82,10 @@ export default function InformacionProveedor({proporcional}) {
             setFotoDos('')
             setFotoTres('')
             setFotoCuatro('')
-            setFotoUno('')
-            setFotoDos('')
-            setFotoTres('')
-            setFotoCuatro('')
+            setFotoCinco('')
+            setFotoSeis('')
+            setFotoSiete('')
+            setFotoOcho('')
             dispatch(proveedoresdata(proveedoresConstants(productos_proveedor.proveedor.id, 0, 0, 0, 0, 0, 0, {}, false).get_tipo_productos_proveedor))
         }
     }, [productos_proveedor])
@@ -122,7 +130,15 @@ export default function InformacionProveedor({proporcional}) {
                 lista_fotos.push ({foto: producto.foto_cuatro, nombre: producto.producto})
             ): producto.foto_cinco !== '' ? (
                 lista_fotos.push ({foto: producto.foto_cinco, nombre: producto.producto})
-            ) : null
+            ) : producto.foto_seis !== '' ? (
+                lista_fotos.push ({foto: producto.foto_seis, nombre: producto.producto})
+            ) : producto.foto_siete !== '' ? (
+                lista_fotos.push ({foto: producto.foto_siete, nombre: producto.producto})
+            ) : producto.foto_ocho !== '' ? (
+                lista_fotos.push ({foto: producto.foto_ocho, nombre: producto.producto})
+            ): (
+                null
+            )
         })
         if (lista_fotos[0]){
             setFotoUno(lista_fotos[0].foto)
@@ -132,6 +148,18 @@ export default function InformacionProveedor({proporcional}) {
                     setFotoTres(lista_fotos[2].foto)
                     if (lista_fotos[3]){
                         setFotoCuatro(lista_fotos[3].foto)
+                        if (lista_fotos[4]){
+                            setFotoCinco(lista_fotos[4].foto)
+                            if (lista_fotos[5]){
+                                setFotoSeis(lista_fotos[5].foto)
+                                if (lista_fotos[6]){
+                                    setFotoSiete(lista_fotos[6].foto)
+                                    if (lista_fotos[7]){
+                                        setFotoOcho(lista_fotos[7].foto)
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -173,6 +201,7 @@ export default function InformacionProveedor({proporcional}) {
             window.localStorage.setItem ('shop_id', shopid)
             dispatch (carritodata (carritoConstants(0, 0, new_lista, false).new_cotizar))
         }
+        window.scrollTo(0, 0)
     }
   
     const agregar_favoritos = () => {
@@ -185,94 +214,109 @@ export default function InformacionProveedor({proporcional}) {
           }
           dispatch (favoritosdata(favoritosConstants(favorito_data, false, 0, 0).new_favorito))
       }
-    }
-
-    const siguientes_fotos = () => {
-        let lista_fotos = []
-        setIndiceFotos (indice_fotos + 1)
-        lista_productos.map ((producto, index) => {
-            producto.foto_uno !== '' ? (
-                lista_fotos.push ({foto: producto.foto_uno, nombre: producto.producto})
-            ) : producto.foto_dos !== '' ? (
-                lista_fotos.push ({foto: producto.foto_dos, nombre: producto.producto})
-            ) : producto.foto_tres !== '' ? (
-                lista_fotos.push ({foto: producto.foto_tres, nombre: producto.producto})
-            ): producto.foto_cuatro !== '' ? (
-                lista_fotos.push ({foto: producto.foto_cuatro, nombre: producto.producto})
-            ): producto.foto_cinco !== '' ? (
-                lista_fotos.push ({foto: producto.foto_cinco, nombre: producto.producto})
-            ) : null
-        })
-        if (lista_fotos[indice_foto_uno + 4]){
-            setFotoUno(lista_fotos[indice_foto_uno + 4].foto)
-            setIndiceFotoUno(indice_foto_uno + 4)
-            if (lista_fotos[indice_foto_dos + 4]){
-                setFotoDos(lista_fotos[indice_foto_dos + 4].foto)
-                setIndiceFotoUno(indice_foto_dos + 4)
-                if (lista_fotos[indice_foto_tres + 4]){
-                    setFotoTres(lista_fotos[indice_foto_tres + 4].foto)
-                    setIndiceFotoUno(indice_foto_tres + 4)
-                    if (lista_fotos[indice_foto_cuatro + 4]){
-                        setFotoCuatro(lista_fotos[indice_foto_cuatro + 4].foto)
-                        setIndiceFotoUno(indice_foto_cuatro + 4)
-                    }
-                }
-            }
-        }
-        setListaFotosProductos(lista_fotos)
-    }
-
-    const anteriores_fotos = () => {
-        let lista_fotos = []
-        setIndiceFotos (indice_fotos - 1)
-        lista_productos.map ((producto, index) => {
-            producto.foto_uno !== '' ? (
-                lista_fotos.push ({foto: producto.foto_uno, nombre: producto.producto})
-            ) : producto.foto_dos !== '' ? (
-                lista_fotos.push ({foto: producto.foto_dos, nombre: producto.producto})
-            ) : producto.foto_tres !== '' ? (
-                lista_fotos.push ({foto: producto.foto_tres, nombre: producto.producto})
-            ): producto.foto_cuatro !== '' ? (
-                lista_fotos.push ({foto: producto.foto_cuatro, nombre: producto.producto})
-            ): producto.foto_cinco !== '' ? (
-                lista_fotos.push ({foto: producto.foto_cinco, nombre: producto.producto})
-            ) : null
-        })
-        if (lista_fotos[indice_fotos - 4]){
-            setFotoUno(lista_fotos[indice_fotos - 4].foto)
-            setIndiceFotoUno(indice_foto_uno - 4)
-            if (lista_fotos[indice_fotos - 4]){
-                setFotoDos(lista_fotos[indice_fotos - 4].foto)
-                setIndiceFotoUno(indice_foto_dos - 4)
-                if (lista_fotos[indice_fotos - 4]){
-                    setFotoTres(lista_fotos[indice_fotos - 4].foto)
-                    setIndiceFotoUno(indice_foto_tres - 4)
-                    if (lista_fotos[indice_fotos - 4]){
-                        setFotoCuatro(lista_fotos[indice_fotos - 4].foto)
-                        setIndiceFotoUno(indice_foto_cuatro - 4)
-                    }
-                }
-            }
-        }
-        setListaFotosProductos(lista_fotos)
+      window.scrollTo(0, 0)
     }
     
     return (
         <div style={{width: '100%', paddingLeft: 350 / proporcional, paddingRight: 350 / proporcional, paddingTop: 120 / proporcional, paddingBottom: 120 / proporcional}}>
             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                {
-                    foto_principal && foto_principal !== '' ? (
-                        <ReactImageZoom {...{ width: '35%', height: 427 / proporcional, img: foto_principal, zoomPosition: 'original', zoomWidth: 500, zoomLensStyle: 'default',
-                        zoomStyle: 'default', offset: 'default'}}/>
-                    ) : (
-                        <div style={{width: '35%', height: 427 / proporcional, marginRight: 10 / proporcional, border: '1px solid #bdbdbd'}}/>
-                    )
-                }
-                <div style={{width: '59%', height: 427 / proporcional}}>
+                <div style={{width: '39%', height: 'auto'}}>
+                    {
+                        foto_principal && foto_principal !== '' ? (
+                            <div style={{width: '100%', height: 427 / proporcional, border: '1px solid #bdbdbd', marginBottom: 20 / proporcional}}>
+                                <ReactImageZoom {...{ width: '100%', height: 427 / proporcional, img: foto_principal, zoomPosition: 'original', zoomWidth: 500, zoomLensStyle: 'default',
+                                zoomStyle: 'default', offset: 'default'}}/>
+                            </div>
+                        ) : (
+                            <div style={{width: '100%', height: 427 / proporcional, border: '1px solid #bdbdbd', marginBottom: 20 / proporcional}}/>
+                        )
+                    }
+                    <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
+                        <div className='' style={{width: '100%', height: 'auto'}}>
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_uno)}>
+                                    {
+                                        foto_uno === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_uno} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_dos)}>
+                                    {
+                                        foto_dos === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_dos} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_tres)}>
+                                    {
+                                        foto_tres === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_tres} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_cuatro)}>
+                                    {
+                                        foto_cuatro === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_cuatro} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_uno)}>
+                                    {
+                                        foto_cinco === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_cinco} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_dos)}>
+                                    {
+                                        foto_seis === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_seis} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_tres)}>
+                                    {
+                                        foto_siete === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_siete} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                                <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_cuatro)}>
+                                    {
+                                        foto_ocho === '' ? (
+                                            <div style={{width: '100%', height: '100%'}}/>
+                                        ): (
+                                            <img src={foto_ocho} style={{width: '100%', height: '100%'}}/>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style={{width: '60%', height: 'auto'}}>
                     <p style={{fontSize: 28 / proporcional, lineHeight: `${38 / proporcional}px`, marginBottom: 0, fontWeight: 500, color: '#222931'}}>
                         {proveedor.proveedor}
                     </p>
-                    <p style={{fontSize: 24 / proporcional, lineHeight: `${38 / proporcional}px`, marginBottom: 18 / proporcional, fontWeight: 400, color: 'rgba(95, 101, 109, 0.6'}}>
+                    <p style={{fontSize: 20 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 18 / proporcional, fontWeight: 400, color: 'rgba(95, 101, 109, 0.6'}}>
                         {proveedor.descripcion}
                     </p>
                     <div style={{width: '100%', height: 'auto'}}>
@@ -344,7 +388,7 @@ export default function InformacionProveedor({proporcional}) {
                     </div>
                     {
                         producto ? (
-                            <div className='overflow-auto' style={{width: '100%', minHeight: 60 / proporcional, padding: 10 / proporcional, maxHeight: 132 / proporcional}}>
+                            <div className='' style={{width: '100%', minHeight: 60 / proporcional, padding: 10 / proporcional, height: 'auto'}}>
                                 <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#222931'}}>
                                     Producto: <span style={{fontSize: 20 / proporcional, fontWeight: 600}}> {producto.producto}</span>
                                 </p>
@@ -358,22 +402,19 @@ export default function InformacionProveedor({proporcional}) {
                                                 Características:
                                             </p>
                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                                {producto.caracteristica_uno}
+                                                1. {producto.caracteristica_uno}
                                             </p>
                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                                {producto.caracteristica_dos}
+                                                2. {producto.caracteristica_dos}
                                             </p>
                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                                {producto.caracteristica_tres}
+                                                3. {producto.caracteristica_tres}
                                             </p>
                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                                {producto.caracteristica_cuatro}
+                                                4. {producto.caracteristica_cuatro}
                                             </p>
                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                                {producto.caracteristica_cinco}
-                                            </p>
-                                            <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                                {producto.caracteristica_seis}
+                                                5. {producto.caracteristica_cinco}
                                             </p>
                                         </div>
                                     ) : null
@@ -383,74 +424,13 @@ export default function InformacionProveedor({proporcional}) {
                     }
                 </div>
             </div>
-            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
-                <div className='' style={{width: '39%', height: 'auto'}}>
-                    <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}>
-                        <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_uno)}>
-                            {
-                                foto_uno === '' ? (
-                                    <div style={{width: '100%', height: '100%'}}/>
-                                ): (
-                                    <img src={foto_uno} style={{width: '100%', height: '100%'}}/>
-                                )
-                            }
-                        </div>
-                        <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_dos)}>
-                            {
-                                foto_dos === '' ? (
-                                    <div style={{width: '100%', height: '100%'}}/>
-                                ): (
-                                    <img src={foto_dos} style={{width: '100%', height: '100%'}}/>
-                                )
-                            }
-                        </div>
-                        <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_tres)}>
-                            {
-                                foto_tres === '' ? (
-                                    <div style={{width: '100%', height: '100%'}}/>
-                                ): (
-                                    <img src={foto_tres} style={{width: '100%', height: '100%'}}/>
-                                )
-                            }
-                        </div>
-                        <div style={{width: '24%', height: 102.48 / proporcional, cursor: 'pointer'}} onClick={() => setFotoPrincipal(foto_cuatro)}>
-                            {
-                                foto_cuatro === '' ? (
-                                    <div style={{width: '100%', height: '100%'}}/>
-                                ): (
-                                    <img src={foto_cuatro} style={{width: '100%', height: '100%'}}/>
-                                )
-                            }
-                        </div>
-                    </div>
-                    <div className='d-flex justify-content-between' style={{width: '100%', height: 29.52 / proporcional}}>
-                        {
-                            indice_fotos > 0 ? (
-                                <div className='d-flex justify-content-start' style={{width: '49%', height: 29.52 / proporcional}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${29.52 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#2222931', cursor: 'pointer'}}
-                                        onClick={() => anteriores_fotos()}>
-                                        Anteriores
-                                    </p>
-                                </div>
-                            ) : <div style={{width: '49%', height: 'auto'}}/>
-                        }
-                        {
-                            indice_fotos < (lista_fotos_productos.length / 4) ? (
-                                <div className='d-flex justify-content-end' style={{width: '49%', height: 29.52 / proporcional}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${29.52 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#222931', cursor: 'pointer'}}
-                                        onClick={() => siguientes_fotos ()}>
-                                        Siguientes
-                                    </p>
-                                </div>
-                            ) : null
-                        }
-                    </div>
-                </div>
-                <div className='' style={{width: '59d%', height: 'auto'}}>
-                    <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#222931'}}>
-                        Pide tu cotización
+            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', border: '1px solid #f0f0f0', marginBottom: 20 / proporcional}}/>
+            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                <div className='' style={{width: 'auto', height: 'auto'}}>
+                    <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 20 / proporcional, fontWeight: 400, color: '#222931'}}>
+                        Pide tu cotización (Producto <span style={{fontWeight: 600}}>{producto.producto}</span>)
                     </p>
-                    <div style={{width: '100%', marginBottom: 10 / proporcional}} className='d-flex'>
+                    <div style={{width: '100%'}} className='d-flex'>
                         <input 
                             type='number'
                             className='form-control'
@@ -458,27 +438,27 @@ export default function InformacionProveedor({proporcional}) {
                             onChange={(event) => setCantidad(event.target.value)}
                             placeholder='1'
                             style={{fontSize: 16 / proporcional, width: 75 / proporcional, height: 50 / proporcional, padding: 10 / proporcional, background: '#f8f9f9', 
-                                    color: '#848a90', marginRight: 10 / proporcional}}/>
+                                    color: '#848a90', marginRight: 20 / proporcional}}/>
                         <div className='btn rounded d-flex justify-content-center' 
                             onClick={() => agregar_lista_cotizar()}
                             style={{width: 200 / proporcional, height: 50 / proporcional, background: boton_lista ? 'white' : 'rgb(209, 142, 50)', paddingTop: 18 / proporcional, 
-                                    paddingBottom: 18 / proporcional, border: '1px solid rgb(209, 142, 50)'}}
+                                    paddingBottom: 18 / proporcional, border: '1px solid rgb(209, 142, 50)', marginRight: 20 / proporcional}}
                                     onMouseOver={() => setBotonLista(true)} onMouseLeave={() => setBotonLista(false)}>
                                 <img src={!boton_lista ? icono_car_black : icono_car_white} style={{width: 14 / proporcional, height: 14 / proporcional, marginRight: 7 / proporcional}}/>
                                 <p style={{fontSize: 14 / proporcional, fontWeight: 700, color: boton_lista ? 'rgb(209, 142, 50)' : 'white', lineHeight: `${16 / proporcional}px`}}>
                                 Agregar a lista
                                 </p>
                         </div>
-                    </div>
-                    <div className='btn rounded d-flex justify-content-center' 
-                        onClick={() => agregar_favoritos()}
-                        style={{width: 235 / proporcional, height: 50 / proporcional, background: boton_favoritos ? 'white' : 'rgb(56, 77, 167)', paddingTop: 18 / proporcional, 
-                            paddingBottom: 18 / proporcional, border: '1px solid rgb(56, 77, 167111111111)'}}
-                            onMouseOver={() => setBotonFavoritos(true)} onMouseLeave={() => setBotonFavoritos(false)}>
-                        <img src={!boton_favoritos ? icono_favoritos_black : icono_favoritos_white} style={{width: 14 / proporcional, height: 14 / proporcional, marginRight: 7 / proporcional}}/>
-                        <p style={{fontSize: 14 / proporcional, fontWeight: 700, color: boton_favoritos ? 'rgb(209, 142, 50)' : 'white', lineHeight: `${16 / proporcional}px`}}>
-                            Agregar a favoritos
-                        </p>
+                        <div className='btn rounded d-flex justify-content-center' 
+                            onClick={() => agregar_favoritos()}
+                            style={{width: 235 / proporcional, height: 50 / proporcional, background: boton_favoritos ? 'white' : 'rgb(56, 77, 167)', paddingTop: 18 / proporcional, 
+                                paddingBottom: 18 / proporcional, border: '1px solid rgb(56, 77, 167111111111)'}}
+                                onMouseOver={() => setBotonFavoritos(true)} onMouseLeave={() => setBotonFavoritos(false)}>
+                            <img src={!boton_favoritos ? icono_favoritos_black : icono_favoritos_white} style={{width: 14 / proporcional, height: 14 / proporcional, marginRight: 7 / proporcional}}/>
+                            <p style={{fontSize: 14 / proporcional, fontWeight: 700, color: boton_favoritos ? 'rgb(209, 142, 50)' : 'white', lineHeight: `${16 / proporcional}px`}}>
+                                Agregar a favoritos
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
