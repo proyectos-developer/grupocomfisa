@@ -65,11 +65,13 @@ export default function CardCotizacionCell({proporcional, cotizacion, total, ind
                                 lista_productos && lista_productos.length > 0 ? (
                                     lista_productos.map ((producto, numprod) => {
                                         return (
-                                            <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, 
-                                                        color: '#212121', fontWeight: 500,
-                                                marginRight: 10 / proporcional}}>
-                                                {producto.producto} ({producto.cantidad}){numprod !== lista_productos.length - 1 ? ',' : ''}
-                                            </p>
+                                            numprod < 1 ? (
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, 
+                                                            color: '#212121', fontWeight: 500,
+                                                    marginRight: 10 / proporcional}}>
+                                                    {producto.producto} ({producto.cantidad}){numprod !== lista_productos.length - 1 ? ',' : ''}
+                                                </p>
+                                            ) : null
                                         )
                                     })
                                 ) : null

@@ -17,7 +17,7 @@ export default function CardProductoCotizarTablet({producto, proporcional}) {
 
     const [foto_uno, setFotoUno] = useState ('')
     const [nombre_producto, setNombreProducto] = useState('')
-    const [descripcion, setDecripcion] = useState('')
+    const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
     const [cantidad, setCantidad] = useState(0)
     const [informacion, setInformacion] = useState('')
@@ -37,7 +37,7 @@ export default function CardProductoCotizarTablet({producto, proporcional}) {
                 setInformacion (producto.comentarios)
                 setCantidad (parseFloat(producto.cantidad))
                 setNombreProducto(res.data.producto.producto) 
-                setDecripcion(res.data.producto.descripcion)
+                setProveedor(res.data.producto.proveedor)
                 setFotoUno(res.data.producto.foto_uno)
                 setIdProducto(res.data.producto.id)
             }).catch ((err) => {
@@ -77,11 +77,11 @@ export default function CardProductoCotizarTablet({producto, proporcional}) {
                         <div style={{marginLeft: 30 / proporcional, width: 102.3 / proporcional}}>
                             <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)',
                                 height: 49 / proporcional}}>
-                                {nombre_producto}
+                                 {proveedor}
                             </p>
                             <p style={{fontSize: 14 / proporcional, lineHeight: `${16 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)',
                                 height: 50 / proporcional}}>
-                                {descripcion}
+                                {nombre_producto}
                             </p>
                         </div>
                     </div>

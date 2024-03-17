@@ -17,7 +17,7 @@ export default function CardProductoConfirmarTablet({producto, proporcional}) {
 
     const [foto_uno, setFotoUno] = useState ('')
     const [nombre_producto, setNombreProducto] = useState('')
-    const [descripcion, setDecripcion] = useState('')
+    const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
     const [cantidad, setCantidad] = useState(0)
     const [informacion, setInformacion] = useState('')
@@ -32,7 +32,7 @@ export default function CardProductoConfirmarTablet({producto, proporcional}) {
                 setInformacion (producto.comntarios)
                 setCantidad (parseFloat(producto.cantidad))
                 setNombreProducto(res.data.producto.producto) 
-                setDecripcion(res.data.producto.descripcion)
+                setProveedor(res.data.producto.proveedor)
                 setFotoUno(res.data.producto.foto_uno)
                 setIdProducto(res.data.producto.id)
             }).catch ((err) => {
@@ -47,10 +47,10 @@ export default function CardProductoConfirmarTablet({producto, proporcional}) {
                         <img src={foto_uno} style={{width: 99 / proporcional, height: 99 / proporcional}}/>
                         <div style={{marginLeft: 30 / proporcional, width: 145.85 / proporcional}}>
                             <p style={{fontSize: 18 / proporcional, lineHeight: `${49 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)'}}>
-                                {nombre_producto}
+                                {proveedor}
                             </p>
                             <p style={{fontSize: 16 / proporcional, lineHeight: `${50 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)'}}>
-                                {descripcion}
+                                {nombre_producto}
                             </p>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import { filtrostypes } from "../actions/filtrosactions";
 
 const initialState = {
-    filtro_productos_search_order_amount:   {pagina: '', filtro: 0, search: 0, order_by: 0, order: 0, begin: 0, cantidad: 9},
+    filtro_productos_search_order_amount:   {pagina: '', id: 0, search: 0, filtro: 0, order_by: 0, order: 0, begin: 0, cantidad: 9},
     limpiar_filtros: {}
 }
 

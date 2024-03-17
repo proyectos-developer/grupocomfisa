@@ -28,7 +28,7 @@ export default function CardProveedor({proporcional, id, titulo, subtitulo, desc
     }, [get_proveedor_detalles_productos])
 
     const ver_productos_proveedor = () => {
-      dispatch(productosdata(productosConstants(id, 0, 0, 0, 0, 0, 9, {}, false).get_proveedor_detalles_productos))
+        dispatch(productosdata(productosConstants(id, 0, 0, 0, 0, 0, 9, {}, false).get_proveedor_detalles_productos))
     }
 
     return (

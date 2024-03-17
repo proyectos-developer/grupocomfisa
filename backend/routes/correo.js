@@ -10,12 +10,12 @@ const nodemailer = require('nodemailer')
 const SMTPTransport = require('nodemailer/lib/smtp-transport')
 
 var transporter = nodemailer.createTransport( new SMTPTransport ({
-    host: 'taxi-huaraz.com',
+    host: 'developer-ideas.com',
     secure: true,
     port: 465,
     auth: {
-        user: 'admin@taxi-huaraz.com',
-        pass: '2t5:w6yTjunPaM.'
+        user: 'admin@developer-ideas.com',
+        pass: '206@Dev2702ideas732'
     },
     tls: {
         rejectUnauthorized: false
@@ -41,7 +41,7 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
     const usuarios = await pool.query ('SELECT * FROM clientes JOIN info_clientes ON clientes.usuario = info_clientes.usuario WHERE clientes.correo = ?', [correo])
     if (usuarios.length === 1){
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@taxi-huaraz.com>', // sender address
+            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
             to: usuarios[0].correo, // list of receivers
             subject: 'Olvide mi contraseña Grupo COMFISA',
             template: 'olvidepassword', // the name of the template file i.e email.handlebars
@@ -75,15 +75,16 @@ router.post('/api/correo/nueva/cotizacion/:shop_id/:usuario', async (req, res) =
     try {
         const data_usuario = await pool.query (`SELECT * FROM info_clientes WHERE usuario = ?`, [usuario])
         const cotizacion = await pool.query (`SELECT productos_proveedor.producto, carrito_cotizacion.cantidad, carrito_cotizacion.precio,
-                                                carrito_cotizacion.comentarios, productos_proveedor.descripcion, productos_proveedor.foto_uno,
+                                                carrito_cotizacion.comentarios, productos_proveedor.proveedor, productos_proveedor.foto_uno,
                                                 carrito_cotizacion.estado FROM carrito_cotizacion JOIN productos_proveedor ON 
                                                 productos_proveedor.id = carrito_cotizacion.id_producto 
-                                                WHERE shop_id = ?`, [shop_id])
+                                                WHERE carrito_cotizacion.shop_id = ?`, [shop_id])
         console.log (cotizacion)
+        console.log (data_usuario[0]) 
 
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@grupocomfisa.com>', // sender address
-            to: data_usuario[0].correo + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+            to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
             subject: 'Pedido de cotización',
             template: 'pedidocotizacion', // the name of the template file i.e email.handlebars
             context:{
@@ -118,8 +119,8 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
     const { correo, nombres, apellidos, telefono, mensaje } = req.body
 
     var mailOptions = {
-        from: '"Grupo COMFISA" <admin@taxi-huaraz.com>', // sender address
-        to: correo + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+        from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+        to: correo, //+ ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
         subject: 'Mensaje de la web Grupo COMFISA',
         template: 'mensajeweb', // the name of the template file i.e email.handlebars
         context:{

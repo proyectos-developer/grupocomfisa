@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {productosdata} from '../../redux/slice/productosdata.js'
 import { productosConstants } from '../../uri/productos-constants.js'
 
-export default function Filtros({proporcional}) {
+export default function  Filtros({proporcional}) {
 
         const dispatch = useDispatch()
       
@@ -61,6 +61,13 @@ export default function Filtros({proporcional}) {
                         fontWeight: 400}}>ACEROS AREQUIPA (BARRAS CORRUGADAS)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                    <img src={check_proveedor === 'inkaferro' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                            onClick={() => filtrar_por_proveedor('30', 'inkaferro')}/>
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                        fontWeight: 400}}>INKAFERRO (BARRAS CORRUGADAS)</p>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'metalyck' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
                             onClick={() => filtrar_por_proveedor('17', 'metalyck')}/>
@@ -89,6 +96,13 @@ export default function Filtros({proporcional}) {
                         fontWeight: 400}}>PIRAMIDE (LADRILLOS)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                    <img src={check_proveedor === 'sagitario' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                            onClick={() => filtrar_por_proveedor('31', 'sagitario')}/>
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                        fontWeight: 400}}>SAGITARIO (LADRILLOS)</p>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'inka' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
                             onClick={() => filtrar_por_proveedor('21', 'inka')}/>
@@ -107,7 +121,7 @@ export default function Filtros({proporcional}) {
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
                             onClick={() => filtrar_por_proveedor('16', 'etsa')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>ETSA PERÚ (TECNOPOR)</p>
+                        fontWeight: 400}}>ETSAPERÚ (TECNOPOR)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'majestad' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,

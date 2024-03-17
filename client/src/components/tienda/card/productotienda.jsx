@@ -6,7 +6,6 @@ import {carritodata} from '../../../redux/slice/carritodata'
 import {carritoConstants} from '../../../uri/carrito-constants'
 
 import {v4 as uuidv4} from 'uuid'
-
 import { set_lista_carrito_cotizacion, set_open_menu_carrito, set_open_warning_login, set_productos_proveedor } from '../../../redux/actions/dataactions';
 import {productosdata} from '../../../redux/slice/productosdata';
 import { productosConstants } from '../../../uri/productos-constants';
@@ -14,7 +13,7 @@ import {favoritosdata} from '../../../redux/slice/favoritosdata'
 import {favoritosConstants} from '../../../uri/favoritos-constants'
 
 export default function CardProductoTienda({producto, proporcional}) {
-    console.log (producto)
+    
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -46,7 +45,7 @@ export default function CardProductoTienda({producto, proporcional}) {
     }, [get_proveedor_detalles_productos])
 
     const ver_detalles_producto = (producto) => {
-        dispatch(productosdata(productosConstants(producto.id_proveedor, 0, 0, 0, 0, 0, 0, {}, false).get_prouctos_proveedor))
+      dispatch(productosdata(productosConstants(producto.id_proveedor, 0, 0, 0, 0, 0, 9, {}, false).get_proveedor_detalles_productos))
     }
 
     return (

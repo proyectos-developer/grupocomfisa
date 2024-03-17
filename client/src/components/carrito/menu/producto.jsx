@@ -15,7 +15,7 @@ export default function CardProductoMenu({cotizar, proporcional}) {
 
     const [cantidad, setCantidad] = useState (1)
     const [producto, setProducto] = useState('')
-    const [descripcion, setDescripcion] = useState('')
+    const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
     const [foto_uno, setFotoUno] = useState('')
     const [loading, setLoading] = useState (0)
@@ -31,7 +31,7 @@ export default function CardProductoMenu({cotizar, proporcional}) {
             .then ((res) => {
                 setLoading (2)
                 setProducto(res.data.producto.producto)
-                setDescripcion(res.data.producto.descripcion)
+                setProveedor (res.data.producto.proveedor)
                 setIdProducto(res.data.producto.id)
                 setFotoUno(res.data.producto.foto_uno)
             }).catch ((err) => {
@@ -61,7 +61,7 @@ export default function CardProductoMenu({cotizar, proporcional}) {
                     <img src={foto_uno} style={{width: 124 / proporcional, height: 124 / proporcional, marginRight: 15 / proporcional}}/>
                     <div style={{width: 239 / proporcional, height: 124 / proporcional}}>
                         <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, marginBottom: 10 / proporcional, color: '#222222'}}>
-                            {producto + '' + descripcion}
+                            {proveedor} <br/> {producto}
                         </p>
                         <div className='d-flex' style={{width: 140 / proporcional, height: 40 / proporcional}}>
                             <img src={icono_minus_black} style={{width: boton_minus ? 22 / proporcional : 24 / proporcional, 

@@ -42,9 +42,9 @@ export default function FiltrosTablet({proporcional}) {
                 const begin = filtro_productos_search_order_amount.begin
                 const cantidad = filtro_productos_search_order_amount.cantidad
                 if (proveedor !== check_proveedor){
-                        dispatch (productosdata(productosConstants(0, search, id_proveedor, order_by, order, begin, cantidad).get_productos_search_filtro_order_tienda))
+                        dispatch (productosdata(productosConstants(0, search, id_proveedor, order_by, order, begin, cantidad, {}, false).get_productos_search_filtro_order_tienda))
                 }else{
-                        dispatch (productosdata(productosConstants(0, search, 0, order_by, order, begin, cantidad).get_productos_search_filtro_order_tienda))
+                        dispatch (productosdata(productosConstants(0, search, 0, order_by, order, begin, cantidad, {}, false).get_productos_search_filtro_order_tienda))
                 }
         }
 
@@ -62,108 +62,124 @@ export default function FiltrosTablet({proporcional}) {
                             fontWeight: 400}}>ACEROS AREQUIPA (BARRAS CORRUGADAS)</p>
                     </div>
                     <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                        <img src={check_proveedor === 'metalyck' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                        <img src={check_proveedor === 'inkaferro' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                 marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                                onClick={() => {filtrar_por_proveedor('17', 'metalyck')}}/>
+                                onClick={() => {filtrar_por_proveedor('30', 'inkaferro')}}/>
                         <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                            fontWeight: 400}}>METALYCK (ALAMBRE RECOCIDO)</p>
+                            fontWeight: 400}}>INKAFERRO (BARRAS CORRUGADAS)</p>
                     </div>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'clavos' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('26', 'clavos')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>ACEROS AREQUIPA (CLAVO ALBAÑILERÍA)</p>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'metalyck' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('17', 'metalyck')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                fontWeight: 400}}>METALYCK (ALAMBRE RECOCIDO)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'clavos' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('26', 'clavos')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>ACEROS AREQUIPA (CLAVO ALBAÑILERÍA)</p>
+                        </div>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'tream' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('29', 'tream')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>TREAMPERÚ (CLAVO ALBAÑILERÍA)</p>
-                </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'piramide' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('23', 'piramide')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>PIRAMIDE (LADRILLOS)</p>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'inka' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('21', 'inka')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>INKA (CEMENTO)</p>
-                </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'tream' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('29', 'tream')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>TREAMPERÚ (CLAVO ALBAÑILERÍA)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'piramide' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('23', 'piramide')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>PIRAMIDE (LADRILLOS)</p>
+                        </div>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'unacem' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('22', 'unacem')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>UNACEM (CEMENTO)</p>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'sagitario' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('31', 'sagitario')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>SAGITARIO (LADRILLOS)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'inka' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('21', 'inka')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>INKA (CEMENTO)</p>
+                        </div>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'etsa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('16', 'etsa')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>ETSA PERÚ (TECNOPOR)</p>
-                </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'majestad' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('19', 'majestad')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>MAJESTAD (TEMPLE)</p>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'norton' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('12', 'norton')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>NORTON (DISCOS CORTADORES)</p>
-                </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'unacem' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('22', 'unacem')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>UNACEM (CEMENTO)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'etsa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('16', 'etsa')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>ETSAPERÚ (TECNOPOR)</p>
+                        </div>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'briker' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('13', 'briker')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>BRIKER (DISCOS CORTADORES)</p>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'majestad' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('19', 'majestad')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>MAJESTAD (TEMPLE)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'norton' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('12', 'norton')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>NORTON (DISCOS CORTADORES)</p>
+                        </div>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'comfisa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('24', 'comfisa')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>COMFISA (GUANTES DE PROTECCIÓN)</p>
-                </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'briker' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('13', 'briker')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>BRIKER (DISCOS CORTADORES)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'comfisa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('24', 'comfisa')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>COMFISA (GUANTES DE PROTECCIÓN)</p>
+                        </div>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'asa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('25', 'asa')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>ASA (LIJAS DE AGUA Y ACERO)</p>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
-                    <img src={check_proveedor === 'tigre' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
-                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => {filtrar_por_proveedor('25', 'tigre')}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>TIGRE (TUBOS Y CONEXIONES)</p>
-                </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'asa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('14', 'asa')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>ASA (LIJAS DE AGUA Y ACERO)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'tigre' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('25', 'tigre')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                        fontWeight: 400}}>TIGRE (TUBOS Y CONEXIONES)</p>
+                        </div>
                 </div>
             </div>
         </div>

@@ -13,11 +13,11 @@ export default function FormularioContactoTablet({proporcional}) {
     const [email, setEmail] = useState('')
     const [mensajes, setMensajes] = useState('')
     
-    const [enombres, setENombres] = useState('')
-    const [eapellidos, setEApellidos] = useState('')
-    const [enro_telefono, setENroTelefono] = useState('')
-    const [eemail, setEEmail] = useState('')
-    const [emensajes, setEMensajes] = useState('')
+    const [enombres, setENombres] = useState(falsee)
+    const [eapellidos, setEApellidos] = useState(falsee)
+    const [enro_telefono, setENroTelefono] = useState(falsee)
+    const [eemail, setEEmail] = useState(falsee)
+    const [emensajes, setEMensajes] = useState(falsee)
 
     const enviar_mensaje = () => {
         if (nombres === '' || apellidos === '' || nro_telefono === '' || email === '' || mensajes === ''){
@@ -55,7 +55,7 @@ export default function FormularioContactoTablet({proporcional}) {
                     className='form-control'
                     onChange={(event) => setNombres(event.target.value)}
                     value={nombres}
-                    style={{width: '100%', height: 50 / proporcional, border: enombres === '' ? '1px solid #ededed' : '1px solid red', 
+                    style={{width: '100%', height: 50 / proporcional, border: !enombres ? '1px solid #ededed' : '1px solid red', 
                             color: '#848a90', paddingTop: 12 / proporcional, 
                             paddingBottom: 12 / proporcional, paddingLeft: 17 / proporcional, paddingRight: 17 / proporcional, background: '#f5f6f6'}} 
                     placeholder='Ingrese sus nombres'
@@ -68,7 +68,7 @@ export default function FormularioContactoTablet({proporcional}) {
                     className='form-control'
                     onChange={(event) => setApellidos(event.target.value)}
                     value={apellidos}
-                    style={{width: '100%', height: 50 / proporcional, border: enombres === '' ? '1px solid #ededed' : '1px solid red', 
+                    style={{width: '100%', height: 50 / proporcional, border: !eapellidos ? '1px solid #ededed' : '1px solid red', 
                             color: '#848a90', paddingTop: 12 / proporcional, 
                             paddingBottom: 12 / proporcional, paddingLeft: 17 / proporcional, paddingRight: 17 / proporcional, background: '#f5f6f6'}} 
                     placeholder='Ingrese sus apellidos'
@@ -81,7 +81,7 @@ export default function FormularioContactoTablet({proporcional}) {
                     className='form-control'
                     onChange={(event) => setNroTelefono(event.target.value)}
                     value={nro_telefono}
-                    style={{width: '100%', height: 50 / proporcional, border: eapellidos === '' ? '1px solid #ededed' : '1px solid red', 
+                    style={{width: '100%', height: 50 / proporcional, border: !enro_telefono ? '1px solid #ededed' : '1px solid red', 
                             color: '#848a90', paddingTop: 12 / proporcional, 
                             paddingBottom: 12 / proporcional, paddingLeft: 17 / proporcional, paddingRight: 17 / proporcional, background: '#f5f6f6'}} 
                     placeholder='Ingrese su teléfono'
@@ -94,7 +94,7 @@ export default function FormularioContactoTablet({proporcional}) {
                     className='form-control'
                     onChange={(event) => setEmail(event.target.value)}
                     value={email}
-                    style={{width: '100%', height: 50 / proporcional, border: enro_telefono === '' ? '1px solid #ededed' : '1px solid red', 
+                    style={{width: '100%', height: 50 / proporcional, border: !eemail ? '1px solid #ededed' : '1px solid red', 
                             color: '#848a90', paddingTop: 12 / proporcional, 
                             paddingBottom: 12 / proporcional, paddingLeft: 17 / proporcional, paddingRight: 17 / proporcional, background: '#f5f6f6'}} 
                     placeholder='Ingrese su email'
@@ -107,7 +107,7 @@ export default function FormularioContactoTablet({proporcional}) {
                 className='form-control'
                 onChange={(event) => setMensajes(event.target.value)}
                 value={mensajes}
-                style={{width: '100%', height: 50 / proporcional, border: emensajes === '' ? '1px solid #ededed' : '1px solid red', 
+                style={{width: '100%', height: 50 / proporcional, border: !emensajes ? '1px solid #ededed' : '1px solid red', 
                         color: '#848a90', height: 225 / proporcional, 
                         paddingTop: 12 / proporcional,  paddingBottom: 12 / proporcional, paddingLeft: 17 / proporcional, paddingRight: 17 / proporcional, 
                         background: '#f5f6f6', marginBottom: 20 / proporcional}} 

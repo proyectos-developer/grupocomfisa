@@ -176,6 +176,10 @@ export default function InformacionProveedor({proporcional}) {
         }
     }, [new_cotizar])
 
+    const obtener_medidas_tipo = (id) => {
+        dispatch(proveedoresdata(proveedoresConstants(id, 0, 0, 0, {}, false).get_medidas_producto))
+    }
+
     const agregar_lista_cotizar = () => {
         const shop_id = window.localStorage.getItem ('shop_id')
         if (shop_id){
@@ -232,8 +236,9 @@ export default function InformacionProveedor({proporcional}) {
                             lista_tipo_productos && lista_tipo_productos.length > 0 ? (
                                 lista_tipo_productos.map ((tipo, index) => {
                                     return (
-                                        <div style={{width: `50%`, height: 30 / proporcional, cursor: 'pointer'}}>
-                                            <p style={{fontSize: 20 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 800, color: 'rgb(56, 77, 167)'}}>
+                                        <div style={{width: `50%`, height: 30 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => obtener_medidas_tipo (tipo.id)}>
+                                            <p style={{fontSize: 20 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 700, color: 'rgb(56, 77, 167)'}}>
                                                 {tipo.nombre_tipo}
                                             </p>
                                         </div>
@@ -249,12 +254,12 @@ export default function InformacionProveedor({proporcional}) {
                                         lista_medidas_producto.map ((medida, index) => {
                                             return (
                                                 index < 4 ? ( 
-                                                    <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
+                                                    <div className='d-flex justify-content-center' style={{width: `50%`, height: 40 / proporcional, cursor: 'pointer',
                                                         background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
                                                         borderTopRightRadius: 8 / proporcional}}
                                                         onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                         onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
-                                                        <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 800, 
+                                                        <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
                                                             color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
                                                             textAlign: 'center'}}>
                                                             {medida.nombre_medida}
@@ -274,12 +279,12 @@ export default function InformacionProveedor({proporcional}) {
                                             lista_medidas_producto.map ((medida, index) => {
                                                 return (
                                                     index > 3 && index < 8 ? (
-                                                        <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
+                                                        <div className='d-flex justify-content-center' style={{width: `50%`, height: 40 / proporcional, cursor: 'pointer',
                                                             background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
-                                                            <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 800, 
+                                                            <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
                                                                 color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
@@ -305,24 +310,41 @@ export default function InformacionProveedor({proporcional}) {
                             {
                                 producto.caracteristica_uno !== '' ? (
                                     <div style={{width: '100%', height: 'auto'}}>
-                                        <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#222931'}}>
-                                            Características:
-                                        </p>
-                                        <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                            1. {producto.caracteristica_uno}
-                                        </p>
-                                        <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                            2. {producto.caracteristica_dos}
-                                        </p>
-                                        <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                            3. {producto.caracteristica_tres}
-                                        </p>
-                                        <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                            4. {producto.caracteristica_cuatro}
-                                        </p>
-                                        <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
-                                            5. {producto.caracteristica_cinco}
-                                        </p>
+                                        {
+                                            producto.caracteristica_uno !== '' ? ( 
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                    1. {producto.caracteristica_uno}
+                                                </p>
+                                            ) : null
+                                        }
+                                        {
+                                            producto.caracteristica_dos !== '' ? ( 
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                    2. {producto.caracteristica_dos}
+                                                </p>
+                                            ) : null
+                                        }
+                                        {
+                                            producto.caracteristica_tres !== '' ? ( 
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                    3. {producto.caracteristica_tres}
+                                                </p>
+                                            ) : null
+                                        }
+                                        {
+                                            producto.caracteristica_cuatro !== '' ? ( 
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                    4. {producto.caracteristica_cuatro}
+                                                </p>
+                                            ) : null
+                                        }
+                                        {
+                                            producto.caracteristica_cinco !== '' ? ( 
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                    5. {producto.caracteristica_cinco}
+                                                </p>
+                                            ) : null
+                                        }
                                     </div>
                                 ) : null
                             }

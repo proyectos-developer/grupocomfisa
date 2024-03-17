@@ -42,11 +42,9 @@ export default function FiltrosTablet({proporcional}) {
                 const begin = filtro_productos_search_order_amount.begin
                 const cantidad = filtro_productos_search_order_amount.cantidad
                 if (proveedor !== check_proveedor){
-                        console.log ('entra')
-                        dispatch (productosdata(productosConstants(0, search, id_proveedor, order_by, order, begin, cantidad).get_productos_search_filtro_order_tienda))
+                        dispatch (productosdata(productosConstants(0, search, id_proveedor, order_by, order, begin, cantidad, {}, false).get_productos_search_filtro_order_tienda))
                 }else{
-                        console.log ('entra 1')
-                        dispatch (productosdata(productosConstants(0, search, 0, order_by, order, begin, cantidad).get_productos_search_filtro_order_tienda))
+                        dispatch (productosdata(productosConstants(0, search, 0, order_by, order, begin, cantidad, {}, false).get_productos_search_filtro_order_tienda))
                 }
         }
 
@@ -61,6 +59,13 @@ export default function FiltrosTablet({proporcional}) {
                             onClick={() => filtrar_por_proveedor('15', 'arequipa')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>ACEROS AREQUIPA (BARRAS CORRUGADAS)</p>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                    <img src={check_proveedor === 'inkaferro' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                            onClick={() => filtrar_por_proveedor('30', 'inkaferro')}/>
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                        fontWeight: 400}}>INKAFERRO (BARRAS CORRUGADAS)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'metalyck' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
@@ -91,6 +96,13 @@ export default function FiltrosTablet({proporcional}) {
                         fontWeight: 400}}>PIRAMIDE (LADRILLOS)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                    <img src={check_proveedor === 'sagitario' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                            onClick={() => filtrar_por_proveedor('31', 'sagitario')}/>
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                        fontWeight: 400}}>SAGITARIO (LADRILLOS)</p>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'inka' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
                             onClick={() => filtrar_por_proveedor('21', 'inka')}/>
@@ -109,7 +121,7 @@ export default function FiltrosTablet({proporcional}) {
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
                             onClick={() => filtrar_por_proveedor('16', 'etsa')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>ETSA PERÚ (TECNOPOR)</p>
+                        fontWeight: 400}}>ETSAPERÚ (TECNOPOR)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'majestad' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,

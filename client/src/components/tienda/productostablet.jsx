@@ -32,13 +32,14 @@ export default function ProductosTablet({proporcional}) {
     const {filtro_productos_search_order_amount} = useSelector (({filtros}) => filtros)
 
     useEffect (() => {
+        const id = filtro_productos_search_order_amount.id
         const filtro = filtro_productos_search_order_amount.filtro
         const search = filtro_productos_search_order_amount.search
         const order_by = filtro_productos_search_order_amount.order_by
         const order = filtro_productos_search_order_amount.order
         const begin = filtro_productos_search_order_amount.begin
         const cantidad = filtro_productos_search_order_amount.cantidad
-        dispatch (productosdata(productosConstants(0, search, filtro, order_by, order, 0, 9, {}, false).get_productos_search_filtro_order_tienda))
+        dispatch (productosdata(productosConstants(id, search, filtro, order_by, order, 0, 9, {}, false).get_productos_search_filtro_order_tienda))
     }, [])
 
     useEffect(() => {
@@ -46,7 +47,8 @@ export default function ProductosTablet({proporcional}) {
     }, [filtro_productos_search_order_amount])
 
     useEffect(() => {
-        if (get_productos_search_filtro_order_tienda && get_productos_search_filtro_order_tienda.success === true && get_productos_search_filtro_order_tienda.productos){
+        if (get_productos_search_filtro_order_tienda && get_productos_search_filtro_order_tienda.success === true && 
+            get_productos_search_filtro_order_tienda.productos){
             let data = get_productos_search_filtro_order_tienda.productos.length
             let lista = []
             let cuenta = data / 3 < 1 ? 1 : data % 3 !== 0 ? (data / 3) + 1 : data / 3
@@ -61,13 +63,14 @@ export default function ProductosTablet({proporcional}) {
 
     const ordenar_productos_por = (value) => {
         setOrderByFiltro(value.split ('-')[0])
+        const id = filtros.id
         const filtro = filtros.filtro
         const search = filtros.search
         const order_by = value.split('-')[0]
         const order = value.split('-')[1]
         const cantidad = filtros.cantidad
         const begin = filtros.begin
-        dispatch (set_filtro_productos_search_order_amount({pagina: 'tienda', filtro: filtro, search: search, order_by: order_by, order: order, begin: begin, cantidad: cantidad}))
+        dispatch (set_filtro_productos_search_order_amount({pagina: 'tienda', id: id, search: search, filtro: filtro, order_by: order_by, order: order, begin: begin, cantidad: cantidad}))
         dispatch(productosdata(productosConstants(0, search, filtro, order_by, order, begin, cantidad, {}, false).get_productos_search_filtro_order_tienda))
     }
 

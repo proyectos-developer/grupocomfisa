@@ -44,9 +44,9 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
 
     return (
         loading === 2 ? (
-            <div className='d-flex' style={{width: 898 / proporcional, height: 60 / proporcional,
+            <div className='d-flex' style={{width: 898 / proporcional, height: 'auto',
                     borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
-                <div style={{width: 120 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
+                <div style={{width: 120 / proporcional, height: 'auto', borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Fecha:
                     </p>
@@ -54,7 +54,7 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
                         {cotizacion.created_at.split ('T')[0]}
                     </p>
                 </div>
-                <div className='' style={{width: 578 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
+                <div className='' style={{width: 578 / proporcional, height: 'auto', borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Productos:
                     </p>
@@ -74,7 +74,7 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
                         }
                     </div>
                 </div>
-                <div style={{width: 190 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
+                <div style={{width: 190 / proporcional, height: 'auto', borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Estado:
                     </p>
@@ -82,8 +82,8 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
                         {lista_productos[0].estado}
                     </p>
                 </div>
-                <div style={{width: 60 / proporcional, height: 60 / proporcional, padding: 10 / proporcional}}>
-                    <img src={icono_view} style={{width: 24 / proporcional, height: 24 / proporcional, margin: 8 / proporcional, cursor: 'pointer'}}
+                <div className='d-flex jutify-content-center' style={{width: 60 / proporcional, height: '100%'}}>
+                    <img src={icono_view} style={{width: '50%', height: '50%', cursor: 'pointer', margin: '12.5%'}}
                     onClick={() => ver_detalles_productos_cotizados()}/>
                 </div>
             </div>

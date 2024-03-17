@@ -20,7 +20,8 @@ export default function FooterPrincipalCell({proporcional}) {
                         color: '#222931', marginBottom: 30 / proporcional}}>Nuestra compañía</p>
                 <p style={{fontSize: 18 / proporcional, color: 'rgb(34, 41, 49)', fontWeight: 400, marginBottom: 26 / proporcional,
                         lineHeight: `${22 / proporcional}px`}}>
-                    Lorm Ipsum, es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.
+                        Somos una empresa familiar con mas de 8 años de experiencia ofreciendo productos y servicio de calidad. Contamos con el respaldo de marcas como aceros arequipa, cemento inka, piramide entre otras marcas,como distribuidores autorizados; por ello manejos el mejor precio del mercado para mayoristas y minoritas.
+                        <span style={{textDecoration: 'underline', cursor: 'pointer', fontSize: 14 / proporcional, marginLeft: 5 / proporcional}} onClick={() => {navigate ('sobre-nosotros'); window.scrollTo(0,0)}}>Ver más</span>
                 </p>
             </div>
             <div style={{width: 459 / proporcional, paddingRight: 15 / proporcional, paddingLeft: 15 / proporcional, paddingTop: 10 / proporcional}}>
@@ -63,31 +64,17 @@ export default function FooterPrincipalCell({proporcional}) {
                 <p style={{fontSize: 22 / proporcional, fontWeight: 500, lineHeight: `${30 / proporcional}px`, marginBottom: 0,
                         color: '#222931', marginBottom: 30 / proporcional}}>Contácto</p>
                 <div className='d-flex' style={{height: 36 / proporcional, paddingTop: 4 / proporcional, paddingBottom: 4 / proporcional, marginBottom: 13 / proporcional}}>
-                    <img src={icon_location} style={{width: 14 / proporcional, height: 14 / proporcional, marginTop: 1 / proporcional, marginBottom: 1 / proporcional, 
-                                marginRight: 13 / proporcional}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 400, color: '#5f656d'}}>
-                        Ubicación
-                    </p>
-                </div>
-                <div className='d-flex' style={{height: 36 / proporcional, paddingTop: 4 / proporcional, paddingBottom: 4 / proporcional, marginBottom: 13 / proporcional}}>
                     <img src={icon_cell} style={{width: 14 / proporcional, height: 14 / proporcional, marginTop: 1 / proporcional, marginBottom: 1 / proporcional, 
                                 marginRight: 13 / proporcional}}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 400, color: '#5f656d'}}>
-                        Número de celular
-                    </p>
-                </div>
-                <div className='d-flex' style={{height: 36 / proporcional, paddingTop: 4 / proporcional, paddingBottom: 4 / proporcional, marginBottom: 13 / proporcional}}>
-                    <img src={icon_clock} style={{width: 14 / proporcional, height: 14 / proporcional, marginTop: 1 / proporcional, marginBottom: 1 / proporcional, 
-                                marginRight: 13 / proporcional}}/>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 400, color: '#5f656d'}}>
-                        Horario
+                        (+51) 979 357 290
                     </p>
                 </div>
                 <div className='d-flex' style={{height: 36 / proporcional, paddingTop: 4 / proporcional, paddingBottom: 4 / proporcional, marginBottom: 13 / proporcional}}>
                     <img src={icon_email} style={{width: 14 / proporcional, height: 14 / proporcional, marginTop: 1 / proporcional, marginBottom: 1 / proporcional, 
                                 marginRight: 13 / proporcional}}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 400, color: '#5f656d'}}>
-                        E-mail
+                        ventas@grupocomfisa.com
                     </p>
                 </div>
             </div>

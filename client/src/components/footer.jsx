@@ -29,26 +29,30 @@ export default function Footer({proporcional}) {
                         onClick={() => {navigate ('/'); window.scrollTo(0, 0)}}/>
                 </div>
                 <div className='d-flex justify-content-end' style={{width: '75%'}}>
-                    <img src={seleccion_red === 'facebook' ? icono_facebook_black : icono_facebook} 
-                            style={{width: 17 / proporcional, height: 17 / proporcional, marginRight: 13 / proporcional,
-                                marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
-                                onMouseOver={() => setSeleccionRed('facebook')} onMouseLeave={() => setSeleccionRed('')}/>
-                    <img src={seleccion_red === 'twitter' ? icono_twitter_black : icono_twitter} 
-                            style={{width: 17 / proporcional, height: 17 / proporcional, marginRight: 13 / proporcional,
-                                marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
-                                onMouseOver={() => setSeleccionRed('twitter')} onMouseLeave={() => setSeleccionRed('')}/>
-                    <img src={seleccion_red === 'linkedin' ? icono_linkedin_black : icono_linkedin} 
-                            style={{width: 17 / proporcional, height: 17 / proporcional, marginRight: 13 / proporcional,
-                                marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
-                                onMouseOver={() => setSeleccionRed('linkedin')} onMouseLeave={() => setSeleccionRed('')}/>
-                    <img src={seleccion_red === 'instagram' ? icono_instagram_black : icono_instagram}
-                            style={{width: 17 / proporcional, height: 17 / proporcional, marginRight: 13 / proporcional,
-                                marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
-                                onMouseOver={() => setSeleccionRed('instagram')} onMouseLeave={() => setSeleccionRed('')}/>
-                    <img src={seleccion_red === 'tiktok' ? icono_tiktok_black : icono_tiktok} 
-                            style={{width: 17 / proporcional, height: 17 / proporcional,
-                                marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
-                                onMouseOver={() => setSeleccionRed('tiktok')} onMouseLeave={() => setSeleccionRed('')}/>
+                    <a href='https://www.facebook.com/Comfisa' target='_blank'>
+                        <img src={seleccion_red === 'facebook' ? icono_facebook_black : icono_facebook} 
+                                style={{width: 17 / proporcional, height: 17 / proporcional, marginRight: 13 / proporcional,
+                                    marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionRed('facebook')} onMouseLeave={() => setSeleccionRed('')}/>
+                    </a>
+                    <a href='https://www.linkedin.com/in/comfisa-973035158/' target='_blank'>
+                        <img src={seleccion_red === 'linkedin' ? icono_linkedin_black : icono_linkedin} 
+                                style={{width: 17 / proporcional, height: 17 / proporcional, marginRight: 13 / proporcional,
+                                    marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionRed('linkedin')} onMouseLeave={() => setSeleccionRed('')}/>
+                    </a>
+                    <a href='https://www.instagram.com/grupocomfisa_' target='_blank'>
+                        <img src={seleccion_red === 'instagram' ? icono_instagram_black : icono_instagram}
+                                style={{width: 17 / proporcional, height: 17 / proporcional, marginRight: 13 / proporcional,
+                                    marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionRed('instagram')} onMouseLeave={() => setSeleccionRed('')}/>
+                    </a>
+                    <a href='https://www.tiktok.com/@comfisasac' target='_blank'>
+                        <img src={seleccion_red === 'tiktok' ? icono_tiktok_black : icono_tiktok} 
+                                style={{width: 17 / proporcional, height: 17 / proporcional,
+                                    marginTop: 29 / proporcional, marginBottom: 29 / proporcional, cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionRed('tiktok')} onMouseLeave={() => setSeleccionRed('')}/>
+                    </a>
                 </div>
             </div>
         </div>

@@ -59,7 +59,7 @@ export default function BarraMenu({proporcional}) {
       setMenuOpcion (location.pathname.split ('/')[1] === 'sobre-nosotros' ? 'nosotros' :
                     location.pathname.split ('/')[1] === 'tienda' ? 'tienda' :
                     location.pathname.split ('/')[1] === 'contacto' ? 'contacto' :
-                    location.pathname.split ('/')[1] === 'proveedores' ? 'proveedores' : 'inicio')
+                    location.pathname.split ('/')[1] === 'proveedor' ? 'proveedor' : 'inicio')
     }, [location.pathname])
 
     useEffect (() => {
@@ -150,18 +150,18 @@ export default function BarraMenu({proporcional}) {
                     Nosotros
                     </p>  
                     <div className='position-relative' style={{width: 140 / proporcional, height: 56 / proporcional}}
-                              onMouseOver={() => setMenu ('proveedores')} onMouseLeave={() => setMenu('')}>
+                              onMouseOver={() => setMenu ('proveedor')} onMouseLeave={() => setMenu('')}>
                         <div className='d-flex' style={{width: 140 / proporcional, height: 56 / proporcional}}>
-                          <p style={{width: 121 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: menu === 'proveedores' ? 700 : 600, 
+                          <p style={{width: 121 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: menu === 'proveedor' ? 700 : 600, 
                               marginBottom: 0,
-                              color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'proveedores' ? '#384da7' : '#d18e32'}}>
+                              color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'proveedor' ? '#384da7' : '#d18e32'}}>
                             Proveedores
                           </p>  
                           <img src={icono_arrow_down} style={{width: 14 / proporcional, height: 14 / proporcional, marginTop: 21 / proporcional, 
                               marginBottom: 21 / proporcional, marginRight: 5 / proporcional, cursor: 'pointer'}}/>
                         </div> 
                         {
-                          menu === 'proveedores' ? (
+                          menu === 'proveedor' ? (
                             <div className='position-absolute shadow rounded' 
                                 style={{width: 800 / proporcional, height: 'auto', padding: 15 / proporcional, background: 'white'}}>
                                 <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
@@ -171,7 +171,7 @@ export default function BarraMenu({proporcional}) {
                                         Acreos Arequipa
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('15')}>
+                                          onClick={() => {ver_productos_proveedor('15'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -186,7 +186,7 @@ export default function BarraMenu({proporcional}) {
                                         INKAFERRO
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('30')}>
+                                          onClick={() => {ver_productos_proveedor('30'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${15 / proporcional}px`, fontWeight: 400, 
@@ -201,7 +201,7 @@ export default function BarraMenu({proporcional}) {
                                         Metalyck
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('17')}>
+                                          onClick={() => {ver_productos_proveedor('17'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -218,7 +218,7 @@ export default function BarraMenu({proporcional}) {
                                         </p>
                                       </div>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('26')}>
+                                          onClick={() => {ver_productos_proveedor('26'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -237,7 +237,7 @@ export default function BarraMenu({proporcional}) {
                                         </p>
                                       </div>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('29')}>
+                                          onClick={() => {ver_productos_proveedor('29'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -252,7 +252,7 @@ export default function BarraMenu({proporcional}) {
                                         Piramide
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('23')}>
+                                          onClick={() => {ver_productos_proveedor('23'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -267,7 +267,7 @@ export default function BarraMenu({proporcional}) {
                                         SAGITARIO
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('31')}>
+                                          onClick={() => {ver_productos_proveedor('31'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -282,7 +282,7 @@ export default function BarraMenu({proporcional}) {
                                         Inka
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('21')}>
+                                          onClick={() => {ver_productos_proveedor('21'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -299,7 +299,7 @@ export default function BarraMenu({proporcional}) {
                                         UNACEM
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('22')}>
+                                          onClick={() => {ver_productos_proveedor('22'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -314,7 +314,7 @@ export default function BarraMenu({proporcional}) {
                                         ETSAPERÚ
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('16')}>
+                                          onClick={() => {ver_productos_proveedor('16'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -329,7 +329,7 @@ export default function BarraMenu({proporcional}) {
                                         MAJESTAD
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('19')}>
+                                          onClick={() => {ver_productos_proveedor('19'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -344,7 +344,7 @@ export default function BarraMenu({proporcional}) {
                                         NORTON
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('12')}>
+                                          onClick={() => {ver_productos_proveedor('12'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -361,7 +361,7 @@ export default function BarraMenu({proporcional}) {
                                         BRIKER
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('13')}>
+                                          onClick={() => {ver_productos_proveedor('13'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -376,7 +376,7 @@ export default function BarraMenu({proporcional}) {
                                         COMFISA
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('24')}>
+                                          onClick={() => {ver_productos_proveedor('24'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -391,7 +391,7 @@ export default function BarraMenu({proporcional}) {
                                         ASA
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('14')}>
+                                          onClick={() => {ver_productos_proveedor('14'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -406,7 +406,7 @@ export default function BarraMenu({proporcional}) {
                                         TIGRE
                                       </p>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => ver_productos_proveedor('25')}>
+                                          onClick={() => {ver_productos_proveedor('25'); setMenu('proveedor')}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 

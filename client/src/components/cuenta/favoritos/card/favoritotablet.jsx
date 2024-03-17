@@ -14,7 +14,7 @@ export default function CardFavoritoTablet({proporcional, favorito, total, index
 
     const [nombre_producto, setNombreProducto] = useState('')
     const [foto_uno, setFotoUno] = useState('')
-    const [descripcion, setDescripcion] = useState('')
+    const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function CardFavoritoTablet({proporcional, favorito, total, index
                 setLoading (2)
                 setFotoUno (res.data.producto.foto_uno)
                 setNombreProducto (res.data.producto.producto)
-                setDescripcion (res.data.producto.descripcion)
+                setProveedor (res.data.producto.proveedor)
                 setIdProducto (res.data.producto.id)
             }).catch ((err) => {
                 setLoading (0)                
@@ -42,10 +42,10 @@ export default function CardFavoritoTablet({proporcional, favorito, total, index
                 <img src={foto_uno} style={{width: 50 / proporcional, height: 50 / proporcional, marginRight: 20 / proporcional}}/>
                 <div style={{width: 431 / proporcional, height: 50 / proporcional}}>
                     <p style={{fontSize: 18 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
-                        {nombre_producto}
+                        {proveedor}
                     </p>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 600}}>
-                        {descripcion}
+                        {nombre_producto}
                     </p>
                 </div>
                 <div style={{width: 50 / proporcional, height: 50 / proporcional, padding: 15 / proporcional, marginLeft: 20 / proporcional}}>
