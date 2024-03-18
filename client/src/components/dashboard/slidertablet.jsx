@@ -4,22 +4,80 @@ import fondo_home_1 from '../../assets/images/fondo_home_tablet_0.png'
 import fondo_home_0 from '../../assets/images/fondo_home_tablet_1.png'
 import fondo_home_2 from '../../assets/images/fondo_home_tablet_2.png'
 
+import logo_comfisa from '../../assets/logo_comfisa_white_300.png'
+
 export default function SliderHomeTablet({proporcional}) {
 
     return (
         <div id="carouselHome" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-                <div className="carousel-item active animate__animated animate__zoomInUp" data-bs-interval="2000"
-                    style={{background: '#(221, 221, 221'}}>
-                    <img src={fondo_home_0} style={{width: '100%', height: 600 / proporcional}} alt="..."/>
+                <div className="carousel-item active animate__animated animate__bounceIn" data-bs-interval="3000"
+                    style={{backgroundImage: `url(${fondo_home_0})`, width: '100%', height: 750 / proporcional, backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                    <div className='position-relative' style={{width: '100%', height: 750 / proporcional, background: 'rgba(56, 77, 167, 0.4)'}}> 
+                        <div className='position-absolute animate__animated animate__backInDown' style={{width: '60%', height: 500 / proporcional, top: 150 / proporcional, left: '25%'}}>
+                            <img src={logo_comfisa} style={{width: 300 / proporcional, height: 109 / proporcional, marginBottom: 20 / proporcional}}/>
+                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, marginBottom: 20 / proporcional, color: '#cd8b2e'}}>
+                                Los mejores materiales
+                            </p>
+                            <p style={{fontSize: 40 / proporcional, lineHeight: `${50 / proporcional}px`, fontWeight: 400, marginBottom: 20 / proporcional, color: '#cd8b2e'}}>
+                                PARA TU PROYECTO
+                            </p>
+                            <button className='btn' style={{width: 300 / proporcional, height: 50 / proporcional, background: '#cd8b2e', color: 'white', fontWeight: 600,
+                                    fontSize: 20 / proporcional}} onClick={() => navigate ('/tienda')}>
+                                Ve nuestros productos
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className="carousel-item animate__animated animate__zoomInRight" data-bs-interval="2000"
-                    style={{background: '#(221, 221, 221'}}>
-                    <img src={fondo_home_1} style={{width: '100%', height: 600 / proporcional}} alt="..."/>
+                <div className="carousel-item animate__animated animate__fadeIn" data-bs-interval="3000"
+                    style={{backgroundImage: `url(${fondo_home_1})`, width: '100%', height: 750 / proporcional, backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                    <div className='position-relative' style={{width: '100%', height: 750 / proporcional, background: 'rgba(56, 77, 167, 0.4)'}}> 
+                        <div className='position-absolute animate__animated animate__backInUp' style={{width: '60%', height: 500 / proporcional, top: 150 / proporcional, left: '25%'}}>
+                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: 'white'}}>
+                                NOS BENEFICIAMOS EN 
+                            </p>  
+                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: '#cd8b2e'}}>
+                                PRECIO Y RAPIDEZ
+                            </p>
+                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: 'white'}}>
+                                DE ENTREGA
+                            </p>
+                            <div className='d-flex justify-content-between' style={{width: 500 / proporcional, height: 'auto'}}>
+                                <button className='btn' style={{width: 200 / proporcional, height: 73 / proporcional, background: '#cd8b2e', color: 'white', fontWeight: 600,
+                                        fontSize: 20 / proporcional}} 
+                                        onClick={() => navigate ('/tienda')}>
+                                    Ver nuestros productos
+                                </button>
+                                <img src={logo_comfisa} style={{width: 200 / proporcional, height: 73 / proporcional}}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="carousel-item animate__animated animate__slideInLeft" data-bs-interval="2000"
-                    style={{background: '#(221, 221, 221'}}>
-                    <img src={fondo_home_2} style={{width: '100%', height: 600 / proporcional}} alt="..."/>
+                <div className="carousel-item animate__animated animate__bounceInRight" data-bs-interval="3000"
+                    style={{backgroundImage: `url(${fondo_home_2})`, width: '100%', height: 750 / proporcional, backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                    <div className='position-relative' style={{width: '100%', height: 750 / proporcional, background: 'rgba(56, 77, 167, 0.4)'}}> 
+                        <div className='position-absolute animate__animated animate__bounceIn' style={{width: '60%', height: 500 / proporcional, top: 150 / proporcional, left: '25%'}}>
+                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: 'white'}}>
+                                ¿QUIERES <br/>CONSTRUIR CON <br/>PRECIOS MAYORISTAS?
+                            </p>  
+                            <div className='rounded' style={{width: 350 / proporcional, height: 'auto', padding: 15 / proporcional, background: '#cd8b2e', marginBottom: 20 / proporcional}}>
+                                <p style={{fontSize: 20 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional, color: '#504868'}}>
+                                    No esperes más y compra todos <br/> los materiales para tu obra.
+                                </p>
+                            </div>
+                            <div className='d-flex justify-content-between' style={{width: 500 / proporcional, height: 'auto'}}>
+                                <button className='btn' style={{width: 200 / proporcional, height: 73 / proporcional, background: '#cd8b2e', color: 'white', fontWeight: 600,
+                                        fontSize: 20 / proporcional}} 
+                                        onClick={() => navigate ('/tienda')}>
+                                    Ver nuestros productos
+                                </button>
+                                <img src={logo_comfisa} style={{width: 200 / proporcional, height: 73 / proporcional}}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">

@@ -13,11 +13,11 @@ export default function FormularioContactoTablet({proporcional}) {
     const [email, setEmail] = useState('')
     const [mensajes, setMensajes] = useState('')
     
-    const [enombres, setENombres] = useState(falsee)
-    const [eapellidos, setEApellidos] = useState(falsee)
-    const [enro_telefono, setENroTelefono] = useState(falsee)
-    const [eemail, setEEmail] = useState(falsee)
-    const [emensajes, setEMensajes] = useState(falsee)
+    const [enombres, setENombres] = useState(false)
+    const [eapellidos, setEApellidos] = useState(false)
+    const [enro_telefono, setENroTelefono] = useState(false)
+    const [eemail, setEEmail] = useState(false)
+    const [emensajes, setEMensajes] = useState(false)
 
     const enviar_mensaje = () => {
         if (nombres === '' || apellidos === '' || nro_telefono === '' || email === '' || mensajes === ''){

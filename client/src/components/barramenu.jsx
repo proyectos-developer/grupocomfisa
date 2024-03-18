@@ -498,17 +498,22 @@ export default function BarraMenu({proporcional}) {
                     }
                     <div className='position-relative' style={{width: 49 / proporcional, height: 24 / proporcional, cursor: 'pointer',
                         marginTop: 14 / proporcional, marginBottom: 18 / proporcional}} 
-                        onMouseOver={() => setMenu('carrito')} onMouseLeave={() => setMenu('')} onClick={() => navigate('/lista-cotizar')}>
+                        onMouseOver={() => setMenu('carrito')} onMouseLeave={() => setMenu('')} 
+                        onClick={lista_carrito_cotizacion.length > 0 ? () => navigate('/lista-cotizar') : null}>
                       <div className='d-flex' style={{height: 56 / proporcional}}>
                         <img src={menu === 'carrito' ? icono_carrito_black : icono_carrito_white} 
                               style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 2 / proporcional, marginBottom: 2 / proporcional, 
                                             cursor: 'pointer', marginRight: 5 / proporcional}}/>
-                        <div className='rounded-circle' style={{width: 24 / proporcional, height: 24 / proporcional, background: '#222931'}}>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${24 / proporcional}px`, color: 'white', marginBottom: 0, fontWeight: 400,
-                              textAlign: 'center'}}>
-                              {cantidad_lista_cotizar}
-                            </p>
-                        </div>
+                        {
+                          lista_carrito_cotizacion.length > 0 ? (
+                            <div className='rounded-circle' style={{width: 24 / proporcional, height: 24 / proporcional, background: '#222931'}}>
+                                <p style={{fontSize: 14 / proporcional, lineHeight: `${24 / proporcional}px`, color: 'white', marginBottom: 0, fontWeight: 400,
+                                  textAlign: 'center'}}>
+                                  {cantidad_lista_cotizar}
+                                </p>
+                            </div>
+                          ) : null
+                        }
                       </div>
                       {
                         menu === 'carrito' && lista_carrito_cotizacion.length > 0 ? (

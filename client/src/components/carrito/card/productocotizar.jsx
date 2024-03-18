@@ -20,7 +20,7 @@ export default function CardProductoCotizar({producto, proporcional}) {
     const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
     const [cantidad, setCantidad] = useState(0)
-    const [informacion, setInformacion] = useState('')
+    const [comentarios, setComentarios] = useState('')
 
     const [loading, setLoading] = useState(0)
 
@@ -34,7 +34,7 @@ export default function CardProductoCotizar({producto, proporcional}) {
         axios.get (`${constantes().url_principal[0].url}/producto/${producto.id_producto}`)
             .then ((res) => {
                 setLoading(2)
-                setInformacion (producto.comntarios)
+                setComentarios (producto.comentarios)
                 setCantidad (parseFloat(producto.cantidad))
                 setNombreProducto(res.data.producto.producto) 
                 setProveedor(res.data.producto.proveedor)
@@ -114,9 +114,9 @@ export default function CardProductoCotizar({producto, proporcional}) {
                           type='default'
                           cols={3}
                           className='form-control'
-                          value={informacion}
-                          onBlur={() => actualizar_informacion(informacion)}
-                          onChange={(event) => setInformacion(event.target.value)}
+                          value={comentarios}
+                          onBlur={() => actualizar_informacion(comentarios)}
+                          onChange={(event) => setComentarios(event.target.value)}
                           placeholder='Ingrese requerimientos del producto'
                           style={{fontSize: 16 / proporcional, width: '100%', height: 99 / proporcional, padding: 10 / proporcional, background: '#f8f9f9', 
                                   color: '#848a90', marginRight: 10 / proporcional}}/>

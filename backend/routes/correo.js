@@ -71,20 +71,20 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
 
 router.post('/api/correo/nueva/cotizacion/:shop_id/:usuario', async (req, res) => {
     const { usuario, shop_id } = req.params
-
+    console.log (usuario, shop_id)
     try {
         const data_usuario = await pool.query (`SELECT * FROM info_clientes WHERE usuario = ?`, [usuario])
+        console.log (data_usuario)
         const cotizacion = await pool.query (`SELECT productos_proveedor.producto, carrito_cotizacion.cantidad, carrito_cotizacion.precio,
                                                 carrito_cotizacion.comentarios, productos_proveedor.proveedor, productos_proveedor.foto_uno,
                                                 carrito_cotizacion.estado FROM carrito_cotizacion JOIN productos_proveedor ON 
                                                 productos_proveedor.id = carrito_cotizacion.id_producto 
                                                 WHERE carrito_cotizacion.shop_id = ?`, [shop_id])
-        console.log (cotizacion)
-        console.log (data_usuario[0]) 
+                                                console.log (cotizacion)
 
         var mailOptions = {
             from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
-            to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+            to: data_usuario[0].correo + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
             subject: 'Pedido de cotización',
             template: 'pedidocotizacion', // the name of the template file i.e email.handlebars
             context:{
@@ -120,7 +120,7 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
 
     var mailOptions = {
         from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
-        to: correo, //+ ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+        to: correo + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
         subject: 'Mensaje de la web Grupo COMFISA',
         template: 'mensajeweb', // the name of the template file i.e email.handlebars
         context:{

@@ -20,7 +20,7 @@ export default function CardProductoCotizarTablet({producto, proporcional}) {
     const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
     const [cantidad, setCantidad] = useState(0)
-    const [informacion, setInformacion] = useState('')
+    const [comentarios, setComentarios] = useState('')
 
     const [loading, setLoading] = useState(0)
 
@@ -34,7 +34,7 @@ export default function CardProductoCotizarTablet({producto, proporcional}) {
         axios.get (`${constantes().url_principal[0].url}/producto/${producto.id_producto}`)
             .then ((res) => {
                 setLoading(2)
-                setInformacion (producto.comentarios)
+                setComentarios (producto.comentarios)
                 setCantidad (parseFloat(producto.cantidad))
                 setNombreProducto(res.data.producto.producto) 
                 setProveedor(res.data.producto.proveedor)
@@ -72,20 +72,22 @@ export default function CardProductoCotizarTablet({producto, proporcional}) {
     return (
             loading === 2 ? (
                 <div className='d-flex' style={{width: 871 / proporcional, height: 131 / proporcional, border: '1px solid #e8e8e8'}}>
-                    <div className='d-flex' style={{width: 261.3 / proporcional, height: 129 / proporcional, padding: 15 / proporcional}}>
-                        <img src={foto_uno} style={{width: 99 / proporcional, height: 99 / proporcional}}/>
-                        <div style={{marginLeft: 30 / proporcional, width: 102.3 / proporcional}}>
-                            <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)',
-                                height: 49 / proporcional}}>
+                    <div className='d-flex' style={{width: '20%', height: 129 / proporcional, padding: 10 / proporcional}}>
+                        <did style={{width: '50%', height: 109 / proporcional, marginTop: 14.5 / proporcional, marginBottom: 14.5 / proporcional}}>
+                            <img src={foto_uno} style={{width: 80 / proporcional, height: 80 / proporcional}}/>
+                        </did>
+                        <div style={{marginLeft: 10 / proporcional, width: '50%', marginTop: 14.5 / proporcional, marginBottom: 14.5 / proporcional}}>
+                            <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0, color: 'rgb(34, 34, 34)',
+                                }}>
                                  {proveedor}
                             </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${16 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)',
+                            <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)',
                                 height: 50 / proporcional}}>
                                 {nombre_producto}
                             </p>
                         </div>
                     </div>
-                    <div className='d-flex justify-content-center' style={{width: 127.1 / proporcional, height: 129 / proporcional, padding: 15 / proporcional}}>
+                    <div className='d-flex justify-content-center' style={{width: '20%', height: 129 / proporcional, padding: 15 / proporcional}}>
                         <img src={icono_minus_black} style={{width: boton_minus ? 16.55 / proporcional : 18.55 / proporcional, 
                                 height: boton_minus ? 16.55 / proporcional : 18.55 / proporcional, marginTop: boton_minus ? 42.225 / proporcional : 40.225 / proporcional, 
                                 marginBottom: boton_minus ? 42.225 / proporcional : 40.225 / proporcional,
@@ -111,20 +113,20 @@ export default function CardProductoCotizarTablet({producto, proporcional}) {
                                 onClick={() => {actualizar_cantidad(cantidad + 1); setCantidad(cantidad + 1)}}
                                 onMouseOver={() => setBotonPlus(true)} onMouseLeave={() => setBotonPlus(true)}/>
                     </div>
-                    <div style={{width: 385.5, height: 129 / proporcional, padding: 15 / proporcional}}>
+                    <div style={{width: '50%', height: 129 / proporcional, padding: 15 / proporcional}}>
                         <textarea 
                           type='number'
                           cols={3}
                           className='form-control'
-                          value={informacion}
-                          onChange={(event) => setInformacion(event.target.value)}
-                          onBlur={() => actualizar_informacion(informacion)}
+                          value={comentarios}
+                          onChange={(event) => setComentarios(event.target.value)}
+                          onBlur={() => actualizar_informacion(comentarios)}
                           placeholder='Ingrese requerimientos del producto'
                           style={{fontSize: 16 / proporcional, width: '100%', height: 99 / proporcional, padding: 10 / proporcional, background: '#f8f9f9', 
-                                  color: '#848a90', marginRight: 10 / proporcional}}/>
+                                  color: '#848a90'}}/>
                     </div>
-                    <div style={{width: 87.1 / proporcional, height: 129 / proporcional, padding: 15 / proporcional}}>
-                        <img src={icono_cross_black} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 39.5 / proporcional,
+                    <div className='d-flex justify-content-center' style={{width: '10%', height: 129 / proporcional, padding: 10 / proporcional}}>
+                        <img src={icono_cross_black} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 44.5 / proporcional, marginBottom: 44.5 / proporcional,
                             cursor: 'pointer'}} onClick={() => borrar_producto()}/>
                     </div>
                 </div>

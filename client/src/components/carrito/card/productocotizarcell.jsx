@@ -20,7 +20,7 @@ export default function CardProductoCotizarCell({producto, proporcional}) {
     const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
     const [cantidad, setCantidad] = useState(0)
-    const [informacion, setInformacion] = useState('')
+    const [comentarios, setComentarios] = useState('')
 
     const [loading, setLoading] = useState(0)
 
@@ -34,7 +34,7 @@ export default function CardProductoCotizarCell({producto, proporcional}) {
         axios.get (`${constantes().url_principal[0].url}/producto/${producto.id_producto}`)
             .then ((res) => {
                 setLoading(2)
-                setInformacion (producto.comntarios)
+                setComentarios (producto.comentarios)
                 setCantidad (parseFloat(producto.cantidad))
                 setNombreProducto(res.data.producto.producto) 
                 setProveedor(res.data.producto.proveedor)
@@ -113,22 +113,22 @@ export default function CardProductoCotizarCell({producto, proporcional}) {
                                 onMouseOver={() => setBotonPlus(true)} onMouseLeave={() => setBotonPlus(true)}/>
                     </div>
                 </div>
-                <div className='d-flex' style={{width: 459 / proporcional, height: 131 / proporcional, border: '1px solid #e8e8e8'}}>
-                    <div style={{width: 255.4 / proporcional, height: 129 / proporcional, padding: 10 / proporcional}}>
+                <div className='d-flex' style={{width: '100%', height: 131 / proporcional, border: '1px solid #e8e8e8'}}>
+                    <div style={{width: '80%', height: 129 / proporcional, padding: 10 / proporcional}}>
                         <textarea 
-                        type='number'
-                        cols={3}
-                        className='form-control'
-                        value={informacion}
-                        onChange={(event) => setInformacion(event.target.value)}
-                        onBlur={() => actualizar_informacion(informacion)}
-                        placeholder='Ingrese requerimientos del producto'
-                        style={{fontSize: 16 / proporcional, width: '100%', height: 99 / proporcional, padding: 10 / proporcional, background: '#f8f9f9', 
-                                color: '#848a90', marginRight: 10 / proporcional}}/>
+                            type='number'
+                            cols={3}
+                            className='form-control'
+                            value={comentarios}
+                            onChange={(event) => setComentarios(event.target.value)}
+                            onBlur={() => actualizar_informacion(comentarios)}
+                            placeholder='Ingrese requerimientos del producto'
+                            style={{fontSize: 16 / proporcional, width: '100%', height: 99 / proporcional, padding: 10 / proporcional, background: '#f8f9f9', 
+                                    color: '#848a90'}}/>
                     </div>
-                    <div style={{width: 183.6 / proporcional, height: 129 / proporcional, padding: 15 / proporcional}}>
-                        <img src={icono_cross_black} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 39.5 / proporcional, 
-                            marginBottom: 39.5 / proporcional, marginLeft: 81.8 / proporcional, marginRight: 82.8 / proporcional,
+                    <div className='d-flex justify-content-center' style={{width: '20%', height: 129 / proporcional, padding: 10 / proporcional}}>
+                        <img src={icono_cross_black} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 49.5 / proporcional, 
+                            marginBottom: 49.5 / proporcional,
                             cursor: 'pointer'}} onClick={() => borrar_producto()}/>
                     </div>
                 </div>

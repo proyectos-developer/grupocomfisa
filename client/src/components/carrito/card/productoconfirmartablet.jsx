@@ -20,7 +20,7 @@ export default function CardProductoConfirmarTablet({producto, proporcional}) {
     const [proveedor, setProveedor] = useState('')
     const [id_producto, setIdProducto] = useState('')
     const [cantidad, setCantidad] = useState(0)
-    const [informacion, setInformacion] = useState('')
+    const [comentarios, setComentarios] = useState('')
 
     const [loading, setLoading] = useState(0)
 
@@ -29,7 +29,7 @@ export default function CardProductoConfirmarTablet({producto, proporcional}) {
         axios.get (`${constantes().url_principal[0].url}/producto/${producto.id_producto}`)
             .then ((res) => {
                 setLoading(2)
-                setInformacion (producto.comntarios)
+                setComentarios (producto.comentarios)
                 setCantidad (parseFloat(producto.cantidad))
                 setNombreProducto(res.data.producto.producto) 
                 setProveedor(res.data.producto.proveedor)
@@ -73,10 +73,10 @@ export default function CardProductoConfirmarTablet({producto, proporcional}) {
                           cols={3}
                           disabled={true}
                           className='form-control'
-                          value={informacion}
-                          onBlur={() => actualizar_informacion(informacion)}
-                          onChange={(event) => setInformacion(event.target.value)}
-                          placeholder='Ingrese requerimientos del producto'
+                          value={comentarios}
+                          onBlur={() => actualizar_informacion(comentarios)}
+                          onChange={(event) => setComentarios(event.target.value)}
+                          placeholder=''
                           style={{fontSize: 16 / proporcional, width: 399.5 / proporcional, height: 99 / proporcional, padding: 10 / proporcional, background: 'white', 
                                   color: '#848a90', marginRight: 10 / proporcional}}/>
                     </div>

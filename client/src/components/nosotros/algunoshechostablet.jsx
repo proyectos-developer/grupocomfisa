@@ -31,7 +31,7 @@ export default function AlgunosHechosTablet({proporcional}) {
                             </div>
                             <div style={{width: '90%', height: 'auto'}}>
                                 <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, marginBottom: 0, color: '384ca7', fontWeight: 500}}>
-                                    Paul Poblt Lind Mz. A lote 9 Urb. Huertos de Lurin - Pachacamarc - Lima - Lima
+                                    Paul Poblet Lind Mz. A lote 9 Urb. Huertos de Lurin - Pachacamarc - Lima - Lima
                                 </p>
                             </div>
                         </div>   
