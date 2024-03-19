@@ -51,6 +51,12 @@ export const carritoConstants = (id = 0, shop_id = 0, data = {}, reset = false) 
             path: `cotizaciones/productos/detalles/${shop_id}`,
             stateType: 'get_productos_cotizacion_usuario',
             reset: reset
+        },
+        update_estado_cotizacion: {
+            patch: `cotizacion/estado/${shop_id}`,
+            stateType: 'update_estado_cotizacion',
+            data: data,
+            reset: reset
         }
     }
 }

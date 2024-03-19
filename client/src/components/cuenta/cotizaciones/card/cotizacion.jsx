@@ -34,7 +34,7 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
         if (get_productos_cotizacion_usuario && get_productos_cotizacion_usuario.success === true && get_productos_cotizacion_usuario.productos){
             dispatch (set_lista_productos_cotizacion(get_productos_cotizacion_usuario.productos))
             dispatch(carritodata(carritoConstants(0, 0, {}, true).get_productos_cotizacion_usuario))
-            navigate (`/cuenta/cotizaciones/${window.localStorage.getItem ('shop_id')}/productos`)
+            navigate (`/cuenta/cotizacion/detalles/${cotizacion.id}`)
         }
     }, [get_productos_cotizacion_usuario])
 

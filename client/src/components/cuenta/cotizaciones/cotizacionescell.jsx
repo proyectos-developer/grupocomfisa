@@ -24,8 +24,8 @@ export default function ListaCotizacionesCell({proporcional}) {
     }, [get_cotizaciones_usuario])
 
     return (
-        <div className='rounded' style={{width: 459 / proporcional, height: 'auto', border: '1px solid #384da7',
-                marginRight: 20 / proporcional, marginLeft: 20 / proporcional}}>
+        <div className='rounded' style={{width: '100%', height: 'auto', 
+                paddingRight: 20 / proporcional, paddingLeft: 20 / proporcional}}>
             {
                 lista_cotizaciones && lista_cotizaciones.length > 0 ? (
                     lista_cotizaciones.map ((cotizacion, index) => {

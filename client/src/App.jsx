@@ -27,6 +27,10 @@ import CotizacionesCuenta from './components/cuenta/cotizaciones/lista.jsx'
 import CotizacionesCuentaTablet from './components/cuenta/cotizaciones/listatablet.jsx'
 import CotizacionesCuentaCell from './components/cuenta/cotizaciones/listacell.jsx'
 
+import DetallesCotizacionCuenta from './components/cuenta/cotizaciones/detalles.jsx'
+import DetallesCotizacionCuentaTablet from './components/cuenta/cotizaciones/detallestablet.jsx'
+import DetallesCotizacionCuentaCell from './components/cuenta/cotizaciones/detallescell.jsx'
+
 import FavoritosCuenta from './components/cuenta/favoritos/lista.jsx'
 import FavoritosCuentaTablet from './components/cuenta/favoritos/listatablet.jsx'
 import FavoritosCuentaCell from './components/cuenta/favoritos/listacell.jsx'
@@ -58,6 +62,18 @@ import DetallesProveedorCell from './components/proveedor/productoscell.jsx'
 import Contacto from './components/contacto/dashboard.jsx'
 import ContactoTablet from './components/contacto/dashboardtablet.jsx'
 import ContactoCell from './components/contacto/dashboardcell.jsx'
+
+import RespuestaCotizacion from './components/cotizacion/respuesta.jsx'
+import RespuestaCotizacionTablet from './components/cotizacion/respuestatablet.jsx'
+import RespuestaCotizacionCell from './components/cotizacion/respuestacell.jsx'
+
+import RespuestaCotizacionCancelada from './components/cotizacion/cancelada.jsx'
+import RespuestaCotizacionCanceladaTablet from './components/cotizacion/canceladatablet.jsx'
+import RespuestaCotizacionCanceladaCell from './components/cotizacion/canceladacell.jsx'
+
+import RespuestaCotizacionAceptada from './components/cotizacion/aceptada.jsx'
+import RespuestaCotizacionAceptadaTablet from './components/cotizacion/aceptadatablet.jsx'
+import RespuestaCotizacionAceptadaCell from './components/cotizacion/aceptadacell.jsx'
 
 function App() {
   const [width, setWidth] = useState (window.outerWidth)
@@ -125,14 +141,31 @@ function App() {
                                                      width < 991 ? <PerfilCuentaTablet proporcional={991 / width}/> :
                                                                    <PerfilCuenta       proporcional={1920 / width} />}/>
                                                                    
-                                                             
                 <Route path='cuenta/cotizaciones' element={width < 500 ? <CotizacionesCuentaCell   proporcional={499 / width}/> :
                                                            width < 991 ? <CotizacionesCuentaTablet proporcional={991 / width}/> :
                                                                          <CotizacionesCuenta       proporcional={1920 / width} />}/>
+                                                                         
+                                                                   
+                <Route path='cuenta/cotizacion/detalles/:id_cotizacion' element={width < 500 ? <DetallesCotizacionCuentaCell   proporcional={499 / width}/> :
+                                                                                 width < 991 ? <DetallesCotizacionCuentaTablet proporcional={991 / width}/> :
+                                                                                               <DetallesCotizacionCuenta       proporcional={1920 / width} />}/>
                                                                    
                 <Route path='cuenta/favoritos' element={width < 500 ? <FavoritosCuentaCell   proporcional={499 / width}/> :
                                                         width < 991 ? <FavoritosCuentaTablet proporcional={991 / width}/> :
                                                                       <FavoritosCuenta       proporcional={1920 / width} />}/>
+                                                                      
+                <Route path='respuesta/cotizacion/:shop_id' element={width < 500 ? <RespuestaCotizacionCell   proporcional={499 / width}/> :
+                                                                     width < 991 ? <RespuestaCotizacionTablet proporcional={991 / width}/> :
+                                                                                   <RespuestaCotizacion       proporcional={1920 / width} />}/>
+                                                                      
+                <Route path='respuesta/cotizacion/cancelada' element={width < 500 ? <RespuestaCotizacionCnceladaCell   proporcional={499 / width}/> :
+                                                                      width < 991 ? <RespuestaCotizacionCnceladaTablet proporcional={991 / width}/> :
+                                                                                    <RespuestaCotizacionCncelada       proporcional={1920 / width} />}/>
+                                                                                   
+                <Route path='respuesta/cotizacion/aceptada' element={width < 500 ? <RespuestaCotizacionAceptadaCell   proporcional={499 / width}/> :
+                                                                     width < 991 ? <RespuestaCotizacionAceptadaTablet proporcional={991 / width}/> :
+                                                                                   <RespuestaCotizacionAceptada       proporcional={1920 / width} />}/>
+                                                                                   
             </Route>
         </Routes>
     </BrowserRouter>

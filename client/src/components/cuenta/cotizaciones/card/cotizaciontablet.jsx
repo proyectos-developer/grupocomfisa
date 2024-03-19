@@ -34,7 +34,7 @@ export default function CardCotizacionTablet({proporcional, cotizacion, total, i
         if (get_productos_cotizacion_usuario && get_productos_cotizacion_usuario.success === true && get_productos_cotizacion_usuario.productos){
             dispatch (set_lista_productos_cotizacion(get_productos_cotizacion_usuario.productos))
             dispatch(carritodata(carritoConstants(0, 0, {}, true).get_productos_cotizacion_usuario))
-            navigate (`/cuenta/cotizaciones/${window.localStorage.getItem ('shop_id')}/productos`)
+            navigate (`/cuenta/cotizacion/detalles/${cotizacion.id}`)
         }
     }, [get_productos_cotizacion_usuario])
 
@@ -46,7 +46,7 @@ export default function CardCotizacionTablet({proporcional, cotizacion, total, i
         loading === 2 ? (
             <div className='d-flex' style={{width: 571 / proporcional, height: 60 / proporcional,
                     borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
-                <div style={{width: 150 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
+                <div style={{width: 120 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Fecha:
                     </p>
@@ -54,11 +54,11 @@ export default function CardCotizacionTablet({proporcional, cotizacion, total, i
                         {cotizacion.created_at.split ('T')[0]}
                     </p>
                 </div>
-                <div className='' style={{width: 261 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
+                <div className='' style={{width: 291 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Productos:
                     </p>
-                    <div className='d-flex' style={{width: 251 / proporcional, height: 40 / proporcional}}>
+                    <div className='d-flex' style={{width: 291 / proporcional, height: 40 / proporcional}}>
                         {
                             lista_productos && lista_productos.length > 0 ? (
                                 lista_productos.map ((producto, numprod) => {

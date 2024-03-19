@@ -12,6 +12,7 @@ export const carritodata = createAsyncThunk ('', async (params) => {
         case 'update_cantidad_producto':
         case 'update_usuario_cotizar':
         case 'update_comentarios_producto':
+        case 'update_estado_cotizacion':
             if (params.reset){ 
                 return {success: false}
             }else{

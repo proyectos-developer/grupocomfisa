@@ -1,0 +1,38 @@
+import React from 'react'
+
+import TituloPaginaProductosTablet from './tituloprincipalproductostablet.jsx'
+import ListaProductosTablet from './listaprouctostablet.jsx'
+import MenuCuentaTablet from '../menu/cuentatablet.jsx'
+import FooterPrincipalTablet from '../../footerprincipaltablet.jsx'
+import FooterTablet from '../../footertablet.jsx'
+import ModalCargando from '../../modal/cargando.jsx'
+import { useSelector } from 'react-redux'
+
+export default function DetallesCotizacionCuentaTablet({proporcional}) {
+
+    const begin = useSelector (({begin_data}) => begin_data)
+
+    return (
+        <div style={{width: '100%'}}>
+            <TituloPaginaProductosTablet proporcional={proporcional}/>
+            <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#384da7', textAlign: 'center',
+                        fontWeight: 500, marginBottom: 25 / proporcional, marginTop: 85 / proporcional}}>
+                PRODUCTOS COTIZADOS
+            </p>
+            <div className='d-flex' style={{width: '100%', height: 'auto', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional, 
+                    marginBottom: 60 / proporcional}}>
+                <div style={{width: '24%' / proporcional, height: 'auto'}}>
+                    <MenuCuentaTablet proporcional={proporcional}/>
+                </div>
+                <div style={{width: '75%', height: 'auto'}}>
+                    <ListaProductosTablet proporcional={proporcional}/>
+                </div>
+            </div>
+            <div style={{width: 1200 / proporcional, marginLeft: 350 / proporcional, marginRight: 350 / proporcional, background: 'rgb(230, 232, 232)', height: 2 / proporcional,
+                            marginTop: 15 / proporcional, marginBottom: 35 / proporcional}}/>
+            <FooterPrincipalTablet proporcional={proporcional}/>
+            <FooterTablet proporcional={proporcional}/>
+            <ModalCargando loading={begin.loading}/>
+        </div>
+    )
+}

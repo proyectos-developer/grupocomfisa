@@ -217,8 +217,9 @@ router.get ('/api/cotizaciones/productos/:shop_id', async(req, res) => {
 router.get ('/api/cotizaciones/productos/detalles/:shop_id', async(req, res) => {
     const {shop_id} = req.params
     try {
-        const productos = await pool.query (`SELECT productos_proveedor.producto, carrito_cotizacion.cantidad, carrito_cotizacion.precio,
-                                                carrito_cotizacion.comentarios, productos_proveedor.descripcion, productos_proveedor.foto_uno,
+        const productos = await pool.query (`SELECT productos_proveedor.producto, carrito_cotizacion.cantidad, carrito_cotizacion.precio, productos_proveedor.proveedor,
+                                                carrito_cotizacion.comentarios, productos_proveedor.descripcion, productos_proveedor.foto_uno, carrito_cotizacion.comentarios,
+                                                carrito_cotizacion.precio, carrito_cotizacion.observaciones,
                                                 carrito_cotizacion.estado FROM carrito_cotizacion JOIN productos_proveedor ON 
                                                 productos_proveedor.id = carrito_cotizacion.id_producto 
                                                 WHERE shop_id = ?`, [shop_id])
@@ -234,6 +235,27 @@ router.get ('/api/cotizaciones/productos/detalles/:shop_id', async(req, res) => 
             success: false
         })
     }   
+})
+
+router.post ('/api/cotizacion/:shop_id', async (req, res) => {
+    const {shop_id} = req.params
+    const {estado} = req.body
+
+    try {
+        const updateEstado = {estado}
+        await pool.query ('UPDATE carrito_cotizacion set ? WHERE shop_id = ?', [updateEstado, shop_id])
+
+        return res.json ({
+            success: true
+        })
+        
+    } catch (error) {
+        console.log (error)
+        return res.json ({
+            error: error,
+            success: false
+        })
+    }
 })
 
 module.exports = router

@@ -34,7 +34,7 @@ export default function CardCotizacionCell({proporcional, cotizacion, total, ind
         if (get_productos_cotizacion_usuario && get_productos_cotizacion_usuario.success === true && get_productos_cotizacion_usuario.productos){
             dispatch (set_lista_productos_cotizacion(get_productos_cotizacion_usuario.productos))
             dispatch(carritodata(carritoConstants(0, 0, {}, true).get_productos_cotizacion_usuario))
-            navigate (`/cuenta/cotizaciones/${window.localStorage.getItem ('shop_id')}/productos`)
+            navigate (`/cuenta/cotizacion/detalles/${cotizacion.id}`)
         }
     }, [get_productos_cotizacion_usuario])
 
@@ -44,7 +44,7 @@ export default function CardCotizacionCell({proporcional, cotizacion, total, ind
 
     return (
         loading === 2 ? (
-            <div className='' style={{width: 459 / proporcional, height: 'auto',
+            <div className='shadow-sm rounded' style={{width: 459 / proporcional, height: 'auto', marginBottom: 10 / proporcional,
                     borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
                 <div className='d-flex' style={{width: 459 / proporcional, height: 60 / proporcional,
                         borderBottom: '1px solid #384da7'}}>

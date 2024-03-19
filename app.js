@@ -2,7 +2,7 @@ const cors = require('cors')
 
 const express = require ('express');
 const morgan = require('morgan');
-const exphbs = require('express-handlebars');
+const {create} = require('express-handlebars');
 const path = require('path');
 const flash = require ('connect-flash')
 const session = require ('express-session')
@@ -16,16 +16,14 @@ app.use(cors())
 require ('./backend/lib/passport.js')
 
 /**Configuraciones */
-app.set ('port', process.env.PORT || 3001);
-app.set('views', path.join(__dirname, 'views')); 
-app.engine('.hbs', exphbs.engine({
-    defaultLayout: 'main',
-    layoutsDir: path.join(app.get('views'), 'layouts'),
-    partialsDir: path.join(app.get('views'), 'partials'),
-    extname: '.hbs', 
-    helpers: require('./backend/lib/handlebars.js')
-}));
-app.set('view engine', '.hbs');
+const hbs = create ({
+  extname: '.hbs'
+})
+
+app.set ('port', process.env.PORT || 3002);
+app.engine(".hbs", hbs.engine);
+app.set("view engine", ".hbs");
+app.set("views", path.join(__dirname, 'views'));
 
 //Middlewares
 app.use(
