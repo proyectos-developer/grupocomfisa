@@ -20,7 +20,7 @@ const hbs = create ({
   extname: '.hbs'
 })
 
-app.set ('port', process.env.PORT || 3002);
+app.set ('port', process.env.PORT || 3001);
 app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
 app.set("views", path.join(__dirname, 'views'));
@@ -94,12 +94,14 @@ app.get('/contacto', (req, res) => {
 app.get('/proveedor/:proveedor', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/proveedor/:proveedor', 'index.html'));
 });
+
 app.get('/proveedor/:proveedor/productos', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/proveedor/:proveedor/productos', 'index.html'));
 });
 app.get('/proveedor/:proveedor/producto/:producto', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/proveedor/:proveedor/producto/:producto', 'index.html'));
 });
+
 app.get('/signin', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/signin', 'index.html'));
 });
@@ -112,8 +114,20 @@ app.get('/cuenta/perfil', (req, res) => {
 app.get('/cuenta/cotizaciones', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cuenta/cotizaciones', 'index.html'));
 });
+app.get('/cuenta/cotizacion/detalles/:id_cotizacion', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cuenta/cotizaciones', 'index.html'));
+});
 app.get('/cuenta/favoritos', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cuenta/favoritos', 'index.html'));
+});
+app.get('/respuesta/cotizacion/:shop_id', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/respuesta/cotizacion', 'index.html'));
+});
+app.get('/cotizacion/respuesta/cancelada', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion/respuesta/cancelada', 'index.html'));
+});
+app.get('/cotizacion/respuesta/aceptada', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion/respuesta/aceptada', 'index.html'));
 });
 
 //Iniciar el servidor
