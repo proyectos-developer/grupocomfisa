@@ -71,28 +71,33 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
 
 router.post('/api/correo/nueva/cotizacion/:shop_id/:usuario', async (req, res) => {
     const { usuario, shop_id } = req.params
-    console.log (usuario, shop_id)
+    
     try {
+        const cotizaciones = await pool.query (`SELECT * FROM carrito_cotizacion GROUP BY shop_id`)
+        let nro_pedido = `${cotizaciones.length < 10 ? `0000${cotizaciones.length}` : cotizaciones.length < 100 ? `000${cotizaciones.length}` : cotizaciones.length < 1000 ? `00${cotizaciones.length}` : cotizaciones.length < 10000 ? `0${cotizaciones.length}` : `${cotizaciones.length}`}`
+        let estado = 'enviado'
+        const updateCarrito = {nro_pedido, estado}
+        await pool.query (`UPDATE carrito_cotizacion set ? WHERE shop_id = ?`, [updateCarrito, shop_id])
         const data_usuario = await pool.query (`SELECT * FROM info_clientes WHERE usuario = ?`, [usuario])
         const cotizacion = await pool.query (`SELECT productos_proveedor.producto, carrito_cotizacion.cantidad, carrito_cotizacion.precio,
                                                 carrito_cotizacion.comentarios, productos_proveedor.proveedor, productos_proveedor.foto_uno,
                                                 carrito_cotizacion.estado FROM carrito_cotizacion JOIN productos_proveedor ON 
                                                 productos_proveedor.id = carrito_cotizacion.id_producto 
                                                 WHERE carrito_cotizacion.shop_id = ?`, [shop_id])
-                                                console.log (cotizacion)
 
         var mailOptions = {
             from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
-            to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
-            subject: 'Pedido de cotización',
+            to: 'developer.ideas2017@gmail.com',// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+            subject: `Nuevo pedido de cotización número ${nro_pedido}`,
             template: 'pedidocotizacion', // the name of the template file i.e email.handlebars
             context:{
+                nro_pedido: nro_pedido,
                 nombres: data_usuario[0].nombres,
                 apellidos: data_usuario[0].apellidos, // replace {{name}} with Adebola
                 lista_cotizacion: cotizacion
             }
         }
-    
+
         // trigger the sending of the E-mail
         transporter.sendMail(mailOptions, function(error, info){
             if(error){
@@ -100,10 +105,32 @@ router.post('/api/correo/nueva/cotizacion/:shop_id/:usuario', async (req, res) =
                     message: 'error: ' + error
                 })
             }
-            
-            return res.json ({
-                message: info
-            })
+
+            var mailOptions = {
+                from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+                to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+                subject: `Tu pedido de cotización número ${nro_pedido}`,
+                template: 'pedidocotizacion', // the name of the template file i.e email.handlebars
+                context:{
+                    nro_pedido: nro_pedido,
+                    nombres: data_usuario[0].nombres,
+                    apellidos: data_usuario[0].apellidos, // replace {{name}} with Adebola
+                    lista_cotizacion: cotizacion
+                }
+            }
+    
+            // trigger the sending of the E-mail
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+                    return res.json ({
+                        message: 'error: ' + error
+                    })
+                }
+                
+                return res.json ({
+                    message: info
+                })
+            });   
         });        
     } catch (error) {
         console.log (error)
@@ -146,19 +173,19 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
 
 router.post('/api/correo/aceptado/cotizacion/:shop_id/:usuario', async (req, res) => {
     const { usuario, shop_id } = req.params
-    console.log (usuario, shop_id)
+
     try {
         const data_usuario = await pool.query (`SELECT * FROM info_clientes WHERE usuario = ?`, [usuario])
         const cotizacion = await pool.query (`SELECT productos_proveedor.producto, carrito_cotizacion.cantidad, carrito_cotizacion.precio,
                                                 carrito_cotizacion.comentarios, productos_proveedor.proveedor, productos_proveedor.foto_uno,
-                                                carrito_cotizacion.estado FROM carrito_cotizacion JOIN productos_proveedor ON 
+                                                carrito_cotizacion.estado, carrito_cotizacion.nro_pedido FROM carrito_cotizacion JOIN productos_proveedor ON 
                                                 productos_proveedor.id = carrito_cotizacion.id_producto 
                                                 WHERE carrito_cotizacion.shop_id = ?`, [shop_id])
 
         var mailOptions = {
             from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
             to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
-            subject: 'Pedido de cotización aceptada',
+            subject: `Pedido de cotización aceptada número ${nro_pedido}`,
             template: 'pedidocotizacionaceptada', // the name of the template file i.e email.handlebars
             context:{
                 nombres: data_usuario[0].nombres,

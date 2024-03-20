@@ -44,30 +44,29 @@ export default function LitaRespuetaCotizacionCell({proporcional}) {
     useEffect (() => {
         if (update_estado_cotizacion && update_estado_cotizacion.success === true){
             dispatch (carritodata(carritoConstants(0, 0, {}, true).update_estado_cotizacion))
-            navigate ('/respuesta/cotizacion/cancelada')
+            navigate ('/cotizacion/respuesta/cancelada')
         }
     }, [update_estado_cotizacion])
 
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div style={{width: '100%', height: 'auto', paddingLeft: 20 / proporcional, paddingRight: 20 / proporcional, paddingTop: 120 / proporcional, paddingBottom: 120 / proporcional}}>
+                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                    <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 25 / proporcional, color: '#212121', fontWeight: 600}}>
+                        NÚMERO DE PEDIDO {lista_cotizar && lista_cotizar.length > 0 ? lista_cotizar[0].nro_pedido : ''}
+                    </p>
+                </div>
                 <div className='d-flex' style={{width: '100%', height: 60 / proporcional, border: '1px solid #e8e8e8'}}>
-                    <div style={{width: '30%', height: 58 / proporcional}}>
+                    <div style={{width: '70%', height: 58 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight: `${28 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)', 
                             padding: 15 / proporcional}}>
                             Producto
                         </p>
                     </div>
-                    <div style={{width: '10%', height: 58 / proporcional}}>
+                    <div style={{width: '30%', height: 58 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight: `${28 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)', 
-                            padding: 15 / proporcional}}>
+                            padding: 15 / proporcional, textAlign: 'center'}}>
                             Cantidad
-                        </p>
-                    </div>
-                    <div style={{width: '60%', height: 58 / proporcional}}>
-                        <p style={{fontSize: 18 / proporcional, lineHeight: `${28 / proporcional}px`, fontWeight: 500, marginBottom: 0, color: 'rgb(34, 34, 34)', 
-                            padding: 15 / proporcional}}>
-                            Detalles requeridos
                         </p>
                     </div>
                 </div>

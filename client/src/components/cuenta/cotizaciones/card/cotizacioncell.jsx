@@ -44,16 +44,16 @@ export default function CardCotizacionCell({proporcional, cotizacion, total, ind
 
     return (
         loading === 2 ? (
-            <div className='shadow-sm rounded' style={{width: 459 / proporcional, height: 'auto', marginBottom: 10 / proporcional,
+            <div className='shadow-sm rounded' style={{width: 459 / proporcional, height: 'auto', marginBottom: 20 / proporcional,
                     borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
                 <div className='d-flex' style={{width: 459 / proporcional, height: 60 / proporcional,
                         borderBottom: '1px solid #384da7'}}>
                     <div style={{width: 150 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
                         <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
-                            Fecha:
+                            {cotizacion.created_at.split ('T')[0]}
                         </p>
                         <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
-                            {cotizacion.created_at.split ('T')[0]}
+                            {cotizacion.nro_pedido}
                         </p>
                     </div>
                     <div className='' style={{width: 349 / proporcional, height: 60 / proporcional, padding: 10 / proporcional}}>

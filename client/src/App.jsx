@@ -158,11 +158,11 @@ function App() {
                                                                      width < 991 ? <RespuestaCotizacionTablet proporcional={991 / width}/> :
                                                                                    <RespuestaCotizacion       proporcional={1920 / width} />}/>
                                                                       
-                <Route path='respuesta/cotizacion/cancelada' element={width < 500 ? <RespuestaCotizacionCnceladaCell   proporcional={499 / width}/> :
-                                                                      width < 991 ? <RespuestaCotizacionCnceladaTablet proporcional={991 / width}/> :
-                                                                                    <RespuestaCotizacionCncelada       proporcional={1920 / width} />}/>
+                <Route path='cotizacion/respuesta/cancelada' element={width < 500 ? <RespuestaCotizacionCanceladaCell   proporcional={499 / width}/> :
+                                                                      width < 991 ? <RespuestaCotizacionCanceladaTablet proporcional={991 / width}/> :
+                                                                                    <RespuestaCotizacionCancelada       proporcional={1920 / width} />}/>
                                                                                    
-                <Route path='respuesta/cotizacion/aceptada' element={width < 500 ? <RespuestaCotizacionAceptadaCell   proporcional={499 / width}/> :
+                <Route path='cotizacion/respuesta/aceptada' element={width < 500 ? <RespuestaCotizacionAceptadaCell   proporcional={499 / width}/> :
                                                                      width < 991 ? <RespuestaCotizacionAceptadaTablet proporcional={991 / width}/> :
                                                                                    <RespuestaCotizacionAceptada       proporcional={1920 / width} />}/>
                                                                                    

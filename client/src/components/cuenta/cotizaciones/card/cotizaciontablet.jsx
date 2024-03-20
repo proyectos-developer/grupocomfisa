@@ -48,10 +48,10 @@ export default function CardCotizacionTablet({proporcional, cotizacion, total, i
                     borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
                 <div style={{width: 120 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
-                        Fecha:
+                    {cotizacion.created_at.split ('T')[0]}
                     </p>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
-                        {cotizacion.created_at.split ('T')[0]}
+                        {cotizacion.nro_pedido}
                     </p>
                 </div>
                 <div className='' style={{width: 291 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
