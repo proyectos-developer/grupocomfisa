@@ -46,7 +46,9 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
             subject: 'Olvide mi contraseña Grupo COMFISA',
             template: 'olvidepassword', // the name of the template file i.e email.handlebars
             context:{
-                nombres: usuarios[0].nombres // replace {{name}} with Adebola
+                usuario: usuarios[0].usuario,
+                nombres: usuarios[0].nombres,
+                apellidos: usuarios[0].apellidos // replace {{name}} with Adebola
             }
         }
     
@@ -59,6 +61,7 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
             }
             
             return res.json ({
+                usuario: usuarios[0].usuario,
                 message: info
             })
         });        

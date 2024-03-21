@@ -15,6 +15,22 @@ import Signin from './components/cuenta/signin.jsx'
 import SigninTablet from './components/cuenta/signintablet.jsx'
 import SigninCell from './components/cuenta/signincell.jsx'
 
+import OlvidoPassword from './components/cuenta/olvidopassword.jsx'
+import OlvidoPasswordTablet from './components/cuenta/olvidopasswordtablet.jsx'
+import OlvidoPasswordCell from './components/cuenta/olvidopasswordcell.jsx'
+
+import ConfirmacionEnvioLink from './components/cuenta/confirmacionlink.jsx'
+import ConfirmacionEnvioLinkTablet from './components/cuenta/confirmacionlinktablet.jsx'
+import ConfirmacionEnvioLinkCell from './components/cuenta/confirmacionlinkcell.jsx'
+
+import PasswordActualizado from './components/cuenta/passwordactualizado.jsx'
+import PasswordActualizadoTablet from './components/cuenta/passwordactualizadotablet.jsx'
+import PasswordActualizadoCell from './components/cuenta/passwordactualizadocell.jsx'
+
+import NuevaContraseña from './components/cuenta/nuevacontraseña.jsx'
+import NuevaContraseñaTablet from './components/cuenta/nuevacontraseñatablet.jsx'
+import NuevaContraseñaCell from './components/cuenta/nuevacontraseñacell.jsx'
+
 import Register from './components/cuenta/register.jsx'
 import RegisterTablet from './components/cuenta/registertablet.jsx'
 import RegisterCell from './components/cuenta/registercell.jsx'
@@ -108,6 +124,22 @@ function App() {
                 <Route path='registro' element={width < 500 ? <RegisterCell   proporcional={499 / width}/> :
                                                 width < 991 ? <RegisterTablet proporcional={991 / width}/> :
                                                               <Register       proporcional={1920 / width} />}/>
+                                                             
+                <Route path='olvidaste-contraseña' element={width < 500 ? <OlvidoPasswordCell   proporcional={499 / width}/> :
+                                                            width < 991 ? <OlvidoPasswordTablet proporcional={991 / width}/> :
+                                                                          <OlvidoPassword       proporcional={1920 / width} />}/>
+                                                             
+                <Route path='olvido-contraseña/confirmacion' element={width < 500 ? <ConfirmacionEnvioLinkCell   proporcional={499 / width}/> :
+                                                                      width < 991 ? <ConfirmacionEnvioLinkTablet proporcional={991 / width}/> :
+                                                                                    <ConfirmacionEnvioLink       proporcional={1920 / width} />}/>
+                                                                                    
+                <Route path='cambio-password/actualizado' element={width < 500 ? <PasswordActualizadoCell   proporcional={499 / width}/> :
+                                                                   width < 991 ? <PasswordActualizadoTablet proporcional={991 / width}/> :
+                                                                                 <PasswordActualizado       proporcional={1920 / width} />}/>
+                                                                                    
+                <Route path='olvido-password/nuevo-password/:usuario' element={width < 500 ? <NuevaContraseñaCell   proporcional={499 / width}/> :
+                                                                               width < 991 ? <NuevaContraseñaTablet proporcional={991 / width}/> :
+                                                                                             <NuevaContraseña       proporcional={1920 / width} />}/>
                                                     
                 <Route path='sobre-nosotros' element={width < 500 ? <SobreNosotrosCell   proporcional={499 / width}/> :
                                                       width < 991 ? <SobreNosotrosTablet proporcional={991 / width}/> :

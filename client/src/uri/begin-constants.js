@@ -40,6 +40,12 @@ export const beginConstants = (data = {}, reset = false, id = 0) => {
             path: `session/delete/${id}`,
             stateType: 'delete_session',
             reset: reset
+        },
+        update_password: {
+            path: `update/password/${id}`,
+            stateType: 'update_password',
+            data: data,
+            reset: reset
         }
     }
 }

@@ -129,6 +129,18 @@ app.get('/cotizacion/respuesta/cancelada', (req, res) => {
 app.get('/cotizacion/respuesta/aceptada', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion/respuesta/aceptada', 'index.html'));
 });
+app.get('/olvidaste-contraseña', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/olvidaste-contraseña', 'index.html'));
+});
+app.get('/olvido-contraseña/confirmacion', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/olvido-contraseña/confirmacion', 'index.html'));
+});
+app.get('/olvido-password/nuevo-password/:usuario', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/olvido-password/nuevo-password', 'index.html'));
+});
+app.get('/cambio-password/actualizado', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cambio-password/actualizado', 'index.html'));
+});
 
 //Iniciar el servidor
 app.listen (app.get('port'), () => {

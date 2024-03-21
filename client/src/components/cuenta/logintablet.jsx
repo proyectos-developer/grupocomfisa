@@ -109,7 +109,7 @@ export default function LoginTablet({proporcional}) {
                 <div className='d-flex justify-content-center'
                     style={{width: 600 / proporcional, height: 20 / proporcional}}>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, color: '#384da7', fontWeight: 500, marginRight: 5 / proporcional,
-                        marginBottom: 0}}>
+                        marginBottom: 0, cursor: 'pointer'}} onClick={() => navigate ('/olvidaste-contraseña')}>
                         ¿Olvidaste tu contraseña?
                     </p>
                 </div>
