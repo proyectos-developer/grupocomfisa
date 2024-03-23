@@ -71,12 +71,21 @@ export default function FiltrosTablet({proporcional}) {
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                                <img src={check_proveedor === 'siderperu' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                                        marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                                        onClick={() => {filtrar_por_proveedor('32', 'siderperu')}}/>
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                                fontWeight: 400}}>SIDERPERU (BARRAS CONSTRUCCIÓN)</p>
+                        </div>
+                        <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'metalyck' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
                                         onClick={() => {filtrar_por_proveedor('17', 'metalyck')}}/>
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                 fontWeight: 400}}>METALYCK (ALAMBRE RECOCIDO)</p>
                         </div>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'clavos' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -84,8 +93,6 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>ACEROS AREQUIPA (CLAVO ALBAÑILERÍA)</p>
                         </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'tream' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -93,6 +100,8 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>TREAMPERÚ (CLAVO ALBAÑILERÍA)</p>
                         </div>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'piramide' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -100,8 +109,6 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>PIRAMIDE (LADRILLOS)</p>
                         </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'sagitario' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -109,6 +116,8 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>SAGITARIO (LADRILLOS)</p>
                         </div>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'inka' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -116,8 +125,6 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>INKA (CEMENTO)</p>
                         </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'unacem' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -125,6 +132,8 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>UNACEM (CEMENTO)</p>
                         </div>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'etsa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -132,8 +141,6 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>ETSAPERÚ (TECNOPOR)</p>
                         </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'majestad' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -141,6 +148,8 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>MAJESTAD (TEMPLE)</p>
                         </div>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'norton' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -148,8 +157,6 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>NORTON (DISCOS CORTADORES)</p>
                         </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'briker' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -157,6 +164,8 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>BRIKER (DISCOS CORTADORES)</p>
                         </div>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'comfisa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -164,8 +173,6 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>COMFISA (GUANTES DE PROTECCIÓN)</p>
                         </div>
-                </div>
-                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'asa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
@@ -173,6 +180,8 @@ export default function FiltrosTablet({proporcional}) {
                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                                         fontWeight: 400}}>ASA (LIJAS DE AGUA Y ACERO)</p>
                         </div>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                         <div className='d-flex' style={{width: '50%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                                 <img src={check_proveedor === 'tigre' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                                         marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}

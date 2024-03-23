@@ -68,6 +68,13 @@ export default function  Filtros({proporcional}) {
                         fontWeight: 400}}>INKAFERRO (BARRAS CORRUGADAS)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
+                    <img src={check_proveedor === 'siderperu' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
+                            marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
+                            onClick={() => filtrar_por_proveedor('32', 'siderperu')}/>
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
+                        fontWeight: 400}}>SIDERPERU (BARRAS CONSTRUCCIÓN)</p>
+                </div>
+                <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'metalyck' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
                             onClick={() => filtrar_por_proveedor('17', 'metalyck')}/>

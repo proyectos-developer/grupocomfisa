@@ -16,6 +16,7 @@ import icono_sellado from '../../assets/iconos/icono_sellado.png'
 import icono_tubo from '../../assets/iconos/icono_tubo.png'
 import icono_varilla from '../../assets/iconos/icono_varilla.png'
 import icono_varilla_1 from '../../assets/iconos/icono_varilla_1.png'
+import icono_barras from '../../assets/iconos/icono_barras.png'
 
 import cortadora from '../../assets/productos/cortadora_404.png'
 import cortadora_1 from '../../assets/productos/cortadora_1_404.png'
@@ -33,6 +34,7 @@ import ladrillos from '../../assets/productos/ladrillos_404.png'
 import ladrillos_1 from '../../assets/productos/ladrillos_1_404.png'
 import guantes from '../../assets/productos/guantes_404.png'
 import tubos from '../../assets/productos/tubos_404.png'
+import barras from '../../assets/productos/barras_404.png'
 
 import CardProveedorTablet from './card/proveedortablet.jsx'
 
@@ -45,6 +47,8 @@ export default function ProductosProveedoresTablet({proporcional}) {
 
         {id: '30', subtitulo: 'INKAFERRO', titulo: 'BARRAS CORRUGADAS', descripcion: `Las barras corrugadas ArcelorMittal ASTM A615/A615M grado 60 se emplea como acero de refuerzo para todo tipo de obra: viviendas, edificaciones, centros comerciales y obras de gran envergadura como represas, puentes, 
         puertos, losas industriales, entre otrosposee una función esencial en la construcción de obras de infraestructura, de vivienda, comerciales e industriales de calidad internacional.`, icono: icono_varilla_1, logo: varillas_1},
+
+        {id: '32', subtitulo: 'SIDERPERU', titulo: 'BARRAS CONSTRUCCIÓN', descripcion: `Las barras de refuerzo, también conocidas como barras corrugadas, son usadas como refuerzo en elemento de concreto armado, por su alta adherencia con el concreto debido a que cuenta con corrugas o resaltes tipo Hight-Bond`, icono: icono_barras, logo: barras},
 
         {id: '17', subtitulo: 'METALYCK', titulo: 'ALAMBRE RECOCIDO', descripcion: `Alambres lisos de acero de bajo carbono laminados y/o trefilado, sometido a tratamiento térmico de recocido para aumentar su ductilidad, usados en la construcción civil en el armado de estructuras y amarre de encofrados.`, icono: icono_alambre, logo: alambre},
 
@@ -90,37 +94,41 @@ export default function ProductosProveedoresTablet({proporcional}) {
                     Contamos con productos de la siguientes marcas
                 </p>
             </div>
-            <div style={{background: 'white', width: 871 / proporcional, paddingTop: 57 / proporcional, paddingBottom: 57 / proporcional}}>
-                <div className='d-flex' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+            <div style={{background: 'white', width: '100%', paddingTop: 57 / proporcional, paddingBottom: 57 / proporcional}}>
+                <div className='d-flex' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[0].id} titulo={lista_proveedores[0].titulo} subtitulo={lista_proveedores[0].subtitulo} descripcion={lista_proveedores[0].descripcion}  icono={lista_proveedores[0].icono} logo={lista_proveedores[0].logo}/>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[1].id} titulo={lista_proveedores[1].titulo} subtitulo={lista_proveedores[1].subtitulo} descripcion={lista_proveedores[1].descripcion}  icono={lista_proveedores[1].icono} logo={lista_proveedores[1].logo}/>
                 </div>
-                <div className='d-flex' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+                <div className='d-flex' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[2].id} titulo={lista_proveedores[2].titulo} subtitulo={lista_proveedores[2].subtitulo} descripcion={lista_proveedores[2].descripcion}  icono={lista_proveedores[2].icono} logo={lista_proveedores[2].logo}/>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[3].id} titulo={lista_proveedores[3].titulo} subtitulo={lista_proveedores[3].subtitulo} descripcion={lista_proveedores[3].descripcion}  icono={lista_proveedores[3].icono} logo={lista_proveedores[3].logo}/>
                 </div>
-                <div className='d-flex' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+                <div className='d-flex' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[4].id} titulo={lista_proveedores[4].titulo} subtitulo={lista_proveedores[4].subtitulo} descripcion={lista_proveedores[4].descripcion}  icono={lista_proveedores[4].icono} logo={lista_proveedores[4].logo}/>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[5].id} titulo={lista_proveedores[5].titulo} subtitulo={lista_proveedores[5].subtitulo} descripcion={lista_proveedores[5].descripcion}  icono={lista_proveedores[5].icono} logo={lista_proveedores[5].logo}/>
                 </div>
-                <div className='d-flex' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+                <div className='d-flex' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[6].id} titulo={lista_proveedores[6].titulo} subtitulo={lista_proveedores[6].subtitulo} descripcion={lista_proveedores[6].descripcion}  icono={lista_proveedores[6].icono} logo={lista_proveedores[6].logo}/>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[7].id} titulo={lista_proveedores[7].titulo} subtitulo={lista_proveedores[7].subtitulo} descripcion={lista_proveedores[7].descripcion}  icono={lista_proveedores[7].icono} logo={lista_proveedores[7].logo}/>
                 </div>
-                <div className='d-flex' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+                <div className='d-flex' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[8].id} titulo={lista_proveedores[8].titulo} subtitulo={lista_proveedores[8].subtitulo} descripcion={lista_proveedores[8].descripcion}  icono={lista_proveedores[8].icono} logo={lista_proveedores[8].logo}/>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[9].id} titulo={lista_proveedores[9].titulo} subtitulo={lista_proveedores[9].subtitulo} descripcion={lista_proveedores[9].descripcion}  icono={lista_proveedores[9].icono} logo={lista_proveedores[9].logo}/>
                 </div>
-                <div className='d-flex' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+                <div className='d-flex' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[10].id} titulo={lista_proveedores[10].titulo} subtitulo={lista_proveedores[10].subtitulo} descripcion={lista_proveedores[10].descripcion}  icono={lista_proveedores[10].icono} logo={lista_proveedores[10].logo}/>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[11].id} titulo={lista_proveedores[11].titulo} subtitulo={lista_proveedores[11].subtitulo} descripcion={lista_proveedores[11].descripcion}  icono={lista_proveedores[11].icono} logo={lista_proveedores[11].logo}/>
                 </div>
-                <div className='d-flex justify-content-center' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+                <div className='d-flex justify-content-center' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[12].id} titulo={lista_proveedores[12].titulo} subtitulo={lista_proveedores[12].subtitulo} descripcion={lista_proveedores[12].descripcion}  icono={lista_proveedores[12].icono} logo={lista_proveedores[12].logo}/>
-                    <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[13].id} titulo={lista_proveedores[13].titulo} subtitulo={lista_proveedores[13].subtitulo} descripcion={lista_proveedores[10].descripcion}  icono={lista_proveedores[13].icono} logo={lista_proveedores[13].logo}/>
+                    <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[13].id} titulo={lista_proveedores[13].titulo} subtitulo={lista_proveedores[13].subtitulo} descripcion={lista_proveedores[13].descripcion}  icono={lista_proveedores[13].icono} logo={lista_proveedores[13].logo}/>
                 </div>
-                <div className='d-flex justify-content-center' style={{width: 871 / proporcional, marginBottom: 34 / proporcional, height: 'auto'}}>
+                <div className='d-flex justify-content-center' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[14].id} titulo={lista_proveedores[14].titulo} subtitulo={lista_proveedores[14].subtitulo} descripcion={lista_proveedores[14].descripcion}  icono={lista_proveedores[14].icono} logo={lista_proveedores[14].logo}/>
+                    <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[15].id} titulo={lista_proveedores[15].titulo} subtitulo={lista_proveedores[15].subtitulo} descripcion={lista_proveedores[15].descripcion}  icono={lista_proveedores[15].icono} logo={lista_proveedores[15].logo}/>
+                </div>
+                <div className='d-flex justify-content-center' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
+                    <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[16].id} titulo={lista_proveedores[16].titulo} subtitulo={lista_proveedores[16].subtitulo} descripcion={lista_proveedores[16].descripcion}  icono={lista_proveedores[16].icono} logo={lista_proveedores[16].logo}/>
                 </div>
             </div>
         </div>
