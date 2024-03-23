@@ -440,6 +440,31 @@ export default function InformacionProveedor({proporcional}) {
                                 ) : null
                             }
                             {
+                                lista_medidas_producto && lista_medidas_producto.length > 0 && proveedor.proveedor === 'SIDERPERU' && proveedor.id === 32 ? (
+                                    <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 5 / proporcional}}>
+                                        {
+                                            lista_medidas_producto.map ((medida, index) => {
+                                                return (
+                                                    index < 4 ? ( 
+                                                        <div className='d-flex justify-content-center' style={{width: `50%`, height: 40 / proporcional, cursor: 'pointer',
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            borderTopRightRadius: 8 / proporcional}}
+                                                            onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
+                                                            onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
+                                                            <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                textAlign: 'center'}}>
+                                                                {medida.nombre_medida}
+                                                            </p>
+                                                        </div>
+                                                    ) : null
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                ) : null
+                            } 
+                            {
                                 lista_medidas_producto && lista_medidas_producto.length > 0 && proveedor.proveedor === 'METALYCK' ? (
                                     <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 5 / proporcional}}>
                                         {
