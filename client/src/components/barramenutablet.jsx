@@ -146,17 +146,17 @@ export default function BarraMenu({proporcional}) {
         
         <div className='position-relative' 
           style={{height: 56 / proporcional, zIndex: 99999, width: '100%', background: '#f9f9f9'}}>
-            <div className='d-flex justify-content-between position-absolute top-0 start-0 rounded' style={{background: '#d18e32', width: 871 / proporcional}}>
-                <div className='d-flex position-relative' style={{paddingLeft: 25 / proporcional, background: '#d18e32'}}>
+            <div className='d-flex justify-content-between position-absolute top-0 start-0 rounded' style={{background: '#007BA7', width: 871 / proporcional}}>
+                <div className='d-flex position-relative' style={{paddingLeft: 25 / proporcional, background: '#007BA7'}}>
                     <p style={{width: 120 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: menu === 'inicio' ? 700 : 600, 
                         marginBottom: 0,
-                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'inicio' ? '#384da7' : '#d18e32'}} 
+                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'inicio' ? '#8B4513' : '#007BA7'}} 
                         onMouseOver={() => setMenu ('inicio')} onMouseLeave={() => setMenu('')} onClick={() => navigate ('/')}>
                     Inicio
                     </p>  
                     <p style={{width: 120 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: menu === 'nosotros' ? 700 : 600, 
                         marginBottom: 0,
-                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'nosotros' ? '#384da7' : '#d18e32'}} 
+                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'nosotros' ? '#8B4513' : '#007BA7'}} 
                         onMouseOver={() => setMenu ('nosotros')} onMouseLeave={() => setMenu('')} onClick={() => navigate ('/sobre-nosotros')}>
                     Nosotros
                     </p> 
@@ -165,7 +165,7 @@ export default function BarraMenu({proporcional}) {
                         <div className='d-flex' style={{width: 120 / proporcional, height: 56 / proporcional}}>
                           <p style={{width: 121 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: menu === 'proveedor' ? 700 : 600, 
                               marginBottom: 0,
-                              color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'proveedor' ? '#384da7' : '#d18e32'}}>
+                              color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'proveedor' ? '#8B4513' : '#007BA7'}}>
                             Proveedores
                           </p>  
                           <img src={icono_arrow_down} style={{width: 14 / proporcional, height: 14 / proporcional, marginTop: 21 / proporcional, 
@@ -447,18 +447,18 @@ export default function BarraMenu({proporcional}) {
                     </div> 
                     <p style={{width: 120 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: menu === 'tienda' ? 700 : 600, 
                         marginBottom: 0,
-                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'tienda' ? '#384da7' : '#d18e32'}} 
+                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'tienda' ? '#8B4513' : '#007BA7'}} 
                         onMouseOver={() => setMenu ('tienda')} onMouseLeave={() => setMenu('')} onClick={() => navigate ('/tienda')}>
                     Tienda
                     </p>  
                     <p style={{width: 120 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: menu === 'contacto' ? 700 : 600, 
                         marginBottom: 0,
-                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'contacto' ? '#384da7' : '#d18e32'}} 
+                        color: 'white', textAlign: 'center', cursor: 'pointer', background: menu_opcion === 'contacto' ? '#8B4513' : '#007BA7'}} 
                         onMouseOver={() => setMenu ('contacto')} onMouseLeave={() => setMenu('')} onClick={() => navigate ('/contacto')}>
                     Contácto
                     </p>  
                 </div> 
-                <div className='d-flex' style={{paddingRight: 25 / proporcional, background: '#d18e32'}}>
+                <div className='d-flex' style={{paddingRight: 25 / proporcional, background: '#007BA7'}}>
                     <img src={menu === 'lupa' ? icono_lupa_black : icono_lupa_white} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 18 / proporcional, marginBottom: 18 / proporcional, 
                                         cursor: 'pointer', marginRight: 30 / proporcional}}
                         onMouseOver={() => setMenu('lupa')} onMouseLeave={() => setMenu('')}/>
