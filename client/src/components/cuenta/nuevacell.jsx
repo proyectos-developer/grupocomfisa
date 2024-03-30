@@ -45,7 +45,7 @@ export default function Nuva({proporcional}) {
     <div style={{width: '100%', paddingLeft: 20 / proporcional, paddingRight: 20 / proporcional, paddingTop: 60 / proporcional, paddingBottom: 60 / proporcional,
           background: 'white'}}>
         <div style={{background: 'white', width: '100%', paddingTop: 57 / proporcional, marginBottom: 34 / proporcional}}>
-            <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#384da7', marginBottom: 6 / proporcional, textAlign: 'center',
+            <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#007BA7', marginBottom: 6 / proporcional, textAlign: 'center',
                         fontWeight: 500, marginBottom: 25 / proporcional}}>
                 Ingresa tu nueva contraseña
             </p>
@@ -70,8 +70,8 @@ export default function Nuva({proporcional}) {
 
             </div>
 
-            <button className='btn' style={{width: '100%', height: 50 / proporcional, background: boton_sesion ? 'white' : '#384da7', 
-                color: boton_sesion ? '#384da7' : 'white', border: '1px solid #384da7', marginBottom: 25 / proporcional,
+            <button className='btn' style={{width: '100%', height: 50 / proporcional, background: boton_sesion ? 'white' : '#8B4513', 
+                color: boton_sesion ? '#8B4513' : 'white', border: '1px solid #8B4513', marginBottom: 25 / proporcional,
                 fontWeight: 600, fontSize: 18 / proporcional}} onMouseOver={() => setBotonSesion(true)} onMouseLeave={() => setBotonSesion(false)}
                 onClick={() => cambiar_password()}>Cambiar password</button>
 

@@ -121,11 +121,11 @@ export default function BarraMenuCell({proporcional}) {
         </div>
         
         <div className='' style={{height: 56 / proporcional, width: '100%', background: '#f9f9f9'}}>
-            <div className='d-flex justify-content-between' style={{background: '#d18e32', width: '100%',
+            <div className='d-flex justify-content-between' style={{background: '#007BA7', width: '100%',
                     paddingRight: 20 / proporcional, paddingLeft: 20 / proporcional}}>
                 <img src={icono_menu_white} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 18 / proporcional, marginBottom: 18 / proporcional, 
                                     cursor: 'pointer', marginRight: 30 / proporcional}} onClick={() => setOpenMenu(!open_menu)}/>
-                <div className='d-flex' style={{background: '#d18e32'}}>
+                <div className='d-flex' style={{background: '#007BA7'}}>
                     <img src={icono_lupa_white} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 18 / proporcional, marginBottom: 18 / proporcional, 
                                         cursor: 'pointer', marginRight: 30 / proporcional}}/>
                     <div className='position-relative' style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 14 / proporcional, 
@@ -236,7 +236,7 @@ export default function BarraMenuCell({proporcional}) {
         </div>
         {
             open_menu  ? (
-                <div className='position-absolute vh-100 shadow' style={{padding: 20 / proporcional, background: '#292929', top: 120 / proporcional, width: '100%', zIndex: 99999}}>
+                <div className='position-absolute vh-100 shadow' style={{padding: 20 / proporcional, background: '#007BA7', top: 120 / proporcional, width: '100%', zIndex: 99999}}>
                     <div className='d-flex justify-content-end' style={{width: '100%'}}
                     onClick={() => setOpenMenu(false)}>
                         <img src={icono_left} style={{width: 18 / proporcional, height: 18 / proporcional, margin: 19 / proporcional}}/>
@@ -244,7 +244,7 @@ export default function BarraMenuCell({proporcional}) {
                     <div className='d-flex justify-content-between' style={{width: '100%', cursor: 'pointer'}}
                     onClick={() => {navigate ('/'); setOpenMenu(false)}}>
                         <p style={{width: 100 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Inicio
                         </p>  
                         <img src={icono_right} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 20 / proporcional}}/>
@@ -252,7 +252,7 @@ export default function BarraMenuCell({proporcional}) {
                     <div className='d-flex justify-content-between' style={{width: '100%', cursor: 'pointer'}}
                     onClick={() => {navigate ('/sobre-nosotros'); setOpenMenu(false)}}>
                         <p style={{width: 100 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Nosotros
                         </p>   
                         <img src={icono_right} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 20 / proporcional}}/>
@@ -260,7 +260,7 @@ export default function BarraMenuCell({proporcional}) {
                     <div className='d-flex justify-content-between' style={{width: '100%', cursor: 'pointer'}}
                     onClick={() => {setOpenSubMenu (true); setOpenMenu(false)}}>
                         <p style={{width: 100 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Proveedores
                         </p>   
                         <img src={icono_right} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 20 / proporcional}}/>
@@ -268,7 +268,7 @@ export default function BarraMenuCell({proporcional}) {
                     <div className='d-flex justify-content-between' style={{width: '100%', cursor: 'pointer'}}
                     onClick={() => {navigate ('/tienda'); setOpenMenu(false)}}>
                         <p style={{width: 100 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Tienda
                         </p>   
                         <img src={icono_right} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 20 / proporcional}}/>
@@ -276,7 +276,7 @@ export default function BarraMenuCell({proporcional}) {
                     <div className='d-flex justify-content-between' style={{width: '100%', cursor: 'pointer'}}
                     onClick={() => {navigate ('/contacto'); setOpenMenu(false)}}>
                         <p style={{width: 100 / proporcional, fontSize: 16 / proporcional, lineHeight: `${56 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Contácto
                         </p>   
                         <img src={icono_right} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 20 / proporcional}}/>
@@ -287,21 +287,21 @@ export default function BarraMenuCell({proporcional}) {
         {
             open_sub_menu  ? (
                 <div className='position-absolute shadow' 
-                    style={{padding: 20 / proporcional, background: '#292929', top: 120 / proporcional, width: '100%', zIndex: 99999, height: 'auto'}}>
+                    style={{padding: 20 / proporcional, background: '#007BA7', top: 120 / proporcional, width: '100%', zIndex: 99999, height: 'auto'}}>
                     <div className='d-flex justify-content-end' style={{width: '100%'}}>
                         <img src={icono_left} style={{width: 18 / proporcional, height: 18 / proporcional, margin: 19 / proporcional}}
                         onClick={() => {setOpenSubMenu(false); setOpenMenu(true)}}/>
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Aceros Arequipa
                         </p>  
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('15'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Barras corrugadas
                             </p>  
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -311,14 +311,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             INKAFERRO
                         </p>  
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('30'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Barras corrugadas ARCELORMITTAL
                             </p>  
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -328,14 +328,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             SIDERPERU
                         </p>  
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('32'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Barras construcción
                             </p>  
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -345,14 +345,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}} >
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Metalyck
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('17'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Alambre recocido
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -362,14 +362,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Aceros Arequipa
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('26'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Clavo de albañilería
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -379,14 +379,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             TREAMPERÚ
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('29'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Clavo de albañilería
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -396,14 +396,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Piramide
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('23'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Ladrillos
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -413,14 +413,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             Sagitario
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('31'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Ladrillos
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -430,14 +430,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             INKA
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('21'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Cemento
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -447,14 +447,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             UNACEM
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('22'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Cemento
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -464,14 +464,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             ETSAPERÚ
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('16'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Planchas de Tecnopor
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -481,14 +481,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             MAJESTAD
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('19'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Sellador
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -498,14 +498,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             NORTON
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('12'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Discos cortadores
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -515,14 +515,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             BRIKER
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('13'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Discos cortadores
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -532,14 +532,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             COMFISA
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('24'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Guantes de protección
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -549,14 +549,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             ASA
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                             onClick={() => {ver_productos_proveedor('14'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Lijas de agua y de acero
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>
@@ -566,14 +566,14 @@ export default function BarraMenuCell({proporcional}) {
                     </div>
                     <div className='' style={{width: '100%', cursor: 'pointer'}}>
                         <p style={{width: 150 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                            marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                             TIGRE
                         </p>   
                         <div className='d-flex' style={{width: '100%', cursor: 'pointer', paddingLeft: 20 / proporcional}}
                         onClick={() => {ver_productos_proveedor('25'); setOpenSubMenu(false)}}>
                             <img src={icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 8 / proporcional}}/>
                             <p style={{width: 250 / proporcional, fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, fontWeight: 600, 
-                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#292929'}}>
+                                marginBottom: 0, color: 'white', textAlign: 'left', cursor: 'pointer', background: '#007BA7'}}>
                                 Tubos y conexiones
                             </p>   
                             <div className='d-flex justify-content-end' style={{width: '100%'}}>

@@ -15,7 +15,7 @@ export default function RegisterCell({proporcional}) {
         <div style={{width: '100%'}}>
             <TituloPaginaCell proporcional={proporcional}/>
             <SignupCell proporcional={proporcional}/>
-            <div style={{width: 1200 / proporcional, marginLeft: 350 / proporcional, marginRight: 350 / proporcional, background: 'rgb(230, 232, 232)', height: 2 / proporcional,
+            <div style={{width: '100%', marginLeft: 20 / proporcional, marginRight: 20 / proporcional, background: 'rgb(230, 232, 232)', height: 2 / proporcional,
                             marginTop: 15 / proporcional, marginBottom: 35 / proporcional}}/>
             <FooterPrincipalCell proporcional={proporcional}/>
             <FooterCell proporcional={proporcional}/>

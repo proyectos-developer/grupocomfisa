@@ -11,18 +11,18 @@ export default function AlgunosHechosTablet({proporcional}) {
     return (
         <div style={{width: '100%', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional, paddingTop: 55 / proporcional, paddingBottom: 55 / proporcional}}>
             <div style={{width: '100%', marginBottom: 8 / proporcional}} className='d-flex justify-content-center'>
-                <div className='rounded-pill' style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(209, 142, 50)'}}/>
+                <div className='rounded-pill' style={{width: 50 / proporcional, height: 4 / proporcional, background: '#8B4513'}}/>
             </div>
-            <p style={{fontSize: 22 / proporcional, color: '#292929', fontWeight: 500, marginBottom: 17 / proporcional, textAlign: 'center'}}>NUESTROS LOCALES</p>
+            <p style={{fontSize: 22 / proporcional, color: '#007BA7', fontWeight: 500, marginBottom: 17 / proporcional, textAlign: 'center'}}>NUESTROS LOCALES</p>
             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 25 / proporcional}}>
                 <div style={{width: '49%', paddingLeft: 15 / proporcional, paddingRight: 15 / proporcional}}>
                     <img src={paul_poblet} style={{width: '100%', height: 303 / proporcional, 
                             marginBottom: 21 / proporcional}}/>
-                    <p style={{fontSize: 28 / proporcional, color: '#292929', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
+                    <p style={{fontSize: 28 / proporcional, color: '#007BA7', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
                         Almacen <br/> Paul Poblet
                     </p>
                     <div className='d-flex justify-content-start' style={{width: '100%', height: 'auto'}}>
-                        <div className='rounded-pill' style={{width:  '75%', height: 4 / proporcional, background: 'rgb(209, 142, 50)', marginBottom: 8 / proporcional}}/>
+                        <div className='rounded-pill' style={{width:  '75%', height: 4 / proporcional, background: '#8B4513', marginBottom: 8 / proporcional}}/>
                     </div>
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
@@ -67,11 +67,11 @@ export default function AlgunosHechosTablet({proporcional}) {
                             paddingLeft: 15 / proporcional, paddingRight: 15 / proporcional}}>
                     <img src={proyectos_flavi} style={{width: '100%', height: 303 / proporcional, 
                             marginBottom: 21 / proporcional}}/>
-                    <p style={{fontSize: 28 / proporcional, color: '#292929', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
+                    <p style={{fontSize: 28 / proporcional, color: '#007BA7', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
                         Proyectos e Inversiones <br/> Flavi S.A.C
                     </p>
                     <div className='d-flex justify-content-start' style={{width: '100%', height: 'auto'}}>
-                        <div className='rounded-pill' style={{width:  '75%', height: 4 / proporcional, background: 'rgb(209, 142, 50)', marginBottom: 8 / proporcional}}/>
+                        <div className='rounded-pill' style={{width:  '75%', height: 4 / proporcional, background: '#8B4513', marginBottom: 8 / proporcional}}/>
                     </div>
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
@@ -117,11 +117,11 @@ export default function AlgunosHechosTablet({proporcional}) {
                 <div style={{width: '49%', paddingLeft: 15 / proporcional, paddingRight: 15 / proporcional}}>
                     <img src={comercializadora_hanna} style={{width: '100%', height: 303 / proporcional, 
                             marginBottom: 21 / proporcional}}/>
-                    <p style={{fontSize: 28 / proporcional, color: '#292929', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
+                    <p style={{fontSize: 28 / proporcional, color: '#007BA7', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
                         Comercializadora <br/> Hanna S.A.C
                     </p>
                     <div className='d-flex justify-content-start' style={{width: '100%', height: 'auto'}}>
-                        <div className='rounded-pill' style={{width:  '50%', height: 4 / proporcional, background: 'rgb(209, 142, 50)', marginBottom: 8 / proporcional}}/>
+                        <div className='rounded-pill' style={{width:  '50%', height: 4 / proporcional, background: '#8B4513', marginBottom: 8 / proporcional}}/>
                     </div>
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
@@ -166,11 +166,11 @@ export default function AlgunosHechosTablet({proporcional}) {
                             paddingLeft: 15 / proporcional, paddingRight: 15 / proporcional}}>
                     <img src={house_valery} style={{width: '100%', height: 303 / proporcional, 
                             marginBottom: 21 / proporcional}}/>
-                    <p style={{fontSize: 28 / proporcional, color: '#292929', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
+                    <p style={{fontSize: 28 / proporcional, color: '#007BA7', fontWeight: 500, lineHeight: `${40 / proporcional}px`, marginBottom: 0, textAlign: 'left'}}>
                         Steel House <br/> Valery S.A.C
                     </p>
                     <div className='d-flex justify-content-start' style={{width: '100%', height: 'auto'}}>
-                        <div className='rounded-pill' style={{width:  '50%', height: 4 / proporcional, background: 'rgb(209, 142, 50)', marginBottom: 8 / proporcional}}/>
+                        <div className='rounded-pill' style={{width:  '50%', height: 4 / proporcional, background: '#8B4513', marginBottom: 8 / proporcional}}/>
                     </div>
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>

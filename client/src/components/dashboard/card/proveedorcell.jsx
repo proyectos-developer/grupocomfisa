@@ -41,7 +41,7 @@ export default function CardProveedorTablet({proporcional, id, titulo, subtitulo
                     ) : null
                 }
                 <div className={`position-absolute top-0 start-0 ${seleccion_producto === 'norton' ? 'animate__animated animate__backInDown' : 'animate__animated animate__bounceOut'}`} 
-                    style={{width: 429 / proporcional, height: 345 / proporcional, background: '#384da7',
+                    style={{width: 429 / proporcional, height: 345 / proporcional, background: '#007BA7',
                             padding: 10}}>
                     <div style={{width: 409 / proporcional, height: 325 / proporcional, marginTop: 14 / proporcional, marginBottom: 14 / proporcional}}>
                         <p style={{fontSize: 16 / proporcional, color: 'white', textAlign: 'left', marginBottom: 0, lineHeight: `${24 / proporcional}px`,
@@ -50,7 +50,7 @@ export default function CardProveedorTablet({proporcional, id, titulo, subtitulo
                         </p>
                         <div className='d-flex' style={{cursor: 'pointer'}}
                             onClick={() => {ver_productos_proveedor(); window.scrollTo(0, 0)}}>
-                            <p style={{fontSize: 14 / proporcional, fontWeight: 600 / proporcional, color: '#d18e32', lineHeight: `${14 / proporcional}px`,
+                            <p style={{fontSize: 14 / proporcional, fontWeight: 600 / proporcional, color: '#8B4513', lineHeight: `${14 / proporcional}px`,
                                 marginRight: 5 / proporcional}}>
                                 Ver más
                             </p>
@@ -68,7 +68,7 @@ export default function CardProveedorTablet({proporcional, id, titulo, subtitulo
                     <p style={{fontSize: 18 / proporcional, lineHeight: `${29 / proporcional}px`, color: '#292929', fontWeight: 500, marginBottom: 6}}>
                         {subtitulo}
                     </p>
-                    <div className='rounded-pill' style={{width: 100 / proporcional, height: 4 / proporcional, background: '#d18e32'}}/>
+                    <div className='rounded-pill' style={{width: 100 / proporcional, height: 4 / proporcional, background: '#8B4513'}}/>
                 </div>
             </div>
         </div>

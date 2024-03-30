@@ -64,13 +64,13 @@ export default function CardProductoTienda({producto, proporcional}) {
                         <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#5f656d', cursor: 'default', marginBottom: 0}}>{producto.producto}</p>
                     </div>
                     <div className='d-flex' style={{width: '100%'}}>
-                        <p style={{fontSize: 22 / proporcional, fontWeight: 700, lineHeight: `${30 / proporcional}px`, color: '#222931', 
+                        <p style={{fontSize: 22 / proporcional, fontWeight: 700, lineHeight: `${30 / proporcional}px`, color: '#007BA7', 
                             marginTop: 15 / proporcional, marginBottom: 15 / proporcional, cursor: 'default'}}>Pide cotización</p>
                     </div>
                 </div>
                 <div className={`position-absolute start-0 ${view_opciones ? 'animate__animated animate__bounceIn' : 'top-0 animate__animated animate__bounceOut'}`} 
                     style={{width: '100%', bottom: 0, marginLeft: 10 / proporcional, marginRight: 10 / proporcional,}}>
-                    <button className='btn' style={{width: '90%', background: '#d18e32', height: 50 / proporcional, marginTop: 5 / proporcional,
+                    <button className='btn' style={{width: '90%', background: '#8B4513', height: 50 / proporcional, marginTop: 5 / proporcional,
                         marginBottom: 10 / proporcional, color: 'white', fontWeight: 600, fontSize: 16 / proporcional}}
                         onClick={() => ver_detalles_producto(producto)}>
                         Ver más detalles

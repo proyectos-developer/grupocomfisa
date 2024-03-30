@@ -48,7 +48,8 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
             context:{
                 usuario: usuarios[0].usuario,
                 nombres: usuarios[0].nombres,
-                apellidos: usuarios[0].apellidos // replace {{name}} with Adebola
+                apellidos: usuarios[0].apellidos,
+                 // replace {{name}} with Adebola
             }
         }
     

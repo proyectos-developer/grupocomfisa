@@ -224,7 +224,7 @@ export default function InformacionProveedor({proporcional}) {
     return (
         <div style={{width: '100%', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional, paddingTop: 120 / proporcional, paddingBottom: 120 / proporcional}}>
             <div style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                <p style={{fontSize: 28 / proporcional, lineHeight: `${38 / proporcional}px`, marginBottom: 0, fontWeight: 500, color: '#222931'}}>
+                <p style={{fontSize: 28 / proporcional, lineHeight: `${38 / proporcional}px`, marginBottom: 0, fontWeight: 500, color: '#007BA7'}}>
                     {proveedor.proveedor}
                 </p>
                 <p style={{fontSize: 20 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 18 / proporcional, fontWeight: 400, color: 'rgba(95, 101, 109, 0.6'}}>
@@ -255,12 +255,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -280,12 +280,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index > 3 && index < 9 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -305,12 +305,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `50%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -330,12 +330,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 3 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -355,12 +355,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index > 2 && index < 6 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -380,12 +380,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 3 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `50%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -405,12 +405,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -430,12 +430,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -455,12 +455,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -480,12 +480,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index > 3 && index < 9 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -505,12 +505,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -530,12 +530,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -555,12 +555,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 4 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -580,12 +580,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 3 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -605,12 +605,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index > 2 && index < 7 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -630,12 +630,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index < 2 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `100%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -655,12 +655,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 3 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -680,12 +680,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 2 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `100%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -705,12 +705,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 3 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -730,12 +730,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index > 2 && index < 6? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -755,12 +755,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index < 4 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `25%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -780,12 +780,12 @@ export default function InformacionProveedor({proporcional}) {
                                                 return (
                                                     index < 2 ? ( 
                                                         <div className='d-flex justify-content-center' style={{width: `100%`, height: 40 / proporcional, cursor: 'pointer',
-                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                            background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                             borderTopRightRadius: 8 / proporcional}}
                                                             onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                             onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                             <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                 textAlign: 'center'}}>
                                                                 {medida.nombre_medida}
                                                             </p>
@@ -805,12 +805,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index < 3 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `33.33%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -830,12 +830,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index < 3 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `50%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -855,12 +855,12 @@ export default function InformacionProveedor({proporcional}) {
                                                     return (
                                                         index < 3 ? (
                                                             <div className='d-flex justify-content-center' style={{width: `50%`, height: 40 / proporcional, cursor: 'pointer',
-                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'rgb(57, 77, 167)' : '#bdbdbd', borderTopLeftRadius: 8 / proporcional, 
+                                                                background: menu_medidas === medida.id || medida_seleccionada === medida.id ? '#8B4513' : '#007BA7', borderTopLeftRadius: 8 / proporcional, 
                                                                 borderTopRightRadius: 8 / proporcional}}
                                                                 onMouseOver={() => setMenuMedidas(medida.id)} onMouseLeave={() => setMenuMedidas('')}
                                                                 onClick={() => {setMedidaSeleccionada(medida.id); dispatch(productosdata(productosConstants(medida.id, 0, 0, 0, 0, 0, 0, {}, false).get_productos_medida))}}>
                                                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 600, 
-                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'rgb(56, 77, 167)',
+                                                                    color: menu_medidas === medida.id || medida_seleccionada === medida.id ? 'white' : 'white',
                                                                     textAlign: 'center'}}>
                                                                     {medida.nombre_medida}
                                                                 </p>
@@ -876,10 +876,10 @@ export default function InformacionProveedor({proporcional}) {
                 {
                     producto ? (
                         <div className='' style={{width: '100%', minHeight: 60 / proporcional, padding: 10 / proporcional, height: 'auto'}}>
-                            <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#222931'}}>
+                            <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#007BA7'}}>
                                 Producto: <span style={{fontSize: 20 / proporcional, fontWeight: 600}}> {producto.producto}</span>
                             </p>
-                            <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#222931'}}>
+                            <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 400, color: '#007BA7'}}>
                                 Descripción: <span style={{fontSize: 20 / proporcional, fontWeight: 600}}> {producto.descripcion}</span>
                             </p>
                             {
@@ -887,35 +887,35 @@ export default function InformacionProveedor({proporcional}) {
                                     <div style={{width: '100%', height: 'auto'}}>
                                         {
                                             producto.caracteristica_uno !== '' ? ( 
-                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#007BA7'}}>
                                                     1. {producto.caracteristica_uno}
                                                 </p>
                                             ) : null
                                         }
                                         {
                                             producto.caracteristica_dos !== '' ? ( 
-                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#007BA7'}}>
                                                     2. {producto.caracteristica_dos}
                                                 </p>
                                             ) : null
                                         }
                                         {
                                             producto.caracteristica_tres !== '' ? ( 
-                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#007BA7'}}>
                                                     3. {producto.caracteristica_tres}
                                                 </p>
                                             ) : null
                                         }
                                         {
                                             producto.caracteristica_cuatro !== '' ? ( 
-                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#007BA7'}}>
                                                     4. {producto.caracteristica_cuatro}
                                                 </p>
                                             ) : null
                                         }
                                         {
                                             producto.caracteristica_cinco !== '' ? ( 
-                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#222931'}}>
+                                                <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 10 / proporcional, fontWeight: 600, color: '#007BA7'}}>
                                                     5. {producto.caracteristica_cinco}
                                                 </p>
                                             ) : null
@@ -930,12 +930,12 @@ export default function InformacionProveedor({proporcional}) {
             <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                 {
                     foto_principal && foto_principal !== '' ? (
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 427 / proporcional, border: '1px solid #bdbdbd', marginBottom: 20 / proporcional}}>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 427 / proporcional, border: '1px solid #007BA7', marginBottom: 20 / proporcional}}>
                             <ReactImageZoom {...{ width: 427 / proporcional, height: 427 / proporcional, img: foto_principal, zoomPosition: 'original', zoomWidth: 500, zoomLensStyle: 'default',
                             zoomStyle: 'default', offset: 'default'}}/>
                         </div>
                     ) : (
-                        <div style={{width: 427 / proporcional, height: 427 / proporcional, border: '1px solid #bdbdbd', marginBottom: 20 / proporcional}}/>
+                        <div style={{width: 427 / proporcional, height: 427 / proporcional, border: '1px solid #007BA7', marginBottom: 20 / proporcional}}/>
                     )
                 }
                 <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
@@ -1022,7 +1022,7 @@ export default function InformacionProveedor({proporcional}) {
             <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', border: '1px solid #f0f0f0', marginBottom: 20 / proporcional}}/>
             <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
                 <div className='' style={{width: 'auto', height: 'auto'}}>
-                    <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 20 / proporcional, fontWeight: 400, color: '#222931'}}>
+                    <p style={{fontSize: 18 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 20 / proporcional, fontWeight: 400, color: '#007BA7'}}>
                         Pide tu cotización (Producto <span style={{fontWeight: 600}}>{producto.producto}</span>)
                     </p>
                     <div style={{width: '100%'}} className='d-flex'>
@@ -1036,21 +1036,21 @@ export default function InformacionProveedor({proporcional}) {
                                     color: '#848a90', marginRight: 20 / proporcional}}/>
                         <div className='btn rounded d-flex justify-content-center' 
                             onClick={() => agregar_lista_cotizar()}
-                            style={{width: 200 / proporcional, height: 50 / proporcional, background: boton_lista ? 'white' : 'rgb(209, 142, 50)', paddingTop: 18 / proporcional, 
-                                    paddingBottom: 18 / proporcional, border: '1px solid rgb(209, 142, 50)', marginRight: 20 / proporcional}}
+                            style={{width: 200 / proporcional, height: 50 / proporcional, background: boton_lista ? 'white' : '#8B4513', paddingTop: 18 / proporcional, 
+                                    paddingBottom: 18 / proporcional, border: '1px solid #8B4513', marginRight: 20 / proporcional}}
                                     onMouseOver={() => setBotonLista(true)} onMouseLeave={() => setBotonLista(false)}>
                                 <img src={!boton_lista ? icono_car_black : icono_car_white} style={{width: 14 / proporcional, height: 14 / proporcional, marginRight: 7 / proporcional}}/>
-                                <p style={{fontSize: 14 / proporcional, fontWeight: 700, color: boton_lista ? 'rgb(209, 142, 50)' : 'white', lineHeight: `${16 / proporcional}px`}}>
+                                <p style={{fontSize: 14 / proporcional, fontWeight: 700, color: boton_lista ? '#8B4513' : 'white', lineHeight: `${16 / proporcional}px`}}>
                                 Agregar a lista
                                 </p>
                         </div>
                         <div className='btn rounded d-flex justify-content-center' 
                             onClick={() => agregar_favoritos()}
-                            style={{width: 235 / proporcional, height: 50 / proporcional, background: boton_favoritos ? 'white' : 'rgb(56, 77, 167)', paddingTop: 18 / proporcional, 
+                            style={{width: 235 / proporcional, height: 50 / proporcional, background: boton_favoritos ? 'white' : '#007BA7', paddingTop: 18 / proporcional, 
                                 paddingBottom: 18 / proporcional, border: '1px solid rgb(56, 77, 167111111111)'}}
                                 onMouseOver={() => setBotonFavoritos(true)} onMouseLeave={() => setBotonFavoritos(false)}>
                             <img src={!boton_favoritos ? icono_favoritos_black : icono_favoritos_white} style={{width: 14 / proporcional, height: 14 / proporcional, marginRight: 7 / proporcional}}/>
-                            <p style={{fontSize: 14 / proporcional, fontWeight: 700, color: boton_favoritos ? 'rgb(209, 142, 50)' : 'white', lineHeight: `${16 / proporcional}px`}}>
+                            <p style={{fontSize: 14 / proporcional, fontWeight: 700, color: boton_favoritos ? '#007BA7' : 'white', lineHeight: `${16 / proporcional}px`}}>
                                 Agregar a favoritos
                             </p>
                         </div>

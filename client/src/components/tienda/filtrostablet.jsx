@@ -50,7 +50,7 @@ export default function FiltrosTablet({proporcional}) {
 
     return (
         <div style={{width: '100%', paddingRight: 60 / proporcional, paddingLeft: 60 / proporcional, paddingTop: 10 / proporcional, paddingRight: 10 / proporcional, marginTop: 58 / proporcional}}>
-            <p style={{fontSize: 22 / proporcional, fontWeight: 500, lineHeight: `${26 / proporcional}px`, color: '#222931'}}>Por proveedor</p>
+            <p style={{fontSize: 22 / proporcional, fontWeight: 500, lineHeight: `${26 / proporcional}px`, color: '#007BA7'}}>Por proveedor</p>
             <div className='rounded' style={{width: '25%', height: 4 / proporcional, background: '#d18e32', marginTop: 17 / proporcional, marginBottom: 17 / proporcional}}/>
             <div style={{width: '100%', marginBottom: 33 / proporcional}}>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>

@@ -40,7 +40,7 @@ export default function CardProveedor({proporcional, id, titulo, subtitulo, desc
                         <img src={logo} style={{width: 368 / proporcional, height: 276 / proporcional}}/>
                     ) : null
                 }
-                <div className={`position-absolute top-0 start-0 ${seleccion_producto === 'norton' ? 'animate__animated animate__bounceIn' : 'animate__animated animate__bounceOut'}`} style={{width: 370 / proporcional, height: 278 / proporcional, background: '#384da7',
+                <div className={`position-absolute top-0 start-0 ${seleccion_producto === 'norton' ? 'animate__animated animate__bounceIn' : 'animate__animated animate__bounceOut'}`} style={{width: 370 / proporcional, height: 278 / proporcional, background: '#007BA7',
                     padding: 20}}>
                     <div style={{width: 330 / proporcional, height: 210 / proporcional, marginTop: 14 / proporcional, marginBottom: 14 / proporcional}}>
                         <p style={{fontSize: 16 / proporcional, color: 'white', textAlign: 'left', marginBottom: 0, lineHeight: `${24 / proporcional}px`,
@@ -49,7 +49,7 @@ export default function CardProveedor({proporcional, id, titulo, subtitulo, desc
                         </p>
                         <div className='d-flex' style={{cursor: 'pointer'}}
                             onClick={() => {ver_productos_proveedor(); window.scrollTo(0, 0)}}>
-                            <p style={{fontSize: 14 / proporcional, fontWeight: 600 / proporcional, color: '#d18e32', lineHeight: `${14 / proporcional}px`,
+                            <p style={{fontSize: 14 / proporcional, fontWeight: 600 / proporcional, color: '#8B4513', lineHeight: `${14 / proporcional}px`,
                                 marginRight: 5 / proporcional}}>
                                 Ver más
                             </p>
@@ -67,7 +67,7 @@ export default function CardProveedor({proporcional, id, titulo, subtitulo, desc
                     <p style={{fontSize: 22 / proporcional, lineHeight: `${39 / proporcional}px`, color: '#292929', fontWeight: 500, marginBottom: 6}}>
                         {subtitulo}
                     </p>
-                    <div className='rounded-pill' style={{width: 100 / proporcional, height: 4 / proporcional, background: '#d18e32'}}/>
+                    <div className='rounded-pill' style={{width: 100 / proporcional, height: 4 / proporcional, background: '#8B4513'}}/>
                 </div>
             </div>
         </div>

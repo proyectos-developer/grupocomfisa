@@ -76,7 +76,7 @@ export default function ProductosTablet({proporcional}) {
 
     return ( 
         <div className='position-relative' style={{width: '100%', paddingTop: 10 / proporcional, paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional}}>
-            <p style={{fontSize: 34 / proporcional, fontWeight: 500, lineHeight: `${45 / proporcional}px`, marginBottom: 30 / proporcional}}>
+            <p style={{fontSize: 34 / proporcional, fontWeight: 500, lineHeight: `${45 / proporcional}px`, marginBottom: 30 / proporcional, color: '#007BA7'}}>
                 TIENDA
             </p>
             <select

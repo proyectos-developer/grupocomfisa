@@ -22,7 +22,7 @@ export default function MarcasTrabajamosTablet({proporcional}) {
         <div style={{width: '100%', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional, paddingTop: 55 / proporcional, paddingBottom: 55 / proporcional,
                     background: '#f5f6f6', marginBottom: 50 / proporcional}}>
             <div style={{width: '100%', marginBottom: 8 / proporcional}} className='d-flex justify-content-center'>
-                <div className='rounded-pill' style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(209, 142, 50)'}}/>
+                <div className='rounded-pill' style={{width: 50 / proporcional, height: 4 / proporcional, background: '#8B4513'}}/>
             </div>
             <p style={{fontSize: 22 / proporcional, color: '#292929', fontWeight: 500, marginBottom: 17 / proporcional, textAlign: 'center'}}>NUESTROS PROVEEDORES</p>
             <div id="carouselMarcas" className="carousel slide" data-bs-ride="carousel">

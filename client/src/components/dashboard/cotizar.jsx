@@ -13,13 +13,13 @@ export default function CotizarAqui({proporcional}) {
         <div className='d-flex' style={{width: 1220 / proporcional, height: 530 / proporcional}}>
             <div className='position-relative' style={{width: 610 / proporcional, height: 530 / proporcional}}>
                 <div className='position-absolute' style={{top: '30%'}}>
-                    <p style={{fontSize: 46 / proporcional, lineHeight: `${50 / proporcional}px`, color: '#222931', fontWeight: 500, marginBottom: 13 / proporcional}}>
+                    <p style={{fontSize: 46 / proporcional, lineHeight: `${50 / proporcional}px`, color: '#007BA7', fontWeight: 500, marginBottom: 13 / proporcional}}>
                         Cotiza con nosotros
                     </p>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: '#222931', fontWeight: 400, marginBottom: 26 / proporcional}}>
                     ¿Podría proporcionarnos una cotización detallada que incluya cantidad, tiempos de entrega, cualquier especificación aplicable? Su pronta respuesta sería muy apreciada. Si necesita más información, no dude en contactarnos.
                     </p>
-                    <button className='btn' style={{width: 170 / proporcional, height: 42 / proporcional, background: '#d18e32', color: 'white', 
+                    <button className='btn' style={{width: 170 / proporcional, height: 42 / proporcional, background: '#8B4513', color: 'white', 
                             fontSize: 16 / proporcional, fontWeight: 700}}
                             onClick={() => {navigate ('/tienda'); window.scrollTo(0, 0)}}>Cotiza aquí</button>
                 </div> 

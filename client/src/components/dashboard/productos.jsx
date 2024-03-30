@@ -85,7 +85,7 @@ export default function ProductosProveedores({proporcional}) {
     return (
         <div style={{background: 'white', width: '100%', paddingLeft: 350 / proporcional, paddingRight: 350 / proporcional}}>
             <div style={{background: 'white', width: '100%', paddingTop: 57 / proporcional, marginBottom: 34 / proporcional}}>
-                <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#384da7', marginBottom: 6 / proporcional, textAlign: 'center',
+                <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#007BA7', marginBottom: 6 / proporcional, textAlign: 'center',
                             fontWeight: 500}}>
                     Nuestros productos
                 </p>

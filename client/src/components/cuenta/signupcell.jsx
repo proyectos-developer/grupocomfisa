@@ -103,7 +103,7 @@ export default function SignupCell({proporcional}) {
     <div style={{width: '100%', paddingLeft: 20 / proporcional, paddingRight: 20 / proporcional, paddingTop: 60 / proporcional, paddingBottom: 60 / proporcional,
           background: 'white'}}>
         <div style={{background: 'white', width: '100%', paddingTop: 57 / proporcional, marginBottom: 34 / proporcional}}>
-            <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#384da7', marginBottom: 6 / proporcional, textAlign: 'center',
+            <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#007BA7', marginBottom: 6 / proporcional, textAlign: 'center',
                         fontWeight: 500, marginBottom: 25 / proporcional}}>
                 Registra tus datos
             </p>
@@ -168,18 +168,18 @@ export default function SignupCell({proporcional}) {
 
                 <div className='d-flex justify-content-end'
                     style={{width: 459 / proporcional, height: 20 / proporcional, marginBottom: 25 / proporcional}}>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, color: '#384da7', fontWeight: 500, marginRight: 5 / proporcional,
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, color: '#007BA7', fontWeight: 500, marginRight: 5 / proporcional,
                         marginBottom: 0}}>
                         ¿Ya tienes una cuenta?
                     </p>
-                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, color: '#384da7', fontWeight: 700,
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, color: '#007BA7', fontWeight: 700,
                         cursor: 'pointer', marginBottom: 0, textDecoration: 'underline'}} onClick={() => navigate ('/signin')}>
                         Ingresa aquí
                     </p>
                 </div>
 
-                <button className='btn' style={{width: 459 / proporcional, height: 50 / proporcional, background: boton_sesion ? 'white' : '#384da7', 
-                    color: boton_sesion ? '#384da7' : 'white', border: '1px solid #384da7', marginBottom: 25 / proporcional,
+                <button className='btn' style={{width: 459 / proporcional, height: 50 / proporcional, background: boton_sesion ? 'white' : '#8B4513', 
+                    color: boton_sesion ? '#8B4513' : 'white', border: '1px solid #8B4513', marginBottom: 25 / proporcional,
                     fontWeight: 600, fontSize: 18 / proporcional}} onMouseOver={() => setBotonSesion(true)} onMouseLeave={() => setBotonSesion(false)}
                     onClick={() => registra_datos()}>Regístrate</button>
 

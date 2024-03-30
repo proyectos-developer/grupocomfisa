@@ -125,11 +125,11 @@ function App() {
                                                 width < 991 ? <RegisterTablet proporcional={991 / width}/> :
                                                               <Register       proporcional={1920 / width} />}/>
                                                              
-                <Route path='olvidaste-contraseña' element={width < 500 ? <OlvidoPasswordCell   proporcional={499 / width}/> :
+                <Route path='olvidaste-password' element={width < 500 ? <OlvidoPasswordCell   proporcional={499 / width}/> :
                                                             width < 991 ? <OlvidoPasswordTablet proporcional={991 / width}/> :
                                                                           <OlvidoPassword       proporcional={1920 / width} />}/>
                                                              
-                <Route path='olvido-contraseña/confirmacion' element={width < 500 ? <ConfirmacionEnvioLinkCell   proporcional={499 / width}/> :
+                <Route path='olvidaste-password/confirmacion' element={width < 500 ? <ConfirmacionEnvioLinkCell   proporcional={499 / width}/> :
                                                                       width < 991 ? <ConfirmacionEnvioLinkTablet proporcional={991 / width}/> :
                                                                                     <ConfirmacionEnvioLink       proporcional={1920 / width} />}/>
                                                                                     

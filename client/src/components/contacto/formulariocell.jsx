@@ -45,11 +45,11 @@ export default function FormularioContactoCell({proporcional}) {
 
     return (
         <div style={{width: 459 / proporcional, marginRight: 20 / proporcional, marginLeft: 20 / proporcional}}>
-            <div className='rounded-pill' style={{width: 50 / proporcional, height: 4 / proporcional, background: '#d18e32', marginTop: 15 / proporcional,
+            <div className='rounded-pill' style={{width: 50 / proporcional, height: 4 / proporcional, background: '#8B4513', marginTop: 15 / proporcional,
                     marginBottom: 15 / proporcional}}/>
-            <p style={{fontSize: 22 / proporcional, fontWeight: 600, color: '#292929', lineHeight: `${26 / proporcional}px`}}>Contáctanos</p>
+            <p style={{fontSize: 22 / proporcional, fontWeight: 600, color: '#007BA7', lineHeight: `${26 / proporcional}px`}}>Contáctanos</p>
             <div style={{width: 459 / proporcional, marginBottom: 20 / proporcional}}>
-                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)'}}>Nombres *</p>
+                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#007BA7'}}>Nombres *</p>
                 <input
                     type='text'
                     className='form-control'
@@ -62,7 +62,7 @@ export default function FormularioContactoCell({proporcional}) {
                 />
             </div>
             <div style={{width: 459 / proporcional, marginBottom: 20 / proporcional}}>
-                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)'}}>Apellidos *</p>
+                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#007BA7'}}>Apellidos *</p>
                 <input
                     type='text'
                     className='form-control'
@@ -75,7 +75,7 @@ export default function FormularioContactoCell({proporcional}) {
                 />
             </div>
             <div style={{width: 459 / proporcional, marginBottom: 20 / proporcional}}>
-                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)'}}>Teléfono *</p>
+                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#007BA7'}}>Teléfono *</p>
                 <input
                     type='number'
                     className='form-control'
@@ -88,7 +88,7 @@ export default function FormularioContactoCell({proporcional}) {
                 />
             </div>
             <div style={{width: 459 / proporcional, marginBottom: 20 / proporcional}}>
-                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)'}}>E-mail *</p>
+                <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#007BA7'}}>E-mail *</p>
                 <input
                     type='email'
                     className='form-control'
@@ -100,7 +100,7 @@ export default function FormularioContactoCell({proporcional}) {
                     placeholder='Ingrese su email'
                 />
             </div>
-            <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)'}}>Tu mensaje *</p>
+            <p style={{fontSize: 16 / proporcional, fontWeight: 600, lineHeight: `${18 / proporcional}px`, color: '#007BA7'}}>Tu mensaje *</p>
             <textarea
                 type='email'
                 rows='4'
@@ -113,7 +113,7 @@ export default function FormularioContactoCell({proporcional}) {
                         background: '#f5f6f6', marginBottom: 20 / proporcional}} 
                 placeholder='Ingrese su mensaje.'
             />
-            <button className='btn rounded' style={{width: 200 / proporcional, hight: 50 / proporcional, background: '#d18e32', fontSize: 18 / proporcional, 
+            <button className='btn rounded' style={{width: 200 / proporcional, hight: 50 / proporcional, background: '#8B4513', fontSize: 18 / proporcional, 
                     color: 'white', lineHeight: `${50 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional}}
                     onClick={() => enviar_mensaje()}>Enviar mensaje</button>
         </div>

@@ -12,14 +12,14 @@ export default function CotizarAquiCell({proporcional}) {
                 paddingTop: 140 / proporcional, marginBottom: 50 / proporcional}}>
         <div className='' style={{width: 459 / proporcional, height: 'auto'}}>
             <div className='' style={{width: '100%', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional, marginBottom: 50 / proporcional}}>
-                <p style={{textAlign: 'center', fontSize: 46 / proporcional, lineHeight: `${50 / proporcional}px`, color: '#222931', fontWeight: 500, marginBottom: 13 / proporcional}}>
+                <p style={{textAlign: 'center', fontSize: 46 / proporcional, lineHeight: `${50 / proporcional}px`, color: '#007BA7', fontWeight: 500, marginBottom: 13 / proporcional}}>
                     Cotiza con nosotros
                 </p>
                 <p style={{textAlign: 'center', fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: '#222931', fontWeight: 400, marginBottom: 26 / proporcional}}>
                     ¿Podría proporcionarnos una cotización detallada que incluya cantidad, tiempos de entrega, cualquier especificación aplicable? Su pronta respuesta sería muy apreciada. Si necesita más información, no dude en contactarnos.
                 </p>
                 <div className='justify-content-center d-flex' style={{width: '100%', marginBottom: 50 / proporcional}}>
-                    <button className='btn' style={{width: 170 / proporcional, height: 42 / proporcional, background: '#d18e32', color: 'white', 
+                    <button className='btn' style={{width: 170 / proporcional, height: 42 / proporcional, background: '#8B4513', color: 'white', 
                             fontSize: 16 / proporcional, fontWeight: 700}}
                             onClick={() => {navigate ('/tienda'); window.scrollTo(0, 0)}}>Cotiza aquí</button>
                 </div> 

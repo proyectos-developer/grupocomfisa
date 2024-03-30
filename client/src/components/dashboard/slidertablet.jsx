@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import fondo_home_1 from '../../assets/images/fondo_home_tablet_0.png'
 import fondo_home_0 from '../../assets/images/fondo_home_tablet_1.png'
 import fondo_home_2 from '../../assets/images/fondo_home_tablet_2.png'
 
 import logo_comfisa from '../../assets/logo_comfisa_white_300.png'
+import { useNavigate } from 'react-router-dom'
 
 export default function SliderHomeTablet({proporcional}) {
+
+    const navigate = useNavigate()
+
+    const [boton_ver_1, setBotonVer1] = useState(false)
+    const [boton_ver_2, setBotonVer2] = useState(false)
+    const [boton_ver_3, setBotonVer3] = useState(false)
 
     return (
         <div id="carouselHome" className="carousel slide" data-bs-ride="carousel">
@@ -17,14 +24,16 @@ export default function SliderHomeTablet({proporcional}) {
                     <div className='position-relative' style={{width: '100%', height: 750 / proporcional, background: 'rgba(56, 77, 167, 0.4)'}}> 
                         <div className='position-absolute animate__animated animate__backInDown' style={{width: '60%', height: 500 / proporcional, top: 150 / proporcional, left: '25%'}}>
                             <img src={logo_comfisa} style={{width: 300 / proporcional, height: 109 / proporcional, marginBottom: 20 / proporcional}}/>
-                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, marginBottom: 20 / proporcional, color: '#cd8b2e'}}>
+                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, marginBottom: 20 / proporcional, color: '#007BA7'}}>
                                 Los mejores materiales
                             </p>
-                            <p style={{fontSize: 40 / proporcional, lineHeight: `${50 / proporcional}px`, fontWeight: 400, marginBottom: 20 / proporcional, color: '#cd8b2e'}}>
+                            <p style={{fontSize: 40 / proporcional, lineHeight: `${50 / proporcional}px`, fontWeight: 400, marginBottom: 20 / proporcional, color: '#007BA7'}}>
                                 PARA TU PROYECTO
                             </p>
-                            <button className='btn' style={{width: 300 / proporcional, height: 50 / proporcional, background: '#cd8b2e', color: 'white', fontWeight: 600,
-                                    fontSize: 20 / proporcional}} onClick={() => navigate ('/tienda')}>
+                            <button className='btn' style={{width: 300 / proporcional, height: 50 / proporcional, background: !boton_ver_1 ? '#007BA7' : 'transparent', 
+                                    color: boton_ver_1 ? '#007ba7' : 'white', fontWeight: boton_ver_1 ? 700 : 600,
+                                    border: '2px solid #007ba7', fontSize: 20 / proporcional}} 
+                                    onClick={() => navigate ('/tienda')} onMouseOver={() => setBotonVer1(true)} onMouseLeave={() => setBotonVer1(false)}>
                                 Ve nuestros productos
                             </button>
                         </div>
@@ -38,18 +47,19 @@ export default function SliderHomeTablet({proporcional}) {
                             <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: 'white'}}>
                                 NOS BENEFICIAMOS EN 
                             </p>  
-                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: '#cd8b2e'}}>
+                            <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: '#007BA7'}}>
                                 PRECIO Y RAPIDEZ
                             </p>
                             <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: 'white'}}>
                                 DE ENTREGA
                             </p>
                             <div className='d-flex justify-content-between' style={{width: 500 / proporcional, height: 'auto'}}>
-                                <button className='btn' style={{width: 200 / proporcional, height: 73 / proporcional, background: '#cd8b2e', color: 'white', fontWeight: 600,
-                                        fontSize: 20 / proporcional}} 
-                                        onClick={() => navigate ('/tienda')}>
-                                    Ver nuestros productos
-                                </button>
+                            <button className='btn' style={{width: 200 / proporcional, height: 73 / proporcional, background: !boton_ver_2 ? '#007BA7' : 'transparent', 
+                                    color: boton_ver_2 ? '#007ba7' : 'white', fontWeight: boton_ver_2 ? 700 : 600,
+                                    border: '2px solid #007ba7', fontSize: 20 / proporcional}} 
+                                    onClick={() => navigate ('/tienda')} onMouseOver={() => setBotonVer2(true)} onMouseLeave={() => setBotonVer2(false)}>
+                                Ve nuestros productos
+                            </button>
                                 <img src={logo_comfisa} style={{width: 200 / proporcional, height: 73 / proporcional}}/>
                             </div>
                         </div>
@@ -63,16 +73,17 @@ export default function SliderHomeTablet({proporcional}) {
                             <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 600, marginBottom: 20 / proporcional, color: 'white'}}>
                                 ¿QUIERES <br/>CONSTRUIR CON <br/>PRECIOS MAYORISTAS?
                             </p>  
-                            <div className='rounded' style={{width: 350 / proporcional, height: 'auto', padding: 15 / proporcional, background: '#cd8b2e', marginBottom: 20 / proporcional}}>
+                            <div className='rounded' style={{width: 350 / proporcional, height: 'auto', padding: 15 / proporcional, background: '#007BA7', marginBottom: 20 / proporcional}}>
                                 <p style={{fontSize: 20 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional, color: '#504868'}}>
                                     No esperes más y compra todos <br/> los materiales para tu obra.
                                 </p>
                             </div>
                             <div className='d-flex justify-content-between' style={{width: 500 / proporcional, height: 'auto'}}>
-                                <button className='btn' style={{width: 200 / proporcional, height: 73 / proporcional, background: '#cd8b2e', color: 'white', fontWeight: 600,
-                                        fontSize: 20 / proporcional}} 
-                                        onClick={() => navigate ('/tienda')}>
-                                    Ver nuestros productos
+                                <button className='btn' style={{width: 200 / proporcional, height: 73 / proporcional, background: !boton_ver_3 ? '#007BA7' : 'transparent', 
+                                        color: boton_ver_3 ? '#007ba7' : 'white', fontWeight: boton_ver_3 ? 700 : 600,
+                                        border: '2px solid #007ba7', fontSize: 20 / proporcional}} 
+                                        onClick={() => navigate ('/tienda')} onMouseOver={() => setBotonVer3(true)} onMouseLeave={() => setBotonVer3(false)}>
+                                    Ve nuestros productos
                                 </button>
                                 <img src={logo_comfisa} style={{width: 200 / proporcional, height: 73 / proporcional}}/>
                             </div>

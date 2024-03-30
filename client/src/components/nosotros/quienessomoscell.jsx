@@ -11,8 +11,8 @@ export default function QuienesSomos({proporcional}) {
             <img src={jefe_obra_cell} style={{width: 459 / proporcional, height: 459 / proporcional}}/>
             <div className='' style={{width: 459 / proporcional, height: 'auto',
                     paddingTop: 43 / proporcional, paddingBottom: 43 / proporcional}}>
-                <p style={{fontSize: 22 / proporcional, fontWeight: 500, color: 'rgb(41, 41, 41)', marginBottom: 17 / proporcional}}>¿QUIENES SOMOS?</p>
-                <p style={{fontSize: 34 / proporcional, fontWeight: 500, color: '#292929', marginBottom: 23 / proporcional}}>Comfisa - </p>
+                <p style={{fontSize: 22 / proporcional, fontWeight: 500, color: '#007BA7', marginBottom: 17 / proporcional}}>¿QUIENES SOMOS?</p>
+                <p style={{fontSize: 34 / proporcional, fontWeight: 500, color: '#007BA7', marginBottom: 23 / proporcional}}>Comfisa - </p>
                 <p style={{fontSize: 16 / proporcional, fontWeight: 400, color: 'rgb(95, 101, 109)'}}>
               Somos una empresa familiar con mas de 8 años de experiencia ofreciendo productos y servicio de calidad. Contamos con el respaldo de marcas como aceros arequipa, cemento inka, piramide entre otras marcas,como distribuidores autorizados; por ello manejos el mejor precio del mercado para mayoristas y minoritas. Contamos con una amplio portafolio de productos para la contruccion. Nuestro éxito está basado en una clara visión empresarial, capital humano y calidad que brindamos a nuestros clientes. Buscamos liderar todos los mercados en los que participamos siendo la mejor solución para nuestros clientes.
                 </p>
