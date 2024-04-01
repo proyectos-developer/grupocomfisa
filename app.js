@@ -115,7 +115,7 @@ app.get('/cuenta/cotizaciones', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cuenta/cotizaciones', 'index.html'));
 });
 app.get('/cuenta/cotizacion/detalles/:id_cotizacion', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build/cuenta/cotizaciones', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/build/cuenta/cotizacion/detalles', 'index.html'));
 });
 app.get('/cuenta/favoritos', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cuenta/favoritos', 'index.html'));
@@ -135,8 +135,8 @@ app.get('/olvidaste-password', (req, res) => {
 app.get('/olvidaste-password/confirmacion', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/olvido-password/confirmacion', 'index.html'));
 });
-app.get('/olvido-password/nuevo-password/:usuario', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build/olvido-password/nuevo-password', 'index.html'));
+app.get('/olvidaste-password/nuevo-password/:usuario', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/olvidaste-password/nuevo-password', 'index.html'));
 });
 app.get('/cambio-password/actualizado', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cambio-password/actualizado', 'index.html'));
@@ -144,8 +144,17 @@ app.get('/cambio-password/actualizado', (req, res) => {
 app.get('/pedido/cotizacion/admin/:shop_id', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/pedido/cotizacion/admin', 'index.html'));
 });
+app.get('/pedido/cotizacion/enviada/:shop_id', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/pedido/cotizacion/enviada', 'index.html'));
+});
 app.get('/pedido/cotizacion/cliente/:shop_id', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/pedido/cotizacion/cliente', 'index.html'));
+});
+app.get('/pedido/cotizacion/revisar/:shop_id', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/pedido/cotizacion/revisar', 'index.html'));
+});
+app.get('/respuesta/cotizacion/cliente/:shop_id', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/pedido/cotizacion/revisar', 'index.html'));
 });
 
 //Iniciar el servidor

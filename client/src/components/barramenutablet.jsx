@@ -18,10 +18,27 @@ import icono_favoritos_black from '../assets/iconos/icono_favoritos_black_96.png
 import icono_lupa_black from '../assets/iconos/icono_lupa_black_96.png'
 import icono_carrito_black from '../assets/iconos/icono_car_black_96.png'
 import icono_perfil_black from '../assets/iconos/icono_perfil_black_96.png'
+import icono_close_black from '../assets/iconos/icono_cross_black_96.png'
 
 import icono_dot from '../assets/iconos/icono_menu_dot.png'
 
 import icono_arrow_down from '../assets/iconos/icono_arrow_down.png'
+
+import logo_aceros_250 from '../assets/logos/logo_aceros_250.png'
+import logo_inkaferro_250 from '../assets/logos/logo_inkaferro_250.png'
+import logo_siderperu_250 from '../assets/logos/logo_sider_peru_250.png'
+import logo_metalyck_250 from '../assets/logos/logo_metalyck_250.png'
+import logo_treamperu_250 from '../assets/logos/logo_treamperu_250.png'
+import logo_piramide_250 from '../assets/logos/logo_piramide_250.png'
+import logo_saguitario_250 from '../assets/logos/logo_saguitario_250.png'
+import logo_inka_250 from '../assets/logos/logo_inka_250.png'
+import logo_etsaperu_250 from '../assets/logos/logo_etsaperu_250.png'
+import logo_majestad_250 from '../assets/logos/logo_majestad_250.png'
+import logo_norton_250 from '../assets/logos/logo_norton_250.png'
+import logo_briker_250 from '../assets/logos/logo_briker_250.png'
+import logo_comfisa_250 from '../assets/logos/logo_comfisa_250.png'
+import logo_asa_250 from '../assets/logos/logo_asa_250.png'
+import logo_matusita from '../assets/logos/logo_matusita_250.png'
 
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -29,7 +46,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import CardProductoCotizarTablet from './barra/productocotizartablet.jsx'
 import {productosdata} from '../redux/slice/productosdata.js'
 import { productosConstants } from '../uri/productos-constants.js'
-import { set_authenticated, set_lista_carrito_cotizacion, set_productos_proveedor } from '../redux/actions/dataactions.js'
+import { set_authenticated, set_lista_carrito_cotizacion, set_lista_productos_buscar, set_productos_proveedor } from '../redux/actions/dataactions.js'
 import {begindata} from '../redux/slice/begindata.js'
 import { beginConstants } from '../uri/begin-constants.js'
 
@@ -42,13 +59,27 @@ export default function BarraMenu({proporcional}) {
     const [menu, setMenu] = useState('')
     const [menu_perfil, setMenuPerfil] = useState(false)
     const [menu_opcion, setMenuOpcion] = useState('inicio')
+    
+    const [menu_buscar, setMenuBuscar] = useState(false)
+    const [buscar, setBuscar] = useState('')
+    const [ebuscar, setEBuscar] = useState(false)
 
     const [cantidad_lista_cotizar, setCantidadLitaCotizar] = useState(0)
     const [lista_cotizar, setListaCotizar] = useState(0)
 
     const {lista_carrito_cotizacion, authenticated} = useSelector(({datareducer}) => datareducer)
-    const {get_proveedor_detalles_productos} = useSelector (({productos_data}) => productos_data)
+    const {get_proveedor_detalles_productos, get_productos_search_filtro_order} = useSelector (({productos_data}) => productos_data)
     const {log_out} = useSelector(({begin_data}) => begin_data)
+
+    useEffect(() => {
+      if (get_productos_search_filtro_order && get_productos_search_filtro_order.success === true && get_productos_search_filtro_order.productos){
+        dispatch(productosdata(productosConstants(0, 0, 0, 0, 0, 0, 0, {}, true).get_productos_search_filtro_order))
+        dispatch (set_lista_productos_buscar({productos: get_productos_search_filtro_order.productos, buscar: buscar}))
+        navigate (`/productos/${buscar.replace(' ', '-')}`)
+        setBuscar('')
+        setMenuBuscar(false)
+      }
+    }, [get_productos_search_filtro_order])
 
     useEffect(() => {
         setListaCotizar(lista_carrito_cotizacion)
@@ -104,6 +135,15 @@ export default function BarraMenu({proporcional}) {
 
     const cerrar_sesion = () => {
       dispatch (begindata(beginConstants({}, false, 0).log_out))
+    }
+
+    const buscar_producto = () => {
+      if (buscar === ''){
+        setEBuscar(buscar === '' ? true : false)
+      }else{
+        setEBuscar(false)
+        dispatch(productosdata(productosConstants(0, buscar, 0, 0, 0, 0, 16, {}, false).get_productos_search_filtro_order))
+      }
     }
 
     return (
@@ -174,108 +214,87 @@ export default function BarraMenu({proporcional}) {
                         {
                           menu === 'proveedor' ? (
                             <div className='position-absolute shadow rounded' 
-                                style={{width: 800 / proporcional, height: 'auto', padding: 15 / proporcional, background: 'white', top: 56 / proporcional,
-                                  left: 33.75 / proporcional}}>
-                              <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Acreos Arequipa
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => {ver_productos_proveedor('15'); setMenu('proveedor')}}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Barras corrugadas
-                                        </p>
+                                style={{width: 920 / proporcional, height: 'auto', padding: 10 / proporcional, background: 'white', left: -50 / proporcional}}>
+                                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
+                                          onClick={() => {ver_productos_proveedor('15'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_aceros_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 200, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Barras corrugadas
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      INKAFERRO
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => {ver_productos_proveedor('30'); setMenu('proveedor')}}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${15 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Barras corrugadas ARCELORMITTAL
-                                        </p>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
+                                          onClick={() => {ver_productos_proveedor('30'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_inkaferro_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 200, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Barras corrugadas
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      SIDERPERU
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => {ver_productos_proveedor('.0'); setMenu('proveedor')}}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Barras construcción
-                                        </p>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
+                                          onClick={() => {ver_productos_proveedor('32'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_siderperu_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 200, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Barras construcción
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Metalyck
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => {ver_productos_proveedor('17'); setMenu('proveedor')}}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Alambre recocido
-                                        </p>
-                                  </div>
-                                  </div>
-                              </div>
-                              <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
-                                  <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                        marginBottom: 0, color: '#22222'}}>
-                                      Acreos Arequipa
-                                    </p>
-                                    <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                        onClick={() => {ver_productos_proveedor('26'); setMenu('proveedor')}}>
-                                        <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                            marginBottom: 0, color: '#000000'}}>
-                                          Clavos albañilería
-                                        </p>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
+                                          onClick={() => {ver_productos_proveedor('17'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_metalyck_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Alambre recocido
+                                          </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        TREAMPERÚ
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                </div>
+                                <div style={{width: '100%', height: 2 / proporcional, background: '#bdbdbd', marginTop: 10 / proporcional, marginBottom: 10 / proporcional}}/>
+                                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
+                                          onClick={() => {ver_productos_proveedor('26'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_aceros_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
+                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
+                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
+                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
+                                              marginBottom: 0, color: '#000000'}}>
+                                            Clavo de albañilería
+                                          </p>
+                                      </div>
+                                    </div>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('29'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_treamperu_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
                                               marginBottom: 0, color: '#000000'}}>
-                                            Clavo albañilería
+                                            Clavo de albañilería
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        Piramide
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('23'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_piramide_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -284,13 +303,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        SAGITARIO
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('31'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_saguitario_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -299,15 +315,13 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                              </div>
-                              <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        INKA
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                </div>
+                                <div style={{width: '100%', height: 2 / proporcional, background: '#bdbdbd', marginTop: 10 / proporcional, marginBottom: 10 / proporcional}}/>
+                                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('21'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_inka_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -316,13 +330,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        ETSAPERÚ
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('16'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_etsaperu_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -331,13 +342,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        MAJESTAD
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('19'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_majestad_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -346,13 +354,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        NORTON
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('12'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_norton_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -361,15 +366,13 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                              </div>
-                              <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        BRIKER
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                </div>
+                                <div style={{width: '100%', height: 2 / proporcional, background: '#bdbdbd', marginTop: 10 / proporcional, marginBottom: 10 / proporcional}}/>
+                                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('13'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_briker_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -378,13 +381,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        COMFISA
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('24'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_comfisa_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -393,13 +393,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        ASA
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('14'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_asa_250} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -408,13 +405,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        TIGRE
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
+                                  <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('25'); setMenu('proveedor')}}>
+                                      <img className='rounded-2' src={logo_matusita} style={{width: '100%'}}/>
+                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
                                                   marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
                                           <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
@@ -423,7 +417,7 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                              </div>
+                                </div>
                             </div>
                           ) : null
                         }  
@@ -442,58 +436,91 @@ export default function BarraMenu({proporcional}) {
                     </p>  
                 </div> 
                 <div className='d-flex' style={{paddingRight: 25 / proporcional, background: '#007BA7'}}>
-                    <img src={menu === 'lupa' ? icono_lupa_black : icono_lupa_white} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 18 / proporcional, marginBottom: 18 / proporcional, 
-                                        cursor: 'pointer', marginRight: 30 / proporcional}}
-                        onMouseOver={() => setMenu('lupa')} onMouseLeave={() => setMenu('')}/>
-                        <div className='position-relative' style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 14 / proporcional, 
-                              marginBottom: 18 / proporcional, marginRight: 30 / proporcional}}>
-                          <img className='position-absolute start-0' src={menu === 'perfil' ? icono_perfil_black : icono_perfil_white} 
-                                style={{width: 20 / proporcional, height: 20 / proporcional, cursor: 'pointer', top: 3 / proporcional}}
-                                onMouseOver={() => setMenu('perfil')} onMouseLeave={() => setMenu('')}
-                                onClick={() => ver_perfil()}/>
-                          {
-                            menu_perfil ? (
-                              <div className='position-absolute '
-                                style={{width: 240 / proporcional, height: 'auto', background: 'transparent', top: 36 / proporcional, right: -20 / proporcional}}>
-                                <img src={triangulo_menu} style={{width: 22 / proporcional, height: 19 / proporcional, marginLeft: 196 / proporcional}}/>
-                                <div className='shadow rounded'
-                                  style={{width: 240 / proporcional, height: 'auto', padding: 20 / proporcional, background: 'white'}}>
-                                    <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, marginBottom: 10 / proporcional,
-                                        cursor: 'pointer'}} onClick={() => {navigate ('/cuenta/perfil'); setMenuPerfil(false)}}>
-                                        <img src={icono_cuenta_perfil} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
-                                            fontWeight: 500}}>
-                                          Mi perfil
-                                        </p>
+                    <div className='position-relative' style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 14 / proporcional, 
+                            marginBottom: 18 / proporcional, marginRight: 30 / proporcional}}>
+                        <img className='position-absolute start-0' src={menu === 'lupa' ? icono_lupa_black : icono_lupa_white} 
+                              style={{width: 20 / proporcional, height: 20 / proporcional, cursor: 'pointer', top: 3 / proporcional}}
+                              onMouseOver={() => setMenu('lupa')} onMouseLeave={() => setMenu('')}
+                              onClick={() => setMenuBuscar(!menu_buscar)}/>
+                        {
+                          menu_buscar ? ( 
+                            <div className='position-absolute '
+                              style={{width: 450 / proporcional, height: 'auto', background: 'transparent', top: 36 / proporcional, right: -20 / proporcional}}>
+                                <div className='d-flex shadow rounded'
+                                  style={{width: 450 / proporcional, height: 70 / proporcional, padding: 10 / proporcional, background: 'white'}}>
+                                    <div className='d-flex' style={{width: 400 / proporcional, height: 50 / proporcional, border: ebuscar ? '1px solid red' : '1px solid #bdbdbd', 
+                                        borderRadius: 8 / proporcional, marginRight: 10 / proporcional}}>
+                                        <input  
+                                          type='default'
+                                          className='form-control border-0'
+                                          style={{width: '90%', height: 48 / proporcional, fontSize: 16 / proporcional, color: '#212121', borderBottomLeftRadius: 8 / proporcional, borderTopLeftRadius: 8 / proporcional}}
+                                          value={buscar}
+                                          onChange={(event) => setBuscar(event.target.value)}
+                                          id='buscar'
+                                          placeholder='Buscar'/>
+                                          <div className='d-flex justify-content-center' style={{width: '10%', height: 48 / proporcional}}>
+                                            <img src={icono_lupa_black} style={{width: 24 / proporcional, height: 24 / proporcional, margin: 12 / proporcional,
+                                              cursor: 'pointer'}} onClick={() => buscar_producto ()}/>
+                                          </div>
                                     </div>
-                                    <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, marginBottom: 10 / proporcional,
-                                        cursor: 'pointer'}} onClick={() => {navigate ('/cuenta/favoritos'); setMenuPerfil(false)}}>
-                                      <img src={icono_cuenta_favoritos} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
-                                          fontWeight: 500}}>
-                                        Mis favoritos
-                                      </p>
-                                    </div>
-                                    <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, marginBottom: 10 / proporcional,
-                                        cursor: 'pointer'}} onClick={() => {navigate ('/cuenta/cotizaciones'); setMenuPerfil(false)}}>
-                                        <img src={icono_cuenta_cotizaciones} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
-                                            fontWeight: 500}}>
-                                          Mis cotizaciones
-                                        </p>
-                                    </div>
-                                    <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, cursor: 'pointer'}} 
-                                      onClick={() => cerrar_sesion()}>
-                                        <img src={icono_cuenta_logout} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
-                                        <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
-                                            fontWeight: 500}}>
-                                          Cerrar sesión
-                                        </p>
+                                    <div className='d-flex justify-content-center' style={{width: 20 / proporcional, height: 50 / proporcional}}>
+                                      <img src={icono_close_black} style={{width: 18 / proporcional, height: 18 / proporcional, marginTop: 16 / proporcional,
+                                        cursor: 'pointer'}} onClick={() => {setMenuBuscar (false); setBuscar(''); setEBuscar(false)}}/>
                                     </div>
                                 </div>
+                            </div>
+                          ): null
+                        }
+                    </div>
+                    <div className='position-relative' style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 14 / proporcional, 
+                          marginBottom: 18 / proporcional, marginRight: 30 / proporcional}}>
+                        <img className='position-absolute start-0' src={menu === 'perfil' ? icono_perfil_black : icono_perfil_white} 
+                              style={{width: 20 / proporcional, height: 20 / proporcional, cursor: 'pointer', top: 3 / proporcional}}
+                              onMouseOver={() => setMenu('perfil')} onMouseLeave={() => setMenu('')}
+                              onClick={() => ver_perfil()}/>
+                        {
+                          menu_perfil ? (
+                            <div className='position-absolute '
+                              style={{width: 240 / proporcional, height: 'auto', background: 'transparent', top: 36 / proporcional, right: -20 / proporcional}}>
+                              <img src={triangulo_menu} style={{width: 22 / proporcional, height: 19 / proporcional, marginLeft: 196 / proporcional}}/>
+                              <div className='shadow rounded'
+                                style={{width: 240 / proporcional, height: 'auto', padding: 20 / proporcional, background: 'white'}}>
+                                  <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, marginBottom: 10 / proporcional,
+                                      cursor: 'pointer'}} onClick={() => {navigate ('/cuenta/perfil'); setMenuPerfil(false)}}>
+                                      <img src={icono_cuenta_perfil} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
+                                          fontWeight: 500}}>
+                                        Mi perfil
+                                      </p>
+                                  </div>
+                                  <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, marginBottom: 10 / proporcional,
+                                      cursor: 'pointer'}} onClick={() => {navigate ('/cuenta/favoritos'); setMenuPerfil(false)}}>
+                                    <img src={icono_cuenta_favoritos} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
+                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
+                                        fontWeight: 500}}>
+                                      Mis favoritos
+                                    </p>
+                                  </div>
+                                  <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, marginBottom: 10 / proporcional,
+                                      cursor: 'pointer'}} onClick={() => {navigate ('/cuenta/cotizaciones'); setMenuPerfil(false)}}>
+                                      <img src={icono_cuenta_cotizaciones} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
+                                          fontWeight: 500}}>
+                                        Mis cotizaciones
+                                      </p>
+                                  </div>
+                                  <div className='d-flex' style={{width: 200 / proporcional, height: 18 / proporcional, cursor: 'pointer'}} 
+                                    onClick={() => cerrar_sesion()}>
+                                      <img src={icono_cuenta_logout} style={{width: 18 / proporcional, height: 18 / proporcional, marginRight: 10 / proporcional}}/>
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`, color: 'rgb(34, 41, 49)', marginBottom: 0,
+                                          fontWeight: 500}}>
+                                        Cerrar sesión
+                                      </p>
+                                  </div>
                               </div>
-                            ) : null
-                          }
+                            </div>
+                          ) : null
+                        }
                     </div>
                     {
                         authenticated ? (
@@ -540,7 +567,7 @@ export default function BarraMenu({proporcional}) {
                                     ) : null
                                   }
                                 </div>
-                                <button className='btn' style={{width: 240 / proporcional, height: 40 / proporcional, fontSize: 14 / proporcional, 
+                                <button className='btn' style={{width: 220 / proporcional, height: 40 / proporcional, fontSize: 14 / proporcional, 
                                     color: 'white', fontWeight: 500, background: 'rgb(225, 4, 4)'}}  onClick={() => navigate('/lista-cotizar')}>
                                   VER LISTA
                                 </button>

@@ -128,7 +128,13 @@ router.get ('/api/productos/search/:search/filtro/:filtro/order/:order_by/:order
                 })
             }            
         }else if (filtro === '0' && search !== '0' && order_by === '0'){
-            const productos = await pool.query (`SELECT * FROM productos_proveedor WHERE proveedor LIKE '%${search}%' OR descripcion LIKE '%${search}%' LIMIT ${begin},${cantidad}`)
+            const productos = await pool.query (`SELECT productos_proveedor.id, productos_proveedor.producto, productos_proveedor.descripcion, productos_proveedor.proveedor, productos_proveedor.foto_uno,
+                                                productos_proveedor.id_proveedor
+                                                FROM productos_proveedor JOIN proveedores ON proveedores.id = productos_proveedor.id_proveedor WHERE productos_proveedor.proveedor LIKE '%${search}%' 
+                                                OR productos_proveedor.descripcion LIKE '%${search}%' OR productos_proveedor.caracteristica_uno LIKE '%${search}%' OR productos_proveedor.caracteristica_dos LIKE '%${search}%'  
+                                                OR productos_proveedor.caracteristica_tres LIKE '%${search}%' OR productos_proveedor.caracteristica_cuatro LIKE '%${search}%' 
+                                                OR productos_proveedor.caracteristica_cinco LIKE '%${search}%' 
+                                                OR productos_proveedor.producto LIKE '%${search}%' OR proveedores.proveedor LIKE '%${search}%' OR proveedores.descripcion LIKE '%${search}%' LIMIT ${begin},${cantidad}`)
 
             if (parseInt(begin) === 0){
                 const total_productos = await pool.query (`SELECT COUNT (id) FROM productos_proveedor WHERE proveedor LIKE '%${search}%' OR descripcion LIKE '%${search}%'`)

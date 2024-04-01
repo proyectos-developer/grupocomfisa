@@ -8,7 +8,8 @@ const initialState = {
     data_cliente: {},
     authenticated: false,
     open_warning_login: {open: false, warning: ''},
-    lista_productos_cotizacion: []
+    lista_productos_cotizacion: [],
+    lista_productos_buscar: {}
 }
 
 const datareducer = (state = initialState, action) => {
@@ -59,6 +60,12 @@ const datareducer = (state = initialState, action) => {
         return {
             ... state,
             lista_productos_cotizacion
+        }
+    }else if (action.type === datatypes.SET_LISTA_PRODUCTOS_BUSCAR){
+        const lista_productos_buscar = action.lista_productos_buscar
+        return {
+            ... state,
+            lista_productos_buscar
         }
     }
     return state

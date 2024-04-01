@@ -12,16 +12,15 @@ import triangulo_menu from '../assets/iconos/triangulo_menu.png'
 
 import icono_favoritos_white from '../assets/iconos/icono_favoritos_white_96.png'
 import icono_lupa_white from'../assets/iconos/icono_lupa_white_96.png'
+import icono_lupa_black from'../assets/iconos/icono_lupa_black_96.png'
 import icono_carrito_white from '../assets/iconos/icono_car_white_96.png'
 import icono_perfil_white from '../assets/iconos/icono_perfil_white_96.png'
 
-import icono_favoritos_black from '../assets/iconos/icono_favoritos_black_96.png'
-import icono_lupa_black from '../assets/iconos/icono_lupa_black_96.png'
-import icono_carrito_black from '../assets/iconos/icono_car_black_96.png'
 import icono_perfil_black from '../assets/iconos/icono_perfil_black_96.png'
 import icono_left from '../assets/iconos/arrow_left_white_96.png'
 import icono_right from '../assets/iconos/arrow_right_white_96.png'
 import icono_dot_white from '../assets/iconos/icono_dot_white_96.png'
+import icono_close_black from '../assets/iconos/icono_cross_black_96.png'
 
 import icono_dot from '../assets/iconos/icono_menu_dot.png'
 
@@ -33,7 +32,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import CardProductoCotizarCell from './barra/productocotizarcell.jsx'
 import {productosdata} from '../redux/slice/productosdata.js'
 import { productosConstants } from '../uri/productos-constants.js'
-import { set_authenticated, set_lista_carrito_cotizacion, set_productos_proveedor } from '../redux/actions/dataactions.js'
+import { set_authenticated, set_lista_carrito_cotizacion, set_lista_productos_buscar, set_productos_proveedor } from '../redux/actions/dataactions.js'
 import {begindata} from '../redux/slice/begindata.js'
 import { beginConstants } from '../uri/begin-constants.js'
 
@@ -49,13 +48,27 @@ export default function BarraMenuCell({proporcional}) {
     const [menu, setMenu] = useState('')
     const [menu_perfil, setMenuPerfil] = useState(false)
     const [menu_opcion, setMenuOpcion] = useState('inicio')
+    
+    const [menu_buscar, setMenuBuscar] = useState(false)
+    const [buscar, setBuscar] = useState('')
+    const [ebuscar, setEBuscar] = useState(false)
 
     const [cantidad_lista_cotizar, setCantidadLitaCotizar] = useState(0)
     const [lista_cotizar, setListaCotizar] = useState(0)
 
     const {lista_carrito_cotizacion, authenticated} = useSelector(({datareducer}) => datareducer)
-    const {get_proveedor_detalles_productos} = useSelector (({productos_data}) => productos_data)
+    const {get_proveedor_detalles_productos, get_productos_search_filtro_order} = useSelector (({productos_data}) => productos_data)
     const {log_out} = useSelector(({begin_data}) => begin_data)
+
+    useEffect(() => {
+      if (get_productos_search_filtro_order && get_productos_search_filtro_order.success === true && get_productos_search_filtro_order.productos){
+        dispatch(productosdata(productosConstants(0, 0, 0, 0, 0, 0, 0, {}, true).get_productos_search_filtro_order))
+        dispatch (set_lista_productos_buscar({productos: get_productos_search_filtro_order.productos, buscar: buscar}))
+        navigate (`/productos/${buscar.replace(' ', '-')}`)
+        setBuscar('')
+        setMenuBuscar(false)
+      }
+    }, [get_productos_search_filtro_order])
 
     useEffect(() => {
         setListaCotizar(lista_carrito_cotizacion)
@@ -113,6 +126,15 @@ export default function BarraMenuCell({proporcional}) {
       dispatch (begindata(beginConstants({}, false, 0).log_out))
     }
 
+    const buscar_producto = () => {
+      if (buscar === ''){
+        setEBuscar(buscar === '' ? true : false)
+      }else{
+        setEBuscar(false)
+        dispatch(productosdata(productosConstants(0, buscar, 0, 0, 0, 0, 16, {}, false).get_productos_search_filtro_order))
+      }
+    }
+
     return (
       <div className='' style={{height: 120 / proporcional, background: '#f9f9f9', paddingTop: 4 / proporcional, paddingBottom: 4 / proporcional}}>
         <div className='d-flex justify-content-center' style={{height: 56 / proporcional, paddingTop: 4 / proporcional,
@@ -126,8 +148,42 @@ export default function BarraMenuCell({proporcional}) {
                 <img src={icono_menu_white} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 18 / proporcional, marginBottom: 18 / proporcional, 
                                     cursor: 'pointer', marginRight: 30 / proporcional}} onClick={() => setOpenMenu(!open_menu)}/>
                 <div className='d-flex' style={{background: '#007BA7'}}>
-                    <img src={icono_lupa_white} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 18 / proporcional, marginBottom: 18 / proporcional, 
-                                        cursor: 'pointer', marginRight: 30 / proporcional}}/>
+                    <div className='position-relative' style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 14 / proporcional, 
+                            marginBottom: 18 / proporcional, marginRight: 30 / proporcional}}>
+                        <img className='position-absolute start-0' src={menu === 'lupa' ? icono_lupa_black : icono_lupa_white} 
+                              style={{width: 20 / proporcional, height: 20 / proporcional, cursor: 'pointer', top: 3 / proporcional}}
+                              onMouseOver={() => setMenu('lupa')} onMouseLeave={() => setMenu('')}
+                              onClick={() => setMenuBuscar(!menu_buscar)}/>
+                        {
+                          menu_buscar ? ( 
+                            <div className='position-absolute '
+                              style={{width: 450 / proporcional, height: 'auto', background: 'transparent', top: 36 / proporcional, right: -125  / proporcional, zIndex: 999999}}>
+                                <div className='d-flex shadow rounded'
+                                  style={{width: 450 / proporcional, height: 70 / proporcional, padding: 10 / proporcional, background: 'white'}}>
+                                    <div className='d-flex' style={{width: 400 / proporcional, height: 50 / proporcional, border: ebuscar ? '1px solid red' : '1px solid #bdbdbd', 
+                                        borderRadius: 8 / proporcional, marginRight: 10 / proporcional}}>
+                                        <input  
+                                          type='default'
+                                          className='form-control border-0'
+                                          style={{width: '90%', height: 48 / proporcional, fontSize: 16 / proporcional, color: '#212121', borderBottomLeftRadius: 8 / proporcional, borderTopLeftRadius: 8 / proporcional}}
+                                          value={buscar}
+                                          onChange={(event) => setBuscar(event.target.value)}
+                                          id='buscar'
+                                          placeholder='Buscar'/>
+                                          <div className='d-flex justify-content-center' style={{width: '10%', height: 48 / proporcional}}>
+                                            <img src={icono_lupa_black} style={{width: 24 / proporcional, height: 24 / proporcional, margin: 12 / proporcional,
+                                              cursor: 'pointer'}} onClick={() => buscar_producto ()}/>
+                                          </div>
+                                    </div>
+                                    <div className='d-flex justify-content-center' style={{width: 20 / proporcional, height: 50 / proporcional}}>
+                                      <img src={icono_close_black} style={{width: 18 / proporcional, height: 18 / proporcional, marginTop: 16 / proporcional,
+                                        cursor: 'pointer'}} onClick={() => {setMenuBuscar (false); setBuscar(''); setEBuscar(false)}}/>
+                                    </div>
+                                </div>
+                            </div>
+                          ): null
+                        }
+                    </div>
                     <div className='position-relative' style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 14 / proporcional, 
                             marginBottom: 18 / proporcional, marginRight: 30 / proporcional}}>
                         <img src={menu === 'perfil' ? icono_perfil_black : icono_perfil_white} 

@@ -6,7 +6,8 @@ export const datatypes = {
     SET_DATA_CLIENTE: "SET_DATA_CLIENTE",
     SET_AUTHENTICATED: 'SET_AUTHENTICATED',
     SET_OPEN_WARNING_LOGIN: 'SET_OPEN_WARNING_LOGIN',
-    SET_LISTA_PRODUCTOS_COTIZACION: 'SET_LISTA_PRODUCTOS_COTIZACION'
+    SET_LISTA_PRODUCTOS_COTIZACION: 'SET_LISTA_PRODUCTOS_COTIZACION',
+    SET_LISTA_PRODUCTOS_BUSCAR: 'SET_LISTA_PRODUCTOS_BUSCAR'
 }
 
 export const set_open_menu_carrito = open_menu_carrito => {
@@ -62,5 +63,12 @@ export const set_lista_productos_cotizacion = lista_productos_cotizacion => {
     return {
         lista_productos_cotizacion,
         type: datatypes.SET_LISTA_PRODUCTOS_COTIZACION
+    }
+}
+
+export const set_lista_productos_buscar = lista_productos_buscar => {
+    return {
+        lista_productos_buscar,
+        type: datatypes.SET_LISTA_PRODUCTOS_BUSCAR
     }
 }

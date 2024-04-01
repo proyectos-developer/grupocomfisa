@@ -59,6 +59,10 @@ import Tienda from './components/tienda/dashboard.jsx'
 import TiendaTablet from './components/tienda/dashboardtablet.jsx'
 import TiendaCell from './components/tienda/dashboardcell.jsx'
 
+import BusquedaProductos from './components/productos/dashboard.jsx'
+import BusquedaProductosTablet from './components/productos/dashboardtablet.jsx'
+import BusquedaProductosCell from './components/productos/dashboardcell.jsx'
+
 import CarritoCotizar from './components/carrito/dashboard.jsx'
 import CarritoCotizarTablet from './components/carrito/dashboardtablet.jsx'
 import CarritoCotizarCell from './components/carrito/dashboardcell.jsx'
@@ -158,8 +162,8 @@ function App() {
                                                                                  <PasswordActualizado       proporcional={1920 / width} />}/>
                                                                                     
                 <Route path='olvidaste-password/nuevo-password/:usuario' element={width < 500 ? <NuevaContraseñaCell   proporcional={499 / width}/> :
-                                                                               width < 991 ? <NuevaContraseñaTablet proporcional={991 / width}/> :
-                                                                                             <NuevaContraseña       proporcional={1920 / width} />}/>
+                                                                                  width < 991 ? <NuevaContraseñaTablet proporcional={991 / width}/> :
+                                                                                                <NuevaContraseña       proporcional={1920 / width} />}/>
                                                     
                 <Route path='sobre-nosotros' element={width < 500 ? <SobreNosotrosCell   proporcional={499 / width}/> :
                                                       width < 991 ? <SobreNosotrosTablet proporcional={991 / width}/> :
@@ -172,6 +176,10 @@ function App() {
                 <Route path='tienda' element={width < 500 ? <TiendaCell   proporcional={499 / width}/> :
                                               width < 991 ? <TiendaTablet proporcional={991 / width}/> :
                                                             <Tienda       proporcional={1920 / width} />}/>
+
+                <Route path='productos/:search' element={width < 500 ? <BusquedaProductosCell   proporcional={499 / width}/> :
+                                                         width < 991 ? <BusquedaProductosTablet proporcional={991 / width}/> :
+                                                                       <BusquedaProductos       proporcional={1920 / width} />}/>
                                                             
                 <Route path='lista-cotizar' element={width < 500 ? <CarritoCotizarCell   proporcional={499 / width}/> :
                                                      width < 991 ? <CarritoCotizarTablet proporcional={991 / width}/> :
