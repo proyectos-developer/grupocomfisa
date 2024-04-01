@@ -57,7 +57,8 @@ router.post(`/api/update/password/:usuario`, async (req, res) => {
     const { usuario } = req.params
     const { password } = req.body
     try {
-        const usuarios = await pool.query('SELECT * FROM users WHERE usuario = ?', [usuario])
+        const usuarios = await pool.query('SELECT * FROM clientes WHERE usuario = ?', [usuario])
+        console.log (usuarios[0])
         const oldcontrasenia = usuarios[0].password
     
         const validate = await bcrypt.compare(password, oldcontrasenia)
@@ -69,8 +70,8 @@ router.post(`/api/update/password/:usuario`, async (req, res) => {
                 password: new_password
             }
     
-            await pool.query('UPDATE users set ? WHERE usuario = ?', [nuevoDato, usuario])
-            const users = await pool.query('SELECT * from users WHERE usuario = ?', [usuario])
+            await pool.query('UPDATE clientes set ? WHERE usuario = ?', [nuevoDato, usuario])
+            const users = await pool.query('SELECT * from clientes WHERE usuario = ?', [usuario])
             return res.json({ 
                 user: users[0],
                 success: true

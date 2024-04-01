@@ -77,6 +77,27 @@ router.post ('/api/cotizar/comentarios/:shop_id/:id_producto', async (req, res) 
     }
 })
 
+router.post ('/api/cotizar/precio/observaciones/:shop_id/:id_producto', async (req, res) => {
+    const {shop_id, id_producto} = req.params
+    const {precio, observaciones, estado} = req.body
+
+    try {
+        const updateCarrito = {precio, observaciones, estado}
+        await pool.query ('UPDATE carrito_cotizacion set ? WHERE shop_id = ? AND id_producto = ?', [updateCarrito, shop_id, id_producto])
+        return res.json ({
+            id_producto: id_producto,
+            success: true
+        })
+    
+    } catch (error) {
+        console.log (error)
+        return res.json ({
+            error: error,
+            success: false
+        })
+    }
+})
+
 router.post ('/api/cotizar/precio/:shop_id/:id_producto', async (req, res) => {
     const {shop_id, id_producto} = req.params
     const {precio} = req.body
@@ -256,6 +277,29 @@ router.post ('/api/cotizacion/:shop_id', async (req, res) => {
             success: false
         })
     }
+})
+
+router.get ('/api/cotizacion/productos/detalles/cliente/:shop_id', async(req, res) => {
+    const {shop_id} = req.params
+    try {
+        const productos = await pool.query (`SELECT productos_proveedor.foto_uno, productos_proveedor.producto, productos_proveedor.proveedor, carrito_cotizacion.usuario, carrito_cotizacion.cantidad,
+                                             carrito_cotizacion.comentarios, carrito_cotizacion.estado, carrito_cotizacion.nro_pedido, carrito_cotizacion.created_at, productos_proveedor.id,
+                                             carrito_cotizacion.precio, carrito_cotizacion.observaciones, carrito_cotizacion.shop_id FROM carrito_cotizacion JOIN
+                                             productos_proveedor ON carrito_cotizacion.id_producto = productos_proveedor.id WHERE carrito_cotizacion.shop_id = ?`, [shop_id])
+        const usuario = await pool.query (`SELECT * FROM info_clientes WHERE usuario = ?`, [productos[0].usuario])
+        return res.json ({
+            usuario: usuario[0],
+            productos: productos,
+            success: true
+        })
+        
+    } catch (error) {
+        console.log (error)
+        return res.json ({
+            error: error,
+            success: false
+        })
+    }   
 })
 
 module.exports = router

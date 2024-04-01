@@ -28,15 +28,19 @@ export default function Nuva({proporcional}) {
     }, [update_password])
 
     const cambiar_password = () => {
+        console.log('entra 1')
         if (password === '' || verificar_password === '' || (password !== verificar_password)){
+            console.log('entra 2')
             setEPassword(password === '' ? true : false)
             setEVerificarPassword(verificar_password === '' ? true : false)
         }else{
+            console.log('entra 3')
             setEPassword(false)
             setEVerificarPassword(false)
             const data_user = {
                 password: password,
             }
+            console.log(data_user)
             dispatch(begindata(beginConstants(data_user, false, window.localStorage.getItem ('usuario')).update_password))
         }
     }

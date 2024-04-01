@@ -18,9 +18,10 @@ export default function IngresarEmailCell({proporcional}) {
     const {forgot_password} = useSelector(({begin_data}) => begin_data)
 
     useEffect(() => {
-        if (forgot_password && forgot_password.messag){
+        if (forgot_password && forgot_password.message && forgot_password.usuario){
             dispatch(correodata(correoConstants({}, true, 0).forgot_password))
-            window.localStorage.setItem('correo', email)
+            window.localStorage.setItem('correo', forgot_password.usuario.email)
+            window.localStorage.setItem('usuario', forgot_password.usuario.usuario)
             navigate ('/olvidaste-password/confirmacion')
         }
     }, [forgot_password])

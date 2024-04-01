@@ -13,6 +13,7 @@ export const carritodata = createAsyncThunk ('', async (params) => {
         case 'update_usuario_cotizar':
         case 'update_comentarios_producto':
         case 'update_estado_cotizacion':
+        case 'update_precio_observaciones_estado_producto':
             if (params.reset){ 
                 return {success: false}
             }else{
@@ -28,6 +29,7 @@ export const carritodata = createAsyncThunk ('', async (params) => {
         case 'get_productos_cotizacion_usuario':
         case 'delete_producto_cotizar':
         case 'delete_lista_cotizar':
+        case 'get_cotizacion_productos_detalles_cliente':
             if (params.reset){ 
                 return {success: false}
             }else{

@@ -91,6 +91,26 @@ import RespuestaCotizacionAceptada from './components/cotizacion/aceptada.jsx'
 import RespuestaCotizacionAceptadaTablet from './components/cotizacion/aceptadatablet.jsx'
 import RespuestaCotizacionAceptadaCell from './components/cotizacion/aceptadacell.jsx'
 
+import CotizacionParaAdmin from './components/pedido/cotizacion/admin/begin.jsx'
+import CotizacionParaAdminTablet from './components/pedido/cotizacion/admin/begintablet.jsx'
+import CotizacionParaAdminCell from './components/pedido/cotizacion/admin/begincell.jsx'
+
+import PedidoEnviado from './components/pedido/cotizacion/enviado/begin.jsx'
+import PedidoEnviadoTablet from './components/pedido/cotizacion/enviado/begintablet.jsx'
+import PedidoEnviadoCell from './components/pedido/cotizacion/enviado/begincell.jsx'
+
+import CotizacionDelCliente from './components/pedido/cotizacion/cliente/begin.jsx'
+import CotizacionDelClienteTablet from './components/pedido/cotizacion/cliente/begintablet.jsx'
+import CotizacionDelClienteCell from './components/pedido/cotizacion/cliente/begincell.jsx'
+
+import RevisarCotizacion from './components/pedido/cotizacion/revisar/begin.jsx'
+import RevisarCotizacionTablet from './components/pedido/cotizacion/revisar/begintablet.jsx'
+import RevisarCotizacionCell from './components/pedido/cotizacion/revisar/begincell.jsx'
+
+import RespuestaCotizacionCliente from './components/pedido/cotizacion/respuesta/begin.jsx'
+import RespuestaCotizacionClienteTablet from './components/pedido/cotizacion/respuesta/begintablet.jsx'
+import RespuestaCotizacionClienteCell from './components/pedido/cotizacion/respuesta/begincell.jsx'
+
 function App() {
   const [width, setWidth] = useState (window.outerWidth)
 
@@ -126,8 +146,8 @@ function App() {
                                                               <Register       proporcional={1920 / width} />}/>
                                                              
                 <Route path='olvidaste-password' element={width < 500 ? <OlvidoPasswordCell   proporcional={499 / width}/> :
-                                                            width < 991 ? <OlvidoPasswordTablet proporcional={991 / width}/> :
-                                                                          <OlvidoPassword       proporcional={1920 / width} />}/>
+                                                          width < 991 ? <OlvidoPasswordTablet proporcional={991 / width}/> :
+                                                                        <OlvidoPassword       proporcional={1920 / width} />}/>
                                                              
                 <Route path='olvidaste-password/confirmacion' element={width < 500 ? <ConfirmacionEnvioLinkCell   proporcional={499 / width}/> :
                                                                       width < 991 ? <ConfirmacionEnvioLinkTablet proporcional={991 / width}/> :
@@ -137,7 +157,7 @@ function App() {
                                                                    width < 991 ? <PasswordActualizadoTablet proporcional={991 / width}/> :
                                                                                  <PasswordActualizado       proporcional={1920 / width} />}/>
                                                                                     
-                <Route path='olvido-password/nuevo-password/:usuario' element={width < 500 ? <NuevaContraseñaCell   proporcional={499 / width}/> :
+                <Route path='olvidaste-password/nuevo-password/:usuario' element={width < 500 ? <NuevaContraseñaCell   proporcional={499 / width}/> :
                                                                                width < 991 ? <NuevaContraseñaTablet proporcional={991 / width}/> :
                                                                                              <NuevaContraseña       proporcional={1920 / width} />}/>
                                                     
@@ -196,9 +216,29 @@ function App() {
                                                                                    
                 <Route path='cotizacion/respuesta/aceptada' element={width < 500 ? <RespuestaCotizacionAceptadaCell   proporcional={499 / width}/> :
                                                                      width < 991 ? <RespuestaCotizacionAceptadaTablet proporcional={991 / width}/> :
-                                                                                   <RespuestaCotizacionAceptada       proporcional={1920 / width} />}/>
+                                                                                   <RespuestaCotizacionAceptada       proporcional={1920 / width} />}/>                                                           
                                                                                    
             </Route>
+
+            <Route path='/pedido/cotizacion/admin/:shop_id' element={width < 500 ? <CotizacionParaAdminCell   proporcional={499 / width}/> :
+                                                                     width < 991 ? <CotizacionParaAdminTablet proporcional={991 / width}/> :
+                                                                                   <CotizacionParaAdmin       proporcional={1920 / width} />}/>
+
+            <Route path='/pedido/cotizacion/enviada/:shop_id' element={width < 500 ? <PedidoEnviadoCell   proporcional={499 / width}/> :
+                                                                       width < 991 ? <PedidoEnviadoTablet proporcional={991 / width}/> :
+                                                                                     <PedidoEnviado       proporcional={1920 / width} />}/>      
+ 
+            <Route path='/pedido/cotizacion/cliente/:shop_id' element={width < 500 ? <CotizacionDelClienteCell   proporcional={499 / width}/> :
+                                                                       width < 991 ? <CotizacionDelClienteTablet proporcional={991 / width}/> :
+                                                                                     <CotizacionDelCliente       proporcional={1920 / width} />}/>    
+
+            <Route path='/pedido/cotizacion/revisar/:shop_id' element={width < 500 ? <RevisarCotizacionCell   proporcional={499 / width}/> :
+                                                                       width < 991 ? <RevisarCotizacionTablet proporcional={991 / width}/> :
+                                                                                     <RevisarCotizacion       proporcional={1920 / width} />}/>  
+                                                                                       
+            <Route path='/respuesta/cotizacion/cliente/:shop_id' element={width < 500 ? <RespuestaCotizacionClienteCell   proporcional={499 / width}/> :
+                                                                          width < 991 ? <RespuestaCotizacionClienteTablet proporcional={991 / width}/> :
+                                                                                        <RespuestaCotizacionCliente       proporcional={1920 / width} />}/>      
         </Routes>
     </BrowserRouter>
   )

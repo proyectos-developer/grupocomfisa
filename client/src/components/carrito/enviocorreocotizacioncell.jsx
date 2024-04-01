@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import envio_correo from '../../assets/images/send_correo_600.png'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 export default function EnvioCorreoCotizacion({proporcional}) {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        window.localStorage.removeItem ('shop_id')
+        dispatch(set_lista_carrito_cotizacion({}))    
+    }, [])
 
     return (
         <div style={{width: '100%', paddingLeft: 20 / proporcional, paddingRight: 20 / proporcional, paddingTop: 60 / proporcional, paddingBottom: 60 / proporcional}}>

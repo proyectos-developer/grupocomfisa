@@ -15,7 +15,7 @@ export default function FavoritosCuentaTablet({proporcional}) {
     return (
         <div style={{width: '100%'}}>
             <TituloPaginaTablet proporcional={proporcional}/>
-            <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#384da7', textAlign: 'center',
+            <p style={{fontSize: 34 / proporcional, lineHeight: `${45 / proporcional}px`, color: '#007BA7', textAlign: 'center',
                         fontWeight: 500, marginBottom: 25 / proporcional, marginTop: 85 / proporcional}}>
                 MIS FAVORITOS
             </p>

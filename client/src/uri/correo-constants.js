@@ -20,6 +20,18 @@ export const correoConstants = (data = {}, reset = false, id = 0, usuario=0) => 
             stateType: 'send_correo_web',
             data: data,
             reset: reset
+        },
+        send_correo_revisar_cotizacion: {
+            path: `correo/revisar/cotizacion/${id}/${usuario}`,
+            stateType: 'send_correo_revisar_cotizacion',
+            data: data,
+            reset: reset
+        },
+        send_correo_respuesta_cotizacion: {
+            path: `correo/cotizacion/respuesta/${id}`,
+            stateType: 'send_correo_respuesta_cotizacion',
+            data: data,
+            reset: reset
         }
     }
 }

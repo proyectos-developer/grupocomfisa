@@ -178,7 +178,7 @@ export default function BarraMenu({proporcional}) {
                                   left: 33.75 / proporcional}}>
                               <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                   <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                         marginBottom: 0, color: '#22222'}}>
                                       Acreos Arequipa
                                     </p>
@@ -193,7 +193,7 @@ export default function BarraMenu({proporcional}) {
                                     </div>
                                   </div>
                                   <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                         marginBottom: 0, color: '#22222'}}>
                                       INKAFERRO
                                     </p>
@@ -208,7 +208,7 @@ export default function BarraMenu({proporcional}) {
                                     </div>
                                   </div>
                                   <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                         marginBottom: 0, color: '#22222'}}>
                                       SIDERPERU
                                     </p>
@@ -223,7 +223,7 @@ export default function BarraMenu({proporcional}) {
                                     </div>
                                   </div>
                                   <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                         marginBottom: 0, color: '#22222'}}>
                                       Metalyck
                                     </p>
@@ -240,7 +240,7 @@ export default function BarraMenu({proporcional}) {
                               </div>
                               <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                   <div style={{width: '25%', height:'auto'}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                         marginBottom: 0, color: '#22222'}}>
                                       Acreos Arequipa
                                     </p>
@@ -255,7 +255,7 @@ export default function BarraMenu({proporcional}) {
                                     </div>
                                   </div>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         TREAMPERÚ
                                       </p>
@@ -270,7 +270,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         Piramide
                                       </p>
@@ -285,7 +285,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         SAGITARIO
                                       </p>
@@ -302,7 +302,7 @@ export default function BarraMenu({proporcional}) {
                               </div>
                               <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         INKA
                                       </p>
@@ -317,22 +317,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
-                                          marginBottom: 0, color: '#22222'}}>
-                                        UNACEM
-                                      </p>
-                                      <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('22'); setMenu('proveedor')}}>
-                                          <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
-                                                  marginBottom: 10 / proporcional, marginRight: 10 / proporcional}}/>
-                                          <p style={{fontSize: 14 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 400, 
-                                              marginBottom: 0, color: '#000000'}}>
-                                            Cemento
-                                          </p>
-                                      </div>
-                                    </div>
-                                    <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         ETSAPERÚ
                                       </p>
@@ -347,7 +332,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         MAJESTAD
                                       </p>
@@ -361,10 +346,8 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                              </div>
-                              <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         NORTON
                                       </p>
@@ -378,8 +361,10 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
+                              </div>
+                              <div className='d-flex' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         BRIKER
                                       </p>
@@ -394,7 +379,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         COMFISA
                                       </p>
@@ -409,7 +394,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         ASA
                                       </p>
@@ -423,10 +408,8 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                              </div>
-                              <div className='d-flex justify-content-start' style={{width: 770 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}>
                                     <div style={{width: '25%', height:'auto'}}>
-                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 500, cursor: 'default',
+                                      <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 500, cursor: 'default',
                                           marginBottom: 0, color: '#22222'}}>
                                         TIGRE
                                       </p>

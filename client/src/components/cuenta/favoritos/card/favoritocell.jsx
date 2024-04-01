@@ -38,7 +38,7 @@ export default function CardFavoritoCell({proporcional, favorito, total, index})
     return (
         loading === 2 ? (
             <div className='d-flex' style={{width: 459 / proporcional, padding: 10 / proporcional, height: 70 / proporcional,
-                    borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
+                    borderBottom: total === index ? 'null' : '1px solid #007BA7'}}>
                 <img src={foto_uno} style={{width: 50 / proporcional, height: 50 / proporcional, marginRight: 20 / proporcional}}/>
                 <div style={{width: 349 / proporcional, height: 50 / proporcional}}>
                     <p style={{fontSize: 18 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>

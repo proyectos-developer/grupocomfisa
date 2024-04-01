@@ -45,8 +45,8 @@ export default function CardCotizacionTablet({proporcional, cotizacion, total, i
     return (
         loading === 2 ? (
             <div className='d-flex' style={{width: 571 / proporcional, height: 60 / proporcional,
-                    borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
-                <div style={{width: 120 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
+                    borderBottom: total === index ? 'null' : '1px solid #007BA7'}}>
+                <div style={{width: 120 / proporcional, height: 60 / proporcional, borderRight: '2px solid #007BA7', padding: 5 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                     {cotizacion.created_at.split ('T')[0]}
                     </p>
@@ -54,7 +54,7 @@ export default function CardCotizacionTablet({proporcional, cotizacion, total, i
                         {cotizacion.nro_pedido}
                     </p>
                 </div>
-                <div className='' style={{width: 291 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 5 / proporcional}}>
+                <div className='' style={{width: 291 / proporcional, height: 60 / proporcional, borderRight: '2px solid #007BA7', padding: 5 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Productos:
                     </p>
@@ -76,7 +76,7 @@ export default function CardCotizacionTablet({proporcional, cotizacion, total, i
                         }
                     </div>
                 </div>
-                <div style={{width: 100 / proporcional, height: 60 / proporcional, borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
+                <div style={{width: 100 / proporcional, height: 60 / proporcional, borderRight: '2px solid #007BA7', padding: 10 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${25 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Estado:
                     </p>

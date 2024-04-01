@@ -19,9 +19,12 @@ export default function IngresarEmail({proporcional}) {
 
     useEffect(() => {
         if (forgot_password && forgot_password.messag){
-            dispatch(correodata(correoConstants({}, true, 0).forgot_password))
-            window.localStorage.setItem('correo', email)
-            navigate ('/olvidaste-password/confirmacion')
+            if (forgot_password && forgot_password.message && forgot_password.usuario){
+                dispatch(correodata(correoConstants({}, true, 0).forgot_password))
+                window.localStorage.setItem('correo', forgot_password.usuario.email)
+                window.localStorage.setItem('usuario', forgot_password.usuario.usuario)
+                navigate ('/olvidaste-password/confirmacion')
+            }
         }
     }, [forgot_password])
 

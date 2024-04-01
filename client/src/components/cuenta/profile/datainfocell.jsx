@@ -78,7 +78,7 @@ export default function DataInfoCell({proporcional}) {
 
   return (
     <div style={{width: 459 / proporcional, background: 'white', marginLeft: 20 / proporcional, marginRight: 20 / proporcional}}>
-        <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, color: '#384da7', textAlign: 'left',  
+        <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, color: '#007BA7', textAlign: 'left',  
                     fontWeight: 500, marginBottom: 25 / proporcional}}>
             (*) Se enviará tus pedidos de cotizaciones al correo indicado o a tu número.
         </p>
@@ -181,14 +181,14 @@ export default function DataInfoCell({proporcional}) {
 
                 {
                     editar_info ? (
-                        <button className='btn' style={{width: 459 / proporcional, height: 50 / proporcional, background: boton_cancelar ? '#384da7' : 'white', 
-                            color: boton_cancelar ? 'white' : '#384da7', border: '1px solid #384da7', marginBottom: 25 / proporcional,
+                        <button className='btn' style={{width: 459 / proporcional, height: 50 / proporcional, background: boton_cancelar ? '#8B4513' : 'white', 
+                            color: boton_cancelar ? 'white' : '#8B4513', border: '1px solid #8B4513', marginBottom: 25 / proporcional,
                             fontWeight: 600, fontSize: 18 / proporcional}} onMouseOver={() => setBotonCancelar(true)} onMouseLeave={() => setBotonCancelar(false)}
                             onClick={() => setEditarInfo (false)}>Cancelar</button>
                     ) : null
                 }
-                <button className='btn' style={{width: 459 / proporcional, height: 50 / proporcional, background: boton_guardar ? 'white' : '#384da7', 
-                    color: boton_guardar ? '#384da7' : 'white', border: '1px solid #384da7', marginBottom: 25 / proporcional,
+                <button className='btn' style={{width: 459 / proporcional, height: 50 / proporcional, background: boton_guardar ? 'white' : '#8B4513', 
+                    color: boton_guardar ? '#8B4513' : 'white', border: '1px solid #8B4513', marginBottom: 25 / proporcional,
                     fontWeight: 600, fontSize: 18 / proporcional}} onMouseOver={() => setBotonGuardar(true)} onMouseLeave={() => setBotonGuardar(false)}
                     onClick={() => editar_info ? actualizar_datos() : setEditarInfo (!editar_info)}>{editar_info ? 'Actualiar datos' : 'Editar datos'}</button>
 

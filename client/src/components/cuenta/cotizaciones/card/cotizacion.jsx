@@ -45,8 +45,8 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
     return (
         loading === 2 ? (
             <div className='d-flex' style={{width: 898 / proporcional, height: 'auto',
-                    borderBottom: total === index ? 'null' : '1px solid #384da7'}}>
-                <div style={{width: 120 / proporcional, height: 'auto', borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
+                    borderBottom: total === index ? 'null' : '1px solid #007BA7'}}>
+                <div style={{width: 120 / proporcional, height: 'auto', borderRight: '2px solid #007BA7', padding: 10 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         {cotizacion.created_at.split ('T')[0]}
                     </p>
@@ -54,7 +54,7 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
                         {cotizacion.nro_pedido}
                     </p>
                 </div>
-                <div className='' style={{width: 578 / proporcional, height: 'auto', borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
+                <div className='' style={{width: 578 / proporcional, height: 'auto', borderRight: '2px solid #007BA7', padding: 10 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Productos:
                     </p>
@@ -63,18 +63,20 @@ export default function CardCotizacion({proporcional, cotizacion, total, index})
                             lista_productos && lista_productos.length > 0 ? (
                                 lista_productos.map ((producto, numprod) => {
                                     return (
-                                        <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, 
-                                                    color: '#212121', fontWeight: 500,
-                                            marginRight: 10 / proporcional}}>
-                                            {producto.producto} ({producto.cantidad}){numprod !== lista_productos.length - 1 ? ',' : ''}
-                                        </p>
+                                        numprod < 3 ? (
+                                            <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, 
+                                                        color: '#212121', fontWeight: 500,
+                                                marginRight: 10 / proporcional}}>
+                                                {producto.producto} ({producto.cantidad}){numprod !== lista_productos.length - 1 ? ',' : ''}
+                                            </p>
+                                        ) : null
                                     )
                                 })
                             ) : null
                         }
                     </div>
                 </div>
-                <div style={{width: 190 / proporcional, height: 'auto', borderRight: '2px solid #384da7', padding: 10 / proporcional}}>
+                <div style={{width: 190 / proporcional, height: 'auto', borderRight: '2px solid #007BA7', padding: 10 / proporcional}}>
                     <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', fontWeight: 500}}>
                         Estado:
                     </p>

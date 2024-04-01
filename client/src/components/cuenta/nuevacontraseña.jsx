@@ -15,7 +15,7 @@ export default function NuevaContraseña({proporcional}) {
         <div style={{width: '100%'}}>
             <TituloPagina proporcional={proporcional}/>
             <Nueva proporcional={proporcional}/>
-            <div style={{width: '100%', marginLeft: 350 / proporcional, marginRight: 350 / proporcional, background: 'rgb(230, 232, 232)', height: 2 / proporcional,
+            <div style={{width: '100%', paddingLeft: 350 / proporcional, paddingRight: 350 / proporcional, background: 'rgb(230, 232, 232)', height: 2 / proporcional,
                             marginTop: 15 / proporcional, marginBottom: 35 / proporcional}}/>
             <FooterPrincipal proporcional={proporcional}/>
             <Footer proporcional={proporcional}/>

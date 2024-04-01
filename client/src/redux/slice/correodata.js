@@ -11,6 +11,8 @@ export const correodata = createAsyncThunk ('', async (params) => {
         case 'forgot_password':
         case 'send_correo_cotizacion':
         case 'send_correo_web': 
+        case 'send_correo_revisar_cotizacion':
+        case 'send_correo_respuesta_cotizacion':
             if (params.reset){ 
                 return {success: null}
             }else{

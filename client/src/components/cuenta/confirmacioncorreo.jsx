@@ -21,7 +21,7 @@ export default function ConfirmacionCorreo({proporcional}) {
                   {window.localStorage.getItem('correo')}</span><br/>para que reestablezca su contraseña.
                 </p>
                 <button className='btn' style={{width: 250 / proporcional, height: 50 / proporcional, color: 'white', background: '#8B4513', 
-                  fontWeight: 600, fontSize: 18 / proporcional}} onClick={() => navigate ('/olvido-contraseña')}>
+                  fontWeight: 600, fontSize: 18 / proporcional}} onClick={() => navigate ('/olvidaste-password')}>
                     No recibí correo
                 </button>
               </div>

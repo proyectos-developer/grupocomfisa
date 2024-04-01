@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import icono_alambre from '../../assets/iconos/icono_alambre.png'
 import icono_cemento from '../../assets/iconos/icono_cemento.png'
-import icono_cemento_1 from '../../assets/iconos/icono_cemento_1.png'
 import icono_clavos from '../../assets/iconos/icono_clavos.png'
 import icono_clavos_1 from '../../assets/iconos/icono_clavo_1.png'
 import icono_cortador from '../../assets/iconos/icono_cortador.png'
@@ -21,20 +20,19 @@ import icono_barras from '../../assets/iconos/icono_barras.png'
 import cortadora from '../../assets/productos/cortadora_404.png'
 import cortadora_1 from '../../assets/productos/cortadora_1_404.png'
 import lijas from '../../assets/productos/lijas_404.png'
-import varillas from '../../assets/productos/varillas_404.png'
+import varillas from '../../assets/productos/aceros_arequipa_404.png'
 import varillas_1 from '../../assets/productos/varillas_1_404.png'
 import tecnopor from '../../assets/productos/tecnopor_404.png'
-import clavos from '../../assets/productos/clavos_404.png'
+import clavos from '../../assets/productos/aceros_arequipa_1_404.png'
 import clavos_1 from '../../assets/productos/clavos_1_404.png'
-import alambre from '../../assets/productos/alambre_404.png'
+import alambre from '../../assets/productos/metalyck_404.png'
 import sellador from '../../assets/productos/sellador_404.png'
 import cemento from '../../assets/productos/cemento_404.png'
-import cemento_1 from '../../assets/productos/cemento_1_404.png'
-import ladrillos from '../../assets/productos/ladrillos_404.png'
-import ladrillos_1 from '../../assets/productos/ladrillos_1_404.png'
-import guantes from '../../assets/productos/guantes_404.png'
+import ladrillos from '../../assets/productos/piramide_404.png'
+import ladrillos_1 from '../../assets/productos/saguitario_404.png'
+import guantes from '../../assets/productos/comfisa_404.png'
 import tubos from '../../assets/productos/tubos_404.png'
-import barras from '../../assets/productos/barras_404.png'
+import barras from '../../assets/productos/siderperu_404.png'
 
 import CardProveedorTablet from './card/proveedortablet.jsx'
 
@@ -63,8 +61,6 @@ export default function ProductosProveedoresTablet({proporcional}) {
 
         {id: '21', subtitulo: 'INKA', titulo: 'CEMENTO', descripcion: `El cemento es un material de construcción esencial; de hecho, es el más utilizado en el mundo. La mayoría de las construcciones lo emplean en, por lo menos, una de sus etapas: cimientos, suelos, dinteles, muros, paredes o techos.`, icono: icono_cemento, logo: cemento},
 
-        {id: '22', subtitulo: 'UNACEM', titulo: 'CEMENTO', descripcion: `Garantizamos la ejecución y sostenibilidad de nuestras operaciones con los más altos estándares de calidad, protección de nuestras instalaciones, desempeño ambiental, y de salud y seguridad en el trabajo a través de nuestro Sistema Integrado de Gestión.`, icono: icono_cemento_1, logo: cemento_1},
-
         {id: '16', subtitulo: 'ETSAPERÚ', titulo: 'PLANCHAS TECNOPOR', descripcion: `El Tecnopor es utilizado en el sector de las obras civiles y construcción,
         en techos y paredes para el aislamiento térmico y acústico.`, icono: icono_planchas, logo: tecnopor},
 
@@ -79,7 +75,7 @@ export default function ProductosProveedoresTablet({proporcional}) {
         {id: '14', subtitulo: 'ASA', titulo: 'LIJAS', descripcion: `Las lijas suelen usarse para dejar lisas las paredes, previo al pintado. Las lijas
         también se utilizan en carpintería, para el acabado de diferentes piezas.`, icono: icono_lija, logo: lijas},
 
-        {id: '25', subtitulo: 'TIGRE', titulo: 'TUBOS Y CONEXIONES', descripcion: `Nuestros productos operan en los segmentos de hidráulica, eléctrica, drenaje, accesorios sanitarios, infraestructura, industria, riego, herramientas de pintura, metales sanitarios y en soluciones para aguas y efluentes en el tratamiento de reutilización de aguas.`, icono: icono_tubo, logo: tubos}
+        {id: '25', subtitulo: 'MATUSITA', titulo: 'TUBOS Y CONEXIONES', descripcion: `Nuestros productos operan en los segmentos de hidráulica, eléctrica, drenaje, accesorios sanitarios, infraestructura, industria, riego, herramientas de pintura, metales sanitarios y en soluciones para aguas y efluentes en el tratamiento de reutilización de aguas.`, icono: icono_tubo, logo: tubos}
     ]
 
     return (
@@ -126,9 +122,6 @@ export default function ProductosProveedoresTablet({proporcional}) {
                 <div className='d-flex justify-content-center' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[14].id} titulo={lista_proveedores[14].titulo} subtitulo={lista_proveedores[14].subtitulo} descripcion={lista_proveedores[14].descripcion}  icono={lista_proveedores[14].icono} logo={lista_proveedores[14].logo}/>
                     <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[15].id} titulo={lista_proveedores[15].titulo} subtitulo={lista_proveedores[15].subtitulo} descripcion={lista_proveedores[15].descripcion}  icono={lista_proveedores[15].icono} logo={lista_proveedores[15].logo}/>
-                </div>
-                <div className='d-flex justify-content-center' style={{width: '100%', marginBottom: 34 / proporcional, height: 'auto'}}>
-                    <CardProveedorTablet proporcional={proporcional} id={lista_proveedores[16].id} titulo={lista_proveedores[16].titulo} subtitulo={lista_proveedores[16].subtitulo} descripcion={lista_proveedores[16].descripcion}  icono={lista_proveedores[16].icono} logo={lista_proveedores[16].logo}/>
                 </div>
             </div>
         </div>

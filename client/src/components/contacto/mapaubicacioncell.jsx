@@ -38,6 +38,15 @@ export default function MapaUbicacionCell({proporcional}) {
         },
         zoom: 14
       };
+      
+      const defaultProps_5 = {
+        center: {
+          lat: -12.1779257,
+          lng: -76.9184903
+        },
+        zoom: 14
+      };
+
 
     return (
         <div style={{width: '100%', paddingLeft: 20 / proporcional, paddingRight: 20 / proporcional, paddingTop: 60 / proporcional}}>
@@ -57,8 +66,8 @@ export default function MapaUbicacionCell({proporcional}) {
             <div style={{width: '100%', height: 300 / proporcional, marginBottom: 20 / proporcional}}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: "AIzaSyCwoATN7RLTSy4jWO_iK4rQbHXfeNHFuxs" }}
-                    defaultCenter={defaultProps_1.center}
-                    defaultZoom={defaultProps_1.zoom}
+                    defaultCenter={defaultProps_2.center}
+                    defaultZoom={defaultProps_2.zoom}
                 >
                     <AnyReactComponent
                         lat={-12.2506607}
@@ -70,8 +79,8 @@ export default function MapaUbicacionCell({proporcional}) {
             <div style={{width: '100%', height: 300 / proporcional, marginBottom: 20 / proporcional}}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: "AIzaSyCwoATN7RLTSy4jWO_iK4rQbHXfeNHFuxs" }}
-                    defaultCenter={defaultProps_1.center}
-                    defaultZoom={defaultProps_1.zoom}
+                    defaultCenter={defaultProps_3.center}
+                    defaultZoom={defaultProps_3.zoom}
                 >
                     <AnyReactComponent
                         lat={-12.2308559}
@@ -83,8 +92,8 @@ export default function MapaUbicacionCell({proporcional}) {
             <div style={{width: '100%', height: 300 / proporcional, marginBottom: 20 / proporcional}}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: "AIzaSyCwoATN7RLTSy4jWO_iK4rQbHXfeNHFuxs" }}
-                    defaultCenter={defaultProps_1.center}
-                    defaultZoom={defaultProps_1.zoom}
+                    defaultCenter={defaultProps_4.center}
+                    defaultZoom={defaultProps_4.zoom}
                 >
                     <AnyReactComponent
                         lat={-12.4650681}
@@ -92,6 +101,19 @@ export default function MapaUbicacionCell({proporcional}) {
                         text="Steel HouseValery S.A.C"
                     />
                     </GoogleMapReact>
+            </div>
+            <div style={{width: '100%', height: 300 / proporcional, marginBottom: 20 / proporcional}}>
+                    <GoogleMapReact
+                        bootstrapURLKeys={{ key: "AIzaSyCwoATN7RLTSy4jWO_iK4rQbHXfeNHFuxs" }}
+                        defaultCenter={defaultProps_5.center}
+                        defaultZoom={defaultProps_5.zoom}
+                    >
+                        <AnyReactComponent
+                            lat={-12.1779257}
+                            lng={-76.9184903}
+                            text="Comercializadora de Fierro S.A.C"
+                        />
+                        </GoogleMapReact>
             </div>
         </div>
     )
