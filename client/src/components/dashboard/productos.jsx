@@ -57,7 +57,7 @@ export default function ProductosProveedores({proporcional}) {
 
         {id: '23', subtitulo: 'PIRAMIDE', titulo: 'LADRILLOS', descripcion: `Los ladrillos se utilizan en construcción para fachadas y particiones. Se utiliza principalmente para construir muros o tabiques. Aunque se pueden colocar a hueso, lo habitual es que se reciban con mortero.`, icono: icono_ladrillos, logo: ladrillos},
 
-        {id: '31', subtitulo: 'SAGITARIO', titulo: 'LADRILLOS', descripcion: `La implementación de los ladrillos es lo último en maquinaria totalmente automatizada, lo que nos permite no sólo mejorar la fabricación de productos con arcilla microcompacta, de altísima durabilidad, sino también incursionar en la elaboración de materiales bajo patrones europeos de calidad.`, icono: icono_ladrillos_1, logo: ladrillos_1},
+        {id: '31', subtitulo: 'SAGUITARIO', titulo: 'LADRILLOS', descripcion: `La implementación de los ladrillos es lo último en maquinaria totalmente automatizada, lo que nos permite no sólo mejorar la fabricación de productos con arcilla microcompacta, de altísima durabilidad, sino también incursionar en la elaboración de materiales bajo patrones europeos de calidad.`, icono: icono_ladrillos_1, logo: ladrillos_1},
 
         {id: '21', subtitulo: 'INKA', titulo: 'CEMENTO', descripcion: `El cemento es un material de construcción esencial; de hecho, es el más utilizado en el mundo. La mayoría de las construcciones lo emplean en, por lo menos, una de sus etapas: cimientos, suelos, dinteles, muros, paredes o techos.`, icono: icono_cemento, logo: cemento},
 

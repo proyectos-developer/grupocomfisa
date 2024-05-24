@@ -49,15 +49,8 @@ export default function ProductosCell({proporcional}) {
     useEffect(() => {
         if (get_productos_search_filtro_order_tienda && get_productos_search_filtro_order_tienda.success === true && 
             get_productos_search_filtro_order_tienda.productos){
-            let data = get_productos_search_filtro_order_tienda.productos.length
-            let lista = []
-            let cuenta = data / 3 < 1 ? 1 : data % 3 !== 0 ? (data / 3) + 1 : data / 3
-            for (let count = 0; count < cuenta; count ++){
-                lista.push ({num: `${count + 1}`})
-            }
             if (get_productos_search_filtro_order_tienda.total_productos){setTotalProductos(get_productos_search_filtro_order_tienda.total_productos)}
-            setProductos (get_productos_search_filtro_order_tienda.productos)
-            setListaProductos (lista)
+            setListaProductos (get_productos_search_filtro_order_tienda.productos)
         }
     }, [get_productos_search_filtro_order_tienda])
 

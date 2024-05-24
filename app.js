@@ -52,8 +52,8 @@ app.use((req, res, next) => {
 })
  
 //Rutas
-/**app.use(require('./backend/routes/index.js'));**/
-app.use(require('./backend/routes/authentication.js'))
+app.use(require('./backend/routes/index.js'))
+//app.use(require('./backend/routes/authentication.js'))
 
 //app.use(require('./backend/routes/sms.js'))
 app.use(require('./backend/routes/proveedores.js'))

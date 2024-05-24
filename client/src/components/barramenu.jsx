@@ -395,7 +395,7 @@ export default function BarraMenu({proporcional}) {
                                           </p>
                                       </div>
                                     </div>
-                                  <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
+                                    <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
                                           onClick={() => {ver_productos_proveedor('25'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_matusita} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>

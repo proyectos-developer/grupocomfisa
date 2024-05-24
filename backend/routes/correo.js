@@ -10,12 +10,12 @@ const nodemailer = require('nodemailer')
 const SMTPTransport = require('nodemailer/lib/smtp-transport')
 
 var transporter = nodemailer.createTransport( new SMTPTransport ({
-    host: 'developer-ideas.com',
-    secure: true,
-    port: 465,
+    service: "hotmail", // hostname
+    secure: false, // use SSL
+    port: 587, // port for secure SMTP
     auth: {
-        user: 'admin@developer-ideas.com',
-        pass: '206@Dev2702ideas732'
+        user: 'jp.portocarrero.jp@hotmail.com',
+        pass: 'J4027@4060r'
     },
     tls: {
         rejectUnauthorized: false
@@ -41,7 +41,7 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
     const usuarios = await pool.query ('SELECT * FROM clientes JOIN info_clientes ON clientes.usuario = info_clientes.usuario WHERE clientes.correo = ?', [correo])
     if (usuarios.length === 1){
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+            from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
             to: usuarios[0].correo, // list of receivers
             subject: 'Olvide mi contraseña Grupo COMFISA',
             template: 'olvidepassword', // the name of the template file i.e email.handlebars
@@ -90,7 +90,7 @@ router.post('/api/correo/nueva/cotizacion/:shop_id/:usuario', async (req, res) =
                                                 WHERE carrito_cotizacion.shop_id = ?`, [shop_id])
 
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+            from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
             to: 'ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
             subject: `Nuevo pedido de cotización número ${nro_pedido}`,
             template: 'pedidocotizacionacomfisa', // the name of the template file i.e email.handlebars
@@ -111,7 +111,7 @@ router.post('/api/correo/nueva/cotizacion/:shop_id/:usuario', async (req, res) =
             }
 
             var mailOptions = {
-                from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+                from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
                 to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
                 subject: `Tu pedido de cotización número ${nro_pedido}`,
                 template: 'pedidocotizacionalcliente', // the name of the template file i.e email.handlebars
@@ -149,7 +149,7 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
     const { correo, nombres, apellidos, telefono, mensaje } = req.body
 
     var mailOptions = {
-        from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+        from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
         to: 'ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
         subject: 'Mensaje de la web Grupo COMFISA',
         template: 'mensajewebadmin', // the name of the template file i.e email.handlebars
@@ -163,14 +163,16 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
 
     // trigger the sending of the E-mail
     transporter.sendMail(mailOptions, function(error, info){
+        console.log ('info 1', info, correo)
         if(error){
+            console.log ('error', error)
             return res.json ({
                 message: 'error: ' + error
             })
         }
 
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+            from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
             to: correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
             subject: `Mensaje de la web Grupo COMFISA`,
             template: 'mensajewebcliente', // the name of the template file i.e email.handlebars
@@ -184,7 +186,9 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
 
         // trigger the sending of the E-mail
         transporter.sendMail(mailOptions, function(error, info){
+            console.log ('info 2', info)
             if(error){
+                console.log ('error', error)
                 return res.json ({
                     message: 'error: ' + error
                 })
@@ -209,7 +213,7 @@ router.post('/api/correo/revisar/cotizacion/:shop_id/:usuario', async (req, res)
         const cotizacion = await pool.query (`SELECT * FROM carrito_cotizacion WHERE shop_id = ?`, [shop_id])
 
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+            from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
             to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
             subject: `Pedido cotización número ${cotizacion[0].nro_pedido}`,
             template: 'revisarcotizacioncliente', // the name of the template file i.e email.handlebars
@@ -262,7 +266,7 @@ router.post ('/api/correo/cotizacion/respuesta/:shop_id', async(req, res) => {
         const data_usuario = await pool.query ('SELECT * FROM info_clientes WHERE usuario = ?', [lista[0].usuario])
 
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+            from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
             to: 'ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
             subject: `Pedido de cotización ${estado.toString().toUpperCase()} número ${lista[0].nro_pedido}`,
             template: 'respuestacotizacionadmin', // the name of the template file i.e email.handlebars
@@ -272,8 +276,8 @@ router.post ('/api/correo/cotizacion/respuesta/:shop_id', async(req, res) => {
                 estado: estado === 'aceptado' ? true : false,
                 apellidos: data_usuario[0].apellidos, // replace {{name}} with Adebola
                 shop_id: shop_id,// replace {{name}} with Adebola
-                imagen: estado === 'aceptado' ? 'https://comfisa.developer-ideas.com/images/correos/correo_admin_cotizacion_aceptada_600.png' :
-                    'https://comfisa.developer-ideas.com/images/correos/correo_admin_cotizacion_cancelada_600.png'
+                imagen: estado === 'aceptado' ? 'https://comfisa.developer-ideas.com/correos/correo_admin_cotizacion_aceptada_600.png' :
+                    'https://comfisa.developer-ideas.com/correos/correo_admin_cotizacion_cancelada_600.png'
             }
         }
 
@@ -286,7 +290,7 @@ router.post ('/api/correo/cotizacion/respuesta/:shop_id', async(req, res) => {
             }
 
             var mailOptions = {
-                from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
+                from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
                 to: data_usuario[0].correo,// + ', ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
                 subject: `Has ${estado.toString().toUpperCase()} tu cotización número ${lista[0].nro_pedido}`,
                 template: 'respuestacotizacioncliente', // the name of the template file i.e email.handlebars
@@ -296,8 +300,8 @@ router.post ('/api/correo/cotizacion/respuesta/:shop_id', async(req, res) => {
                     apellidos: data_usuario[0].apellidos, // replace {{name}} with Adebola
                     shop_id: shop_id,
                     estado: estado === 'aceptado' ? true : false,
-                    imagen: estado === 'aceptado' ? 'https://comfisa.developer-ideas.com/images/correos/correo_cliente_cotizacion_aceptada_600.png' :
-                        'https://comfisa.developer-ideas.com/images/correos/correo_cliente_cotizacion_cancelada_600.png'
+                    imagen: estado === 'aceptado' ? 'https://comfisa.developer-ideas.com/correos/correo_cliente_cotizacion_aceptada_600.png' :
+                        'https://comfisa.developer-ideas.com/correos/correo_cliente_cotizacion_cancelada_600.png'
                 }
             }
     

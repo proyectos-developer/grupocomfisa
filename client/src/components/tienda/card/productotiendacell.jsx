@@ -14,7 +14,7 @@ import {favoritosdata} from '../../../redux/slice/favoritosdata'
 import {favoritosConstants} from '../../../uri/favoritos-constants'
 
 export default function CardProductoTienda({producto, proporcional}) {
-    console.log (producto)
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
 

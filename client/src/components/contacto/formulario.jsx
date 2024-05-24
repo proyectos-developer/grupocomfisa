@@ -39,6 +39,7 @@ export default function FormularioContacto({proporcional}) {
                 mensaje: mensajes, 
                 correo: email
             }
+            console.log (data_mensaje)
             dispatch(correodata(correoConstants(data_mensaje, false, 0, 0).send_correo_web))
         }
     }
