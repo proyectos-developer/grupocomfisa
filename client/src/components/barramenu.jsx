@@ -207,7 +207,7 @@ export default function BarraMenu({proporcional}) {
                                 style={{width: 1020 / proporcional, height: 'auto', padding: 10 / proporcional, background: 'white'}}>
                                 <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('15'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('1'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_aceros_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -219,7 +219,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('30'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('2'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_inkaferro_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -231,7 +231,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('32'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('3'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_siderperu_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -243,7 +243,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('17'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('4'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_metalyck_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -258,7 +258,7 @@ export default function BarraMenu({proporcional}) {
                                 <div style={{width: '100%', height: 2 / proporcional, background: '#bdbdbd', marginTop: 10 / proporcional, marginBottom: 10 / proporcional}}/>
                                 <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('26'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('5'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_aceros_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -270,7 +270,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('29'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('6'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_treamperu_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -282,7 +282,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('23'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('7'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_piramide_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -294,7 +294,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('31'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('8'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_saguitario_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -309,7 +309,7 @@ export default function BarraMenu({proporcional}) {
                                 <div style={{width: '100%', height: 2 / proporcional, background: '#bdbdbd', marginTop: 10 / proporcional, marginBottom: 10 / proporcional}}/>
                                 <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('21'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('9'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_inka_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -321,7 +321,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('16'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('10'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_etsaperu_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -333,7 +333,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('19'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('11'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_majestad_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -372,7 +372,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('24'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('14'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_comfisa_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -384,7 +384,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('14'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('15'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_asa_250} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 
@@ -396,7 +396,7 @@ export default function BarraMenu({proporcional}) {
                                       </div>
                                     </div>
                                     <div style={{width: '24%', height:'auto', cursor: 'pointer'}}
-                                          onClick={() => {ver_productos_proveedor('25'); setMenu('proveedor')}}>
+                                          onClick={() => {ver_productos_proveedor('16'); setMenu('proveedor')}}>
                                       <img className='rounded-2' src={logo_matusita} style={{width: '100%'}}/>
                                       <div className='d-flex' style={{height: 30 / proporcional, width: '100%', cursor: 'pointer'}}>
                                           <img src={icono_dot} style={{width: 10 / proporcional, height: 10 / proporcional, marginTop: 10 / proporcional, 

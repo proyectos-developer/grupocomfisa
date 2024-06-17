@@ -150,7 +150,7 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
 
     var mailOptions = {
         from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
-        to: 'ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+        to: 'developer.ideas2017@gmail.com', //'ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
         subject: 'Mensaje de la web Grupo COMFISA',
         template: 'mensajewebadmin', // the name of the template file i.e email.handlebars
         context:{

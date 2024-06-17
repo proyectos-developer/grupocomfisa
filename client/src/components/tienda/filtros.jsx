@@ -36,6 +36,7 @@ export default function  Filtros({proporcional}) {
                 }else{
                         setCheckProveedor(proveedor)
                 }
+                console.log ('id_proveedor', id_proveedor)
                 const search = filtro_productos_search_order_amount.search
                 const order_by = filtro_productos_search_order_amount.order_by
                 const order = filtro_productos_search_order_amount.order
@@ -56,77 +57,77 @@ export default function  Filtros({proporcional}) {
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'arequipa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('15', 'arequipa')}/>
+                            onClick={() => filtrar_por_proveedor('1', 'arequipa')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
-                        fontWeight: 400}}>BARRAS CORRUGADAS (ACEROS AREQUIPA)</p>
+                        fontWeight: 400}}>BARRAS CORRUGADAS (ACEROS )</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'inkaferro' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('30', 'inkaferro')}/>
+                            onClick={() => filtrar_por_proveedor('2', 'inkaferro')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>BARRAS CORRUGADAS (INKAFERRO)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'siderperu' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('32', 'siderperu')}/>
+                            onClick={() => filtrar_por_proveedor('3', 'siderperu')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>BARRAS CONSTRUCCIÓN (SIDERPERU)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'metalyck' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('17', 'metalyck')}/>
+                            onClick={() => filtrar_por_proveedor('4', 'metalyck')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>ALAMBRE RECOCIDO (METALYCK)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'clavos' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('26', 'clavos')}/>
+                            onClick={() => filtrar_por_proveedor('5', 'clavos')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>CLAVO ALBAÑILERÍA (ACEROS AREQUIPA)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'tream' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('29', 'tream')}/>
+                            onClick={() => filtrar_por_proveedor('6', 'tream')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>CLAVO ALBAÑILERÍA (TREAMPERÚ)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'piramide' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('23', 'piramide')}/>
+                            onClick={() => filtrar_por_proveedor('7', 'piramide')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>LADRILLOS (PIRAMIDE)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'sagitario' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('31', 'sagitario')}/>
+                            onClick={() => filtrar_por_proveedor('8', 'sagitario')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>LADRILLOS (SAGITARIO)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'inka' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('21', 'inka')}/>
+                            onClick={() => filtrar_por_proveedor('9', 'inka')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>CEMENTO (INKA)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'etsa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('16', 'etsa')}/>
+                            onClick={() => filtrar_por_proveedor('10', 'etsa')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>TECNOPOR (ETSAPERÚ)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'majestad' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('19', 'majestad')}/>
+                            onClick={() => filtrar_por_proveedor('11', 'majestad')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>TEMPLE (MAJESTAD)</p>
                 </div>
@@ -147,21 +148,21 @@ export default function  Filtros({proporcional}) {
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'comfisa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('24', 'comfisa')}/>
+                            onClick={() => filtrar_por_proveedor('14', 'comfisa')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>GUANTES DE PROTECCIÓN (COMFISA)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'asa' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('14', 'asa')}/>
+                            onClick={() => filtrar_por_proveedor('15', 'asa')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>LIJAS DE AGUA Y ACERO (ASA)</p>
                 </div>
                 <div className='d-flex' style={{width: '100%', height: 26 / proporcional, marginBottom: 3 / proporcional}}>
                     <img src={check_proveedor === 'tigre' ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 3 / proporcional,
                             marginBottom: 3 / proporcional, marginRight: 6 / proporcional, cursor: 'pointer'}}
-                            onClick={() => filtrar_por_proveedor('25', 'tigre')}/>
+                            onClick={() => filtrar_por_proveedor('16', 'tigre')}/>
                     <p style={{fontSize: 16 / proporcional, lineHeight: `${26 / proporcional}px`, color: 'rgb(95, 101, 109)', cursor: 'pointer',
                         fontWeight: 400}}>TUBOS Y CONEXIONES (MATUSITA)</p>
                 </div>
