@@ -10,12 +10,12 @@ const nodemailer = require('nodemailer')
 const SMTPTransport = require('nodemailer/lib/smtp-transport')
 
 var transporter = nodemailer.createTransport( new SMTPTransport ({
-    service: "hotmail", // hostname
+    host: "developer-ideas.com", // service
     secure: false, // use SSL
     port: 587, // port for secure SMTP
     auth: {
-        user: 'jp.portocarrero.jp@hotmail.com',
-        pass: 'J4027@4060r'
+        user: 'admin@developer-ideas.com',
+        pass: '206@Dev2702ideas732'
     },
     tls: {
         rejectUnauthorized: false
@@ -150,7 +150,7 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
 
     var mailOptions = {
         from: '"Grupo COMFISA" <jp.portocarrero.jp@hotmail.com>', // sender address
-        to: 'developer.ideas2017@gmail.com', //'ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
+        to: 'ventas@grupocomfisa.com, gerencia@grupocomfisa.com', // list of receivers
         subject: 'Mensaje de la web Grupo COMFISA',
         template: 'mensajewebadmin', // the name of the template file i.e email.handlebars
         context:{
